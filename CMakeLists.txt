@@ -5,6 +5,7 @@ project("Game")
 include_directories("include")
 
 add_subdirectory(glfw)
+add_subdirectory(glm)
 
 include_directories("stb")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
@@ -21,3 +22,5 @@ set(SOURCE_FILES
 add_executable(game ${SOURCE_FILES})
 
 target_link_libraries(game glfw)
+target_link_libraries(game glm)
+
