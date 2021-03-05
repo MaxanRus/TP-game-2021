@@ -6,6 +6,7 @@ include_directories("include")
 
 add_subdirectory(glfw)
 
+include_directories("stb")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glfw/include)
 
@@ -13,6 +14,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/glad/src/glad.c
+		stb/stb_image.cpp
     src/main.cpp
     )
 
