@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "graphics/Window.hpp"
+#include "graphics/GShape.hpp"
 
 int main() {
   Graphics::Window window(100, 100, "Game");
@@ -10,7 +11,11 @@ int main() {
     return -1;
   }
 
+  Graphics::GShape&& shape = Graphics::Triangle(0.0, 0.0, 1.0, 0.0, 1.0, 1.0);
+  Graphics::Shader shader("shaders/shader.vs", "shaders/shader.fs");
+
   while (window.IsLive()) {
+    shape.Draw(window, shader);
     window.Render();
   }
 

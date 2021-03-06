@@ -2,6 +2,7 @@
 
 #pragma once
 
+namespace Graphics {
 class Shader {
  public:
   Shader(const std::string& vertex_path, const std::string& fragment_path);
@@ -14,3 +15,5 @@ class Shader {
 
   unsigned int id_;
 };
+}
+

@@ -4,6 +4,8 @@
 
 #include "graphics/Shader.hpp"
 
+using namespace Graphics;
+
 Shader::Shader(const std::string& vertex_path, const std::string& fragment_path) {
   auto[vertex_code_shader, fragment_code_shader] = LoadFromFile(vertex_path, fragment_path);
   Compile(vertex_code_shader, fragment_code_shader);
