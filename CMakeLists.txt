@@ -15,8 +15,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/glad/src/glad.c
-		stb/stb_image.cpp
+    stb/stb_image.cpp
     src/main.cpp
+    include/graphics/Window.hpp
+    src/graphics/Window.cpp
+		include/graphics/Shader.hpp
+		src/graphics/Shader.cpp
     )
 
 add_executable(game ${SOURCE_FILES})
