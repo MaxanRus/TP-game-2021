@@ -12,11 +12,11 @@ int main() {
   }
 
   Graphics::GShape&& shape = Graphics::Triangle(0.0, 0.0, -1.0, 0.0, -1.0, 1.0);
-  Graphics::Shader shader("shaders/shader.vs", "shaders/shader.fs");
+  Graphics::Shader shader("assets/shaders/shader.vs", "assets/shaders/shader.fs");
 
-  Graphics::Image img("img/dwarf.png");
+  Graphics::Image img("assets/img/dwarf.png");
   Graphics::Quadrangle quadrangle(-1.0, -1.0, 0.0, -1.0, 0.0, 0.0, -1.0, 0.0);
-  Graphics::Shader image_shader("shaders/image_shader.vs", "shaders/image_shader.fs");
+  Graphics::Shader image_shader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs");
 
   while (window.IsLive()) {
     shape.Draw(window, shader);
