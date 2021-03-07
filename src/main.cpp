@@ -11,17 +11,21 @@ int main() {
     return -1;
   }
 
-  Graphics::GShape&& shape = Graphics::Triangle(0.0, 0.0, -1.0, 0.0, -1.0, 1.0);
+  Graphics::GShape&& shape = Graphics::Triangle(10.0, 10.0, 1280.0, 10.0, 1280.0, 720.0);
   Graphics::Shader shader("assets/shaders/shader.vs", "assets/shaders/shader.fs");
 
   Graphics::Image img("assets/img/dwarf.png");
-  Graphics::Quadrangle quadrangle(-1.0, -1.0, 0.0, -1.0, 0.0, 0.0, -1.0, 0.0);
+  Graphics::Quadrangle quadrangle(0.0, 0.0, 50.0, 0.0, 75.0, 100.0, 0.0, 50.0);
   Graphics::Shader image_shader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs");
 
   while (window.IsLive()) {
-    shape.Draw(window, shader);
+    glm::mat4 transform(1.0f);
+    transform = glm::translate(transform, glm::vec3(0 * std::abs(sin(glfwGetTime())) * 720.0, 0.0, 0.0));
+    transform = glm::scale(transform, glm::vec3(10.0, 10.0, 1.0));
+
+    img.Draw(window, image_shader, transform);
     quadrangle.Draw(window, shader);
-    img.Draw(window, image_shader);
+
     window.Render();
   }
 
