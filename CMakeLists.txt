@@ -14,12 +14,24 @@ add_custom_command(TARGET copy_shaders
 		COMMENT "Copy shaders"
 		VERBATIM)
 
+add_custom_target(copy_images ALL
+		DEPENDS ${CMAKE_SOURCE_DIR}/img
+		VERBATIM)
+
+add_custom_command(TARGET copy_images
+		PRE_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_SOURCE_DIR}/img
+		${CMAKE_BINARY_DIR}/img
+		COMMENT "Copy img"
+		VERBATIM)
+
 include_directories("include")
+include_directories("stb")
 
 add_subdirectory(glfw)
 add_subdirectory(glm)
 
-include_directories("stb")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glfw/include)
 

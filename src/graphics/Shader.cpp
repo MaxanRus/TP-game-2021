@@ -11,12 +11,12 @@ Shader::Shader(const std::string& vertex_path, const std::string& fragment_path)
   Compile(vertex_code_shader, fragment_code_shader);
 }
 
-unsigned int Shader::GetId() {
-  return this->id_;
+void Shader::Use() const {
+  glUseProgram(this->id_);
 }
 
-void Shader::Use() {
-  glUseProgram(this->id_);
+void Shader::Set(const char* name, const Image& image) {
+  glUniform1i(glGetUniformLocation(id_, "ourTexture"), image.GetId());
 }
 
 std::pair<std::string, std::string> Shader::LoadFromFile(const std::string& vertex_path,

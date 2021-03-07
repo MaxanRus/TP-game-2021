@@ -29,17 +29,17 @@ Window::Window(int width, int height, const char* title_window) {
   Clear();
 }
 
-bool Window::IsLive() {
+bool Window::IsLive() const {
   return !glfwWindowShouldClose(window_);
 }
 
-std::pair<int, int> Window::GetSizeWindow() {
+std::pair<int, int> Window::GetSizeWindow() const {
   int window_width, window_height;
   glfwGetWindowSize(window_, &window_width, &window_height);
   return std::make_pair(window_width, window_height);
 }
 
-std::pair<int, int> Window::GetCursorPosition() {
+std::pair<int, int> Window::GetCursorPosition() const {
   double mouse_x, mouse_y;
   glfwGetCursorPos(window_, &mouse_x, &mouse_y);
   return std::make_pair(int(mouse_x + 0.5), int(mouse_y) + 0.5);
@@ -60,6 +60,6 @@ void Window::Render() {
   Clear();
 }
 
-Window::operator bool() {
+Window::operator bool() const {
   return window_;
 }
