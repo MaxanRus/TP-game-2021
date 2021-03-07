@@ -35,25 +35,27 @@ set(SOURCE_FILES
 		src/graphics/Shader.cpp
 		include/graphics/GShape.hpp
 		src/graphics/GShape.cpp
-		include/Object.cpp
+		src/Object.cpp
 		include/Object.hpp
-		include/Field.cpp
+		src/Field.cpp
 		include/Field.hpp
-		include/objects/Player.cpp
+		src/objects/Player.cpp
 		include/objects/Player.hpp
-		include/objects/Cell.cpp
+		src/objects/Cell.cpp
 		include/objects/Cell.hpp
-		include/objects/ground/GroundEarth.cpp
+		src/objects/ground/GroundEarth.cpp
 		include/objects/ground/GroundEarth.hpp
-		include/objects/ground/GroundWater.cpp
+		src/objects/ground/GroundWater.cpp
 		include/objects/ground/GroundWater.hpp
-        include/objects/Ground.cpp
+		src/objects/Ground.cpp
 		include/objects/Ground.hpp
 		include/Console.hpp
-		include/objects/ground/GroundEmpty.cpp
+		src/objects/ground/GroundEmpty.cpp
 		include/objects/ground/GroundEmpty.hpp
-		include/Console.cpp
-		)
+		src/Console.cpp
+		src/objects/ground/earth/Earth.cpp
+		include/objects/ground/earth/Earth.hpp
+		src/objects/ground/earth/Stone.cpp include/objects/ground/earth/Stone.hpp)
 
 add_executable(game ${SOURCE_FILES})
 
