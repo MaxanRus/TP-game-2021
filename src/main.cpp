@@ -1,5 +1,9 @@
 #include <iostream>
-
+#include <ncurses.h>
+#include <Console.hpp>
+#include <Field.hpp>
+#include <objects/Player.hpp>
+#include <objects/ground/GroundEarth.hpp>
 #include "graphics/Window.hpp"
 #include "graphics/GShape.hpp"
 
@@ -11,7 +15,7 @@ int main() {
     return -1;
   }
 
-  Graphics::GShape&& shape = Graphics::Triangle(0.0, 0.0, -1.0, 0.0, -1.0, 1.0);
+  Graphics::GShape &&shape = Graphics::Triangle(0.0, 0.0, -1.0, 0.0, -1.0, 1.0);
   Graphics::Shader shader("assets/shaders/shader.vs", "assets/shaders/shader.fs");
 
   Graphics::Image img("assets/img/dwarf.png");

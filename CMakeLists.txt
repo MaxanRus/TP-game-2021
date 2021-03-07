@@ -23,7 +23,7 @@ add_subdirectory(glm)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glfw/include)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 set(SOURCE_FILES
 		${CMAKE_CURRENT_SOURCE_DIR}/glad/src/glad.c
@@ -35,6 +35,24 @@ set(SOURCE_FILES
 		src/graphics/Shader.cpp
 		include/graphics/GShape.hpp
 		src/graphics/GShape.cpp
+		include/Object.cpp
+		include/Object.hpp
+		include/Field.cpp
+		include/Field.hpp
+		include/objects/Player.cpp
+		include/objects/Player.hpp
+		include/objects/Cell.cpp
+		include/objects/Cell.hpp
+		include/objects/ground/GroundEarth.cpp
+		include/objects/ground/GroundEarth.hpp
+		include/objects/ground/GroundWater.cpp
+		include/objects/ground/GroundWater.hpp
+        include/objects/Ground.cpp
+		include/objects/Ground.hpp
+		include/Console.hpp
+		include/objects/ground/GroundEmpty.cpp
+		include/objects/ground/GroundEmpty.hpp
+		include/Console.cpp
 		)
 
 add_executable(game ${SOURCE_FILES})
