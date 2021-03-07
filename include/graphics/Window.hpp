@@ -6,6 +6,7 @@ class Window;
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/gtc/type_ptr.hpp>
 
 #include <utility>
 
@@ -22,6 +23,14 @@ class Window {
   void Use(Shader);
   void Clear();
   void Render();
+
+  glm::mat4 GetTransformCoordinates() const {
+    glm::mat4 transform = glm::mat4(1.0f);
+    auto[w, h] = GetSizeWindow();
+    transform = glm::translate(transform, glm::vec3(-1.0f, -1.0f, 0.0f));
+    transform = glm::scale(transform, glm::vec3(2.0 / w, 2.0 / h, 1.0));
+    return transform;
+  }
 
   operator bool() const;
 
