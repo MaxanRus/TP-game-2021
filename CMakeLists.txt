@@ -55,7 +55,10 @@ set(SOURCE_FILES
 		src/Console.cpp
 		src/objects/ground/earth/Earth.cpp
 		include/objects/ground/earth/Earth.hpp
-		src/objects/ground/earth/Stone.cpp include/objects/ground/earth/Stone.hpp)
+		src/objects/ground/earth/Stone.cpp include/objects/ground/earth/Stone.hpp
+		include/graphics/Transform.hpp
+		src/graphics/Transform.cpp
+		)
 
 add_executable(game ${SOURCE_FILES})
 
