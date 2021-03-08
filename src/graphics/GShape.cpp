@@ -23,11 +23,11 @@ Triangle::Triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
   glBindVertexArray(0);
 }
 
-void Triangle::Draw(Window& window, Shader shader, glm::mat4 transform) const {
+void Triangle::Draw(Window& window, Shader shader, const Transform& transform) const {
   shader.Use();
 
   glUniformMatrix4fv(glGetUniformLocation(shader.GetId(), "transform"),
-                     1, GL_FALSE, glm::value_ptr(window.GetTransformCoordinates() * transform));
+                     1, GL_FALSE, (window.GetTransformCoordinates() * transform).GetMatrix());
 
   glBindVertexArray(id_vertex_arrays_);
   glDrawArrays(GL_TRIANGLES, 0, 3);
@@ -58,11 +58,11 @@ Quadrangle::Quadrangle(float x1, float y1, float x2, float y2, float x3, float y
   glBindVertexArray(0);
 }
 
-void Quadrangle::Draw(Window& window, Shader shader, glm::mat4 transform) const {
+void Quadrangle::Draw(Window& window, Shader shader, const Transform& transform) const {
   shader.Use();
 
   glUniformMatrix4fv(glGetUniformLocation(shader.GetId(), "transform"),
-                     1, GL_FALSE, glm::value_ptr(window.GetTransformCoordinates() * transform));
+                     1, GL_FALSE, (window.GetTransformCoordinates() * transform).GetMatrix());
 
   glBindVertexArray(id_vertex_arrays_);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id_element_buffer_);
@@ -90,8 +90,7 @@ Image::Image(const char* path) : Quadrangle(0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1
   nrChannels_ = nrChannels;
 }
 
-void Image::Draw(Window& window, Shader shader, glm::mat4 transform) const {
+void Image::Draw(Window& window, Shader shader, const Transform& transform) const {
   shader.Set("texture", *this);
-  transform = glm::scale(transform, glm::vec3(width_, height_, 1));
-  Quadrangle::Draw(window, shader, transform);
+  Quadrangle::Draw(window, shader, Transform(transform).Scale(width_, height_));
 }

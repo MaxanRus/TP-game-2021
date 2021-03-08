@@ -6,11 +6,11 @@ class Window;
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <glm/gtc/type_ptr.hpp>
 
 #include <utility>
 
 #include "graphics/Shader.hpp"
+#include "graphics/Transform.hpp"
 
 namespace Graphics {
 class Window {
@@ -24,12 +24,9 @@ class Window {
   void Clear();
   void Render();
 
-  glm::mat4 GetTransformCoordinates() const {
-    glm::mat4 transform = glm::mat4(1.0f);
+  Transform GetTransformCoordinates() const {
     auto[w, h] = GetSizeWindow();
-    transform = glm::translate(transform, glm::vec3(-1.0f, -1.0f, 0.0f));
-    transform = glm::scale(transform, glm::vec3(2.0 / w, 2.0 / h, 1.0));
-    return transform;
+    return Transform().Move(-1, -1).Scale(2.0 / w, 2.0 / h);
   }
 
   operator bool() const;
