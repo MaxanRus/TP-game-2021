@@ -35,6 +35,8 @@ set(SOURCE_FILES
 		src/graphics/Shader.cpp
 		include/graphics/GShape.hpp
 		src/graphics/GShape.cpp
+		include/graphics/Transform.hpp
+		src/graphics/Transform.cpp
 		)
 
 add_executable(game ${SOURCE_FILES})
