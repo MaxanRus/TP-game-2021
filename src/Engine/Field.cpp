@@ -2,30 +2,29 @@
 #include <engine/Field.hpp>
 
 const Cell& Field::GetCell(float x, float y) const {
-  int X = std::trunc(x/Cell::GetPixelWidth());
-  int Y = std::trunc(y/Cell::GetPixelHeight());
+  int X = std::trunc(x/Engine::GetPixelWidth());
+  int Y = std::trunc(y/Engine::GetPixelHeight());
   return At(X, Y);
 }
 
 std::pair<unsigned int, unsigned int> Field::GetCellPos(float x, float y) {
-  return {std::trunc(x/Cell::GetPixelWidth()), std::trunc(y/Cell::GetPixelHeight())};
+  return {std::trunc(x/Engine::GetPixelWidth()), std::trunc(y/Engine::GetPixelHeight())};
 }
 
-void Field::Draw(int WindowCellWidth, int WindowCellHeight,
-                 float x, float y, float centerX, float centerY) const {
-  int px, py;
-  std::tie(px, py) = GetCellPos(x, y);
+void Field::Draw(float x, float y, float centerX, float centerY) const {
+  int WindowCellWidth = Engine::GetWindow()->GetSizeWindow().first / Engine::GetPixelWidth() + Engine::GetBiggestObjectWidth() + 5;
+  int WindowCellHeight = Engine::GetWindow()->GetSizeWindow().second / Engine::GetPixelHeight() + Engine::GetBiggestObjectHeight() + 5;
+  int px = GetCellPos(x, y).first;
+  int py = GetCellPos(x, y).second;
   px -= WindowCellWidth/2;
   py -= WindowCellHeight/2;
-  centerX -= (WindowCellWidth/2) * Cell::GetPixelWidth();
-  centerY -= (WindowCellHeight/2) * Cell::GetPixelHeight();
-  for (int i = px; i < px + WindowCellWidth; ++i) {
-    for (int j = py; j < py + WindowCellHeight; ++j) {
-      GetCell(i, j).Draw(round(centerX + (i-px) * Cell::GetPixelWidth()),
-                         round(centerY + (j-py) * Cell::GetPixelHeight()));
-      break; /// TODO
+  centerX -= (WindowCellWidth/2) * Engine::GetPixelWidth();
+  centerY -= (WindowCellHeight/2) * Engine::GetPixelHeight();
+  for (int i = px - Engine::GetBiggestObjectWidth() - 1; i < px + WindowCellWidth + 5; ++i) {
+    for (int j = py - Engine::GetBiggestObjectHeight() - 1; j < py + WindowCellHeight + 5; ++j) {
+      GetCell(i, j).Draw(round(centerX + (i-px) * Engine::GetPixelWidth()),
+                         round(centerY + (j-py) * Engine::GetPixelHeight()));
     }
-    break; /// TODO
   }
 }
 

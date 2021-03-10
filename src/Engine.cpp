@@ -1,5 +1,10 @@
 #include "Engine.hpp"
 
+unsigned Engine::pixelWidth_ = 32;
+unsigned Engine::pixelHeight_ = 32;
+unsigned Engine::biggestObjectWidth_ = 1;
+unsigned Engine::biggestObjectHeight_ = 1;
+
 Engine* Engine::ptr = nullptr;
 Graphics::Window* Engine::window_;
 Graphics::Shader* Engine::image_shader_;
@@ -20,13 +25,12 @@ Engine::Engine(Graphics::Window* window, unsigned width, unsigned height,
   Engine::SetShader(new Graphics::Shader("assets/shaders/shader.vs", "assets/shaders/shader.fs"));
 
   /// TODO TIMOFEY
-  //_Dirt_ = new Dirt(new Graphics::Image("assets/img/dwarf_debug.png"));
+  _Dirt_ = new Dirt(new Graphics::Image("assets/img/dirt.png"));
   //_Stone_ = new Stone(new Graphics::Image("assets/img/stone.png"));
-  _GroundEmpty_ = new GroundEmpty(new Graphics::Image("assets/img/empty.png"));
-  _GroundEmpty_->Draw(100, 100);
-  window->Render();
-
-  while (true) ;
+  //_GroundEmpty_ = new GroundEmpty(new Graphics::Image("assets/img/empty.png"));
+  //_GroundEmpty_->Draw(100, 100);
+  //window->Render();
+  //while (true) ;
 
   field_ = Field(width, height, file);
 
@@ -47,7 +51,7 @@ Stone* Engine::GetStone() {
 }
 
 void Engine::Draw() const {
-  field_.Draw(windowWidth_, windowHeight_, player_.GetX(), player_.GetY(),
+  field_.Draw(player_.GetX(), player_.GetY(),
               window_->GetSizeWindow().first/2, window_->GetSizeWindow().second/2);
   player_.Draw(window_->GetSizeWindow().first/2, window_->GetSizeWindow().second/2);
 
@@ -82,4 +86,16 @@ void Engine::SetImageShader(Graphics::Shader *image_shader) {
 }
 void Engine::SetShader(Graphics::Shader *shader) {
   shader_ = shader;
+}
+unsigned Engine::GetPixelWidth() {
+  return Engine::pixelWidth_;
+}
+unsigned Engine::GetPixelHeight() {
+  return Engine::pixelHeight_;
+}
+unsigned Engine::GetBiggestObjectWidth() {
+  return biggestObjectWidth_;
+}
+unsigned Engine::GetBiggestObjectHeight() {
+  return biggestObjectHeight_;
 }

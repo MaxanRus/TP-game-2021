@@ -26,17 +26,26 @@ class Engine {
   [[nodiscard]] static Graphics::Window* GetWindow();
   [[nodiscard]] static Graphics::Shader* GetImageShader();
 
+  static unsigned GetPixelWidth();
+  static unsigned GetPixelHeight();
+  static unsigned GetBiggestObjectWidth();
+  static unsigned GetBiggestObjectHeight();
+
   static void SetWindow(Graphics::Window* window);
   static void SetImageShader(Graphics::Shader* image_shader);
   static void SetShader(Graphics::Shader* shader);
 
-  /// TODO
-  Player player_;
  private:
   unsigned windowWidth_;
   unsigned windowHeight_;
 
+  Player player_;
   Field field_;
+
+  static unsigned pixelWidth_;
+  static unsigned pixelHeight_;
+  static unsigned biggestObjectWidth_;
+  static unsigned biggestObjectHeight_;
 
   static Engine* ptr;
   static Graphics::Window* window_;

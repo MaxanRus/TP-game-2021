@@ -22,8 +22,7 @@ class Field {
   [[nodiscard]] const Cell& GetCell(float x, float y) const;
   [[nodiscard]] static std::pair<unsigned int, unsigned int> GetCellPos(float x, float y);
 
-  void Draw(int WindowCellWidth, int WindowCellHeight,
-            float x, float y, float centerX, float centerY) const;
+  void Draw(float x, float y, float centerX, float centerY) const;
 
   void Tick();
 

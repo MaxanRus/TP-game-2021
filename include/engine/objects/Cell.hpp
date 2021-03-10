@@ -17,9 +17,6 @@ class Cell: public Object {
 
   ~Cell() override = default;
 
-  [[nodiscard]] static float GetPixelWidth();
-  [[nodiscard]] static float GetPixelHeight();
-
   void add(Ground* x);
   [[nodiscard]] size_t GetSize() const;
 
@@ -27,10 +24,6 @@ class Cell: public Object {
   void Tick() override;
 
  private:
-  /// may be bad
-  constexpr static float pixelWidth_ = 32;
-  constexpr static float pixelHeight_ = 32;
-
   float speed_ = 1.0;
 
   std::vector<Ground*> items_;

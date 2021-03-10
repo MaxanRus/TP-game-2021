@@ -15,11 +15,11 @@ int main() {
   Graphics::Window* window;
   Initialization(window);
 
-
-  Engine::GetDirt()->Draw(1, 1);
-  window->Render();
-
-  while (true) ;
+//
+//  Engine::GetDirt()->Draw(1, 1);
+//  window->Render();
+//
+//  while (true) ;
 
   while (window->IsLive()) {
     Engine::GetEngine()->Tick();
