@@ -1,4 +1,3 @@
-#include <glm/gtc/type_ptr.hpp>
 #include <stb_image.h>
 
 #include "graphics/GShape.hpp"
@@ -80,7 +79,7 @@ Image::Image(const char* path) : Quadrangle(0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1
     if (nrChannels == 4)
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
     else
-      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
   } else {
     exit(-1);
