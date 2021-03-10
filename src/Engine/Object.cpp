@@ -10,14 +10,18 @@ void Object::Draw(int x, int y) const {
   //transform.Move(-(float) wi / 2, -(float) hi / 2);
   img_->Draw(*Engine::GetWindow(), *Engine::GetImageShader(), transform);
 }
+
 void Object::Draw(std::pair<unsigned int, unsigned int> p) const {
   Draw(p.first, p.second);
 }
-Object::Object(Graphics::Image* img): img_(img) {
+
+Object::Object(Graphics::Image* img) : img_(img) {
 }
-const Graphics::Image *Object::GetImg() const {
+
+const Graphics::Image* Object::GetImg() const {
   return img_;
 }
-void Object::SetImage(Graphics::Image *img) {
+
+void Object::SetImage(Graphics::Image* img) {
   img_ = img;
 }

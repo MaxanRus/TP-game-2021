@@ -7,6 +7,6 @@ class GroundWater;
 class GroundWater: public Ground {
  public:
   ~GroundWater() override = default;
-
+  explicit GroundWater(Graphics::Image* x);
  private:
 };

@@ -8,6 +8,7 @@ void Cell::Draw(int x, int y) const {
 }
 
 float Cell::GetSpeed() const { return speed_; }
+
 size_t Cell::GetSize() const { return items_.size(); }
 
 void Cell::add(Ground* x) {
@@ -16,6 +17,7 @@ void Cell::add(Ground* x) {
   }
   items_.emplace_back(x);
 }
+
 void Cell::Tick() {
   for (auto& it : items_) {
     it->Tick();

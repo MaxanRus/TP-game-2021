@@ -36,9 +36,9 @@ void Console::buildImages() {
 }
 
 void Console::Image::Draw(unsigned int x, unsigned int y) {
-  for (int i = 0; i < img_.size() && i+x < pixels.size(); ++i) {
-    for (int j = 0; j < img_[i].size() && j+y < pixels[i+x].size(); ++j) {
-      pixels[i+x][j+y] = img_[i][j];
+  for (int i = 0; i < img_.size() && i + x < pixels.size(); ++i) {
+    for (int j = 0; j < img_[i].size() && j + y < pixels[i + x].size(); ++j) {
+      pixels[i + x][j + y] = img_[i][j];
     }
   }
 }

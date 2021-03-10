@@ -60,7 +60,9 @@ set(SOURCE_FILES
 		include/graphics/Transform.hpp
 		src/graphics/Transform.cpp
 		src/Engine.cpp
-		include/Engine.hpp)
+		include/Engine.hpp
+		src/Engine/objects/ground/water/Water.cpp
+		include/engine/objects/ground/water/Water.hpp)
 
 add_executable(game ${SOURCE_FILES})
 

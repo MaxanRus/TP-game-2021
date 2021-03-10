@@ -9,10 +9,10 @@
 #include "graphics/GShape.hpp"
 #include "graphics/Transform.hpp"
 
-void Initialization(Graphics::Window*& window);
+void Initialization(Graphics::Window *&window);
 
 int main() {
-  Graphics::Window* window;
+  Graphics::Window *window;
   Initialization(window);
 
 //
@@ -31,7 +31,7 @@ int main() {
   return 0;
 }
 
-void Initialization(Graphics::Window*& window) {
+void Initialization(Graphics::Window *&window) {
   window = new Graphics::Window(1280, 720, "Game");
 
   if (!window) {
@@ -39,5 +39,5 @@ void Initialization(Graphics::Window*& window) {
     exit(-1);
   }
 
-  Engine::GetEngine(window,100, 100, 20, 20);
+  Engine::GetEngine(window, 100, 100, 20, 20);
 }
