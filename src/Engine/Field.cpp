@@ -19,12 +19,13 @@ void Field::Draw(int WindowCellWidth, int WindowCellHeight,
   py -= WindowCellHeight/2;
   centerX -= (WindowCellWidth/2) * Cell::GetPixelWidth();
   centerY -= (WindowCellHeight/2) * Cell::GetPixelHeight();
-  std::cerr << px << " " << px+WindowCellHeight << std::endl;
   for (int i = px; i < px + WindowCellWidth; ++i) {
-    for (int j = py; j < py + WindowCellHeight; ++i) {
+    for (int j = py; j < py + WindowCellHeight; ++j) {
       GetCell(i, j).Draw(round(centerX + (i-px) * Cell::GetPixelWidth()),
                          round(centerY + (j-py) * Cell::GetPixelHeight()));
+      break; /// TODO
     }
+    break; /// TODO
   }
 }
 
@@ -46,12 +47,12 @@ const std::vector<Cell> &Field::operator[](unsigned int i) const { return field_
 unsigned int Field::GetWidth() const { return width_; }
 unsigned int Field::GetHeight() const { return height_; }
 
-Field::Field(Engine* engine, unsigned width, unsigned height, std::string file):
+Field::Field(unsigned width, unsigned height, std::string file):
     width_(width), height_(height),
     field_(width, std::vector<Cell>(height)) {
   for (auto& i : field_) {
     for (auto& j : i) {
-      j.add(engine->GetDirt());
+      j.add(Engine::GetDirt());
     }
   }
 }

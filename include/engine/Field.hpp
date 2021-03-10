@@ -14,7 +14,7 @@ class Field {
   [[nodiscard]] unsigned int GetHeight() const;
 
   Field() = default;
-  Field(Engine* engine, unsigned int width, unsigned int height, std::string file);
+  Field(unsigned int width, unsigned int height, std::string file);
 
   [[nodiscard]] std::vector<Cell>& operator[](unsigned int i);
   [[nodiscard]] const std::vector<Cell>& operator[](unsigned int i) const;

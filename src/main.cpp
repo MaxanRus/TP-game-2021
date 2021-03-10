@@ -9,30 +9,29 @@
 #include "graphics/GShape.hpp"
 #include "graphics/Transform.hpp"
 
-void Initialization(Graphics::Window*& window, Engine*& engine);
+void Initialization(Graphics::Window*& window);
 
 int main() {
   Graphics::Window* window;
-  Engine* engine;
-  Initialization(window, engine);
+  Initialization(window);
 
-  Engine::GetEngine()->GetDirt()->Draw(5, 5);
+
+  Engine::GetDirt()->Draw(1, 1);
   window->Render();
 
   while (true) ;
 
-  //while (window->IsLive()) {
-  //  engine->Tick();
-  //  engine->Draw();
-  //}
+  while (window->IsLive()) {
+    Engine::GetEngine()->Tick();
+    Engine::GetEngine()->Draw();
+  }
 
   delete window;
-  delete engine;
 
   return 0;
 }
 
-void Initialization(Graphics::Window*& window, Engine*& engine) {
+void Initialization(Graphics::Window*& window) {
   window = new Graphics::Window(1280, 720, "Game");
 
   if (!window) {

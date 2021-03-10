@@ -1,9 +1,13 @@
 #include "Engine.hpp"
 
-Engine* Engine::ptr;
+Engine* Engine::ptr = nullptr;
 Graphics::Window* Engine::window_;
 Graphics::Shader* Engine::image_shader_;
 Graphics::Shader* Engine::shader_;
+
+GroundEmpty* Engine::_GroundEmpty_;
+Dirt* Engine::_Dirt_;
+Stone* Engine::_Stone_;
 
 Engine::Engine(Graphics::Window* window, unsigned width, unsigned height,
                unsigned windowWidth, unsigned windowHeight, const std::string& file):
@@ -15,25 +19,30 @@ Engine::Engine(Graphics::Window* window, unsigned width, unsigned height,
   Engine::SetImageShader(new Graphics::Shader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs"));
   Engine::SetShader(new Graphics::Shader("assets/shaders/shader.vs", "assets/shaders/shader.fs"));
 
-  _Dirt_ = new Dirt(new Graphics::Image("assets/img/dwarf.png"));
-  _Stone_ = new Stone(new Graphics::Image("assets/img/stone.png"));
+  /// TODO TIMOFEY
+  //_Dirt_ = new Dirt(new Graphics::Image("assets/img/dwarf_debug.png"));
+  //_Stone_ = new Stone(new Graphics::Image("assets/img/stone.png"));
   _GroundEmpty_ = new GroundEmpty(new Graphics::Image("assets/img/empty.png"));
+  _GroundEmpty_->Draw(100, 100);
+  window->Render();
 
+  while (true) ;
 
-  field_ = Field(this, width, height, file);
+  field_ = Field(width, height, file);
+
 }
 
 void Engine::Tick() {
   player_.Tick();
   field_.Tick();
 }
-GroundEmpty* Engine::GetGroundEmpty() const {
+GroundEmpty* Engine::GetGroundEmpty() {
   return _GroundEmpty_;
 }
-Dirt* Engine::GetDirt() const {
+Dirt* Engine::GetDirt() {
   return _Dirt_;
 }
-Stone* Engine::GetStone() const {
+Stone* Engine::GetStone() {
   return _Stone_;
 }
 

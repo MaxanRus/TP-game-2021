@@ -1,4 +1,5 @@
 #include "engine/objects/Player.hpp"
+#include <iostream>
 
 void Player::MoveOn(float x, float y) {
   /// TODO border out
@@ -36,6 +37,10 @@ void Player::SpeedInc(float x, float y) {
   speedY_ += y;
 }
 
+void Player::PrintSpeed() const {
+  std::cout << speedX_ << " " << speedY_ << std::endl;
+}
+
 void Player::Tick() {
   x_ += speedX_;
   y_ += speedY_;
@@ -43,7 +48,8 @@ void Player::Tick() {
 }
 
 Player::Player(float x, float y, Field *field, Graphics::Image* img, bool fly, bool rooted):
-    x_(x), y_(y), field_(field), fly_(fly), rooted_(rooted), Object(img) {
+    x_(x), y_(y), field_(field), fly_(fly), rooted_(rooted), Object(img),
+    speedX_(0), speedY_(0) {
 }
 float Player::GetX() const {
   return x_;

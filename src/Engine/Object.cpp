@@ -6,8 +6,8 @@ void Object::Draw(unsigned int x, unsigned int y) const {
   auto[wi, hi] = img_->GetSize();
   transform.Move(x, y);
   transform.Scale(10);
-  transform.Rotate(glfwGetTime() * 100);
-  transform.Move(-(float) wi / 2, -(float) hi / 2);
+  //transform.Rotate(glfwGetTime() * 100);
+  //transform.Move(-(float) wi / 2, -(float) hi / 2);
   img_->Draw(*Engine::GetWindow(), *Engine::GetImageShader(), transform);
 }
 void Object::Draw(std::pair<unsigned int, unsigned int> p) const {

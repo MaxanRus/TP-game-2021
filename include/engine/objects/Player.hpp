@@ -22,6 +22,7 @@ class Player: public Object {
   void SpeedInc(float x, float y);
 
   void Tick() override;
+  void PrintSpeed() const;
 
  private:
   float x_, y_;

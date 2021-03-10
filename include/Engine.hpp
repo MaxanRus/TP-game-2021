@@ -19,9 +19,9 @@ class Engine {
   void Tick();
   void Draw() const;
 
-  [[nodiscard]] GroundEmpty* GetGroundEmpty() const;
-  [[nodiscard]] Dirt* GetDirt() const;
-  [[nodiscard]] Stone* GetStone() const;
+  [[nodiscard]] static GroundEmpty* GetGroundEmpty();
+  [[nodiscard]] static Dirt* GetDirt();
+  [[nodiscard]] static Stone* GetStone();
 
   [[nodiscard]] static Graphics::Window* GetWindow();
   [[nodiscard]] static Graphics::Shader* GetImageShader();
@@ -30,22 +30,22 @@ class Engine {
   static void SetImageShader(Graphics::Shader* image_shader);
   static void SetShader(Graphics::Shader* shader);
 
+  /// TODO
+  Player player_;
  private:
   unsigned windowWidth_;
-
   unsigned windowHeight_;
-  Field field_;
 
-  Player player_;
+  Field field_;
 
   static Engine* ptr;
   static Graphics::Window* window_;
   static Graphics::Shader* image_shader_;
   static Graphics::Shader* shader_;
 
-  GroundEmpty* _GroundEmpty_;
-  Dirt* _Dirt_;
-  Stone* _Stone_;
+  static GroundEmpty* _GroundEmpty_;
+  static Dirt* _Dirt_;
+  static Stone* _Stone_;
 
   explicit Engine(Graphics::Window* window, unsigned width, unsigned height,
                   unsigned windowWidth, unsigned windowHeight, const std::string& file = "");
