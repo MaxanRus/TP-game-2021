@@ -35,30 +35,32 @@ set(SOURCE_FILES
 		src/graphics/Shader.cpp
 		include/graphics/GShape.hpp
 		src/graphics/GShape.cpp
-		src/Object.cpp
-		include/Object.hpp
-		src/Field.cpp
-		include/Field.hpp
-		src/objects/Player.cpp
-		include/objects/Player.hpp
-		src/objects/Cell.cpp
-		include/objects/Cell.hpp
-		src/objects/ground/GroundEarth.cpp
-		include/objects/ground/GroundEarth.hpp
-		src/objects/ground/GroundWater.cpp
-		include/objects/ground/GroundWater.hpp
-		src/objects/Ground.cpp
-		include/objects/Ground.hpp
+		src/Engine/Object.cpp
+		include/engine/Object.hpp
+		src/Engine/Field.cpp
+		include/engine/Field.hpp
+		src/Engine/objects/Player.cpp
+		include/engine/objects/Player.hpp
+		src/Engine/objects/Cell.cpp
+		include/engine/objects/Cell.hpp
+		src/Engine/objects/ground/GroundEarth.cpp
+		include/engine/objects/ground/GroundEarth.hpp
+		src/Engine/objects/ground/GroundWater.cpp
+		include/engine/objects/ground/GroundWater.hpp
+		src/Engine/objects/Ground.cpp
+		include/engine/objects/Ground.hpp
 		include/Console.hpp
-		src/objects/ground/GroundEmpty.cpp
-		include/objects/ground/GroundEmpty.hpp
+		src/Engine/objects/ground/GroundEmpty.cpp
+		include/engine/objects/ground/GroundEmpty.hpp
 		src/Console.cpp
-		src/objects/ground/earth/Earth.cpp
-		include/objects/ground/earth/Earth.hpp
-		src/objects/ground/earth/Stone.cpp include/objects/ground/earth/Stone.hpp
+		src/Engine/objects/ground/earth/Dirt.cpp
+		include/engine/objects/ground/earth/Dirt.hpp
+		src/Engine/objects/ground/earth/Stone.cpp
+		include/engine/objects/ground/earth/Stone.hpp
 		include/graphics/Transform.hpp
 		src/graphics/Transform.cpp
-		)
+		src/Engine.cpp
+		include/Engine.hpp)
 
 add_executable(game ${SOURCE_FILES})
 

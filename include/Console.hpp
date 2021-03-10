@@ -1,9 +1,10 @@
+#pragma once
+
 #include <utility>
 #include <vector>
 #include <iostream>
-#include <string>
 
-#pragma once
+#include <string>
 
 namespace Console {
   const unsigned int WindowCellWidth = 30;

@@ -1,7 +1,10 @@
-#include <objects/Cell.hpp>
-#include <graphics/GShape.hpp>
+class GroundEarth;
 
 #pragma once
+
+#include <engine/objects/Cell.hpp>
+
+#include <graphics/GShape.hpp>
 
 class GroundEarth: public Ground {
  public:

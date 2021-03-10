@@ -1,6 +1,8 @@
-#include <objects/Cell.hpp>
+class GroundWater;
 
 #pragma once
+
+#include <engine/objects/Cell.hpp>
 
 class GroundWater: public Ground {
  public:

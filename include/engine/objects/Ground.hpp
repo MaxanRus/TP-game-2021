@@ -1,11 +1,14 @@
-#include <Object.hpp>
+class Ground;
 
 #pragma once
+
+#include <engine/Object.hpp>
 
 class Ground: public Object {
  public:
   ~Ground() override = default;
-  Ground(Graphics::Image* x);
+  Ground();
+  explicit Ground(Graphics::Image* x);
 
  private:
 

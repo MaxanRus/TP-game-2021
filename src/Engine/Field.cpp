@@ -1,4 +1,5 @@
-#include "Field.hpp"
+#include <Engine.hpp>
+#include <engine/Field.hpp>
 
 const Cell& Field::GetCell(float x, float y) const {
   int X = std::trunc(x/Cell::GetPixelWidth());
@@ -10,17 +11,19 @@ std::pair<unsigned int, unsigned int> Field::GetCellPos(float x, float y) {
   return {std::trunc(x/Cell::GetPixelWidth()), std::trunc(y/Cell::GetPixelHeight())};
 }
 
-void Field::Draw(float x, float y, float centerX, float centerY) const {
+void Field::Draw(int WindowCellWidth, int WindowCellHeight,
+                 float x, float y, float centerX, float centerY) const {
   int px, py;
   std::tie(px, py) = GetCellPos(x, y);
-  px -= Console::WindowCellWidth/2;
-  py -= Console::WindowCellHeight/2;
-  centerX -= (Console::WindowCellWidth/2) * Console::CellWidth;
-  centerY -= (Console::WindowCellHeight/2) * Console::CellHeight;
-  for (int i = px; i < px + Console::WindowCellWidth; ++i) {
-    for (int j = py; j < py + Console::WindowCellHeight; ++i) {
-      GetCell(i, j).Draw(round(centerX + (i-px) * Console::CellWidth),
-                         round(centerY + (j-py) * Console::CellHeight));
+  px -= WindowCellWidth/2;
+  py -= WindowCellHeight/2;
+  centerX -= (WindowCellWidth/2) * Cell::GetPixelWidth();
+  centerY -= (WindowCellHeight/2) * Cell::GetPixelHeight();
+  std::cerr << px << " " << px+WindowCellHeight << std::endl;
+  for (int i = px; i < px + WindowCellWidth; ++i) {
+    for (int j = py; j < py + WindowCellHeight; ++i) {
+      GetCell(i, j).Draw(round(centerX + (i-px) * Cell::GetPixelWidth()),
+                         round(centerY + (j-py) * Cell::GetPixelHeight()));
     }
   }
 }
@@ -43,11 +46,15 @@ const std::vector<Cell> &Field::operator[](unsigned int i) const { return field_
 unsigned int Field::GetWidth() const { return width_; }
 unsigned int Field::GetHeight() const { return height_; }
 
-Field::Field(unsigned width, unsigned height):
+Field::Field(Engine* engine, unsigned width, unsigned height, std::string file):
     width_(width), height_(height),
     field_(width, std::vector<Cell>(height)) {
+  for (auto& i : field_) {
+    for (auto& j : i) {
+      j.add(engine->GetDirt());
+    }
+  }
 }
 
-void Field::Draw(std::pair<float, float> position, std::pair<float, float> center) const {
-  Draw(position.first, position.second, center.first, center.second);
+void Field::Tick() {
 }

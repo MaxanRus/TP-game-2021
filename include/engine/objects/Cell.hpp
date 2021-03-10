@@ -1,8 +1,11 @@
-#include <Object.hpp>
-#include <vector>
-#include "Ground.hpp"
+class Cell;
 
 #pragma once
+
+#include <engine/Object.hpp>
+#include <vector>
+
+#include "Ground.hpp"
 
 class Cell: public Object {
  public:
@@ -25,8 +28,8 @@ class Cell: public Object {
 
  private:
   /// may be bad
-  constexpr static float pixelWidth_ = 50;
-  constexpr static float pixelHeight_ = 50;
+  constexpr static float pixelWidth_ = 32;
+  constexpr static float pixelHeight_ = 32;
 
   float speed_ = 1.0;
 

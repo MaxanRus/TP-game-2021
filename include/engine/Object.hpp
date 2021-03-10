@@ -1,8 +1,10 @@
+class Object;
+
+#pragma once
+
 #include <tuple>
 #include <cmath>
 #include <graphics/GShape.hpp>
-
-#pragma once
 
 class Object {
  public:
@@ -12,6 +14,9 @@ class Object {
   virtual void Draw(std::pair<unsigned int, unsigned int> p) const;
   virtual ~Object() = default;
   virtual void Tick() = 0;
+
+  [[nodiscard]] const Graphics::Image* GetImg() const;
+  void SetImage(Graphics::Image* img);
 
  private:
   Graphics::Image* img_;

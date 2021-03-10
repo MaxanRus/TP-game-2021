@@ -1,4 +1,5 @@
-#include "objects/Player.hpp"
+#include "engine/objects/Player.hpp"
+
 void Player::MoveOn(float x, float y) {
   /// TODO border out
   float speed;
@@ -14,6 +15,7 @@ void Player::MoveOn(float x, float y) {
   x_ += x * speed;
   y_ += y * speed;
 }
+
 void Player::MoveTo(float x, float y) {
   /// TODO border out
   x_ = x;
@@ -42,4 +44,10 @@ void Player::Tick() {
 
 Player::Player(float x, float y, Field *field, Graphics::Image* img, bool fly, bool rooted):
     x_(x), y_(y), field_(field), fly_(fly), rooted_(rooted), Object(img) {
+}
+float Player::GetX() const {
+  return x_;
+}
+float Player::GetY() const {
+  return y_;
 }

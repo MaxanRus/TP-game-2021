@@ -1,18 +1,20 @@
-#include <vector>
-#include <objects/Cell.hpp>
-#include <cmath>
-#include <objects/ground/GroundEmpty.hpp>
+class Field;
 
 #pragma once
+
+#include <vector>
+#include <engine/objects/Cell.hpp>
+#include <cmath>
+
+class Engine;
 
 class Field {
  public:
   [[nodiscard]] unsigned int GetWidth() const;
   [[nodiscard]] unsigned int GetHeight() const;
 
-  Field(unsigned int width, unsigned int height);
-
-  virtual ~Field() = default;
+  Field() = default;
+  Field(Engine* engine, unsigned int width, unsigned int height, std::string file);
 
   [[nodiscard]] std::vector<Cell>& operator[](unsigned int i);
   [[nodiscard]] const std::vector<Cell>& operator[](unsigned int i) const;
@@ -20,11 +22,13 @@ class Field {
   [[nodiscard]] const Cell& GetCell(float x, float y) const;
   [[nodiscard]] static std::pair<unsigned int, unsigned int> GetCellPos(float x, float y);
 
-  void Draw(float x, float y, float centerX, float centerY) const;
-  void Draw(std::pair<float, float> position, std::pair<float, float> center) const;
+  void Draw(int WindowCellWidth, int WindowCellHeight,
+            float x, float y, float centerX, float centerY) const;
+
+  void Tick();
 
  private:
-  unsigned int width_{}, height_{};
+  unsigned int width_=0, height_=0;
   std::vector<std::vector<Cell>> field_;
 
   [[nodiscard]] Cell& At(int x, int y);
