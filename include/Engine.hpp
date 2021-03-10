@@ -19,9 +19,10 @@ class Engine {
   void Tick();
   void Draw() const;
 
-  [[nodiscard]] static GroundEmpty* GetGroundEmpty();
   [[nodiscard]] static Dirt* GetDirt();
   [[nodiscard]] static Stone* GetStone();
+  [[nodiscard]] static GroundEmpty* GetGroundEmpty();
+  [[nodiscard]] static Cell* GetCellGroundEmpty();
 
   [[nodiscard]] static Graphics::Window* GetWindow();
   [[nodiscard]] static Graphics::Shader* GetImageShader();
@@ -52,9 +53,10 @@ class Engine {
   static Graphics::Shader* image_shader_;
   static Graphics::Shader* shader_;
 
-  static GroundEmpty* _GroundEmpty_;
   static Dirt* _Dirt_;
   static Stone* _Stone_;
+  static GroundEmpty* _GroundEmpty_;
+  static Cell* _CellGroundEmpty_;
 
   explicit Engine(Graphics::Window* window, unsigned width, unsigned height,
                   unsigned windowWidth, unsigned windowHeight, const std::string& file = "");

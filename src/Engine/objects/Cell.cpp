@@ -1,7 +1,7 @@
 #include "engine/objects/Cell.hpp"
 #include <iostream>
 
-void Cell::Draw(unsigned int x, unsigned int y) const {
+void Cell::Draw(int x, int y) const {
   for (auto& it : items_) {
     it->Draw(x, y);
   }

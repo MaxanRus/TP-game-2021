@@ -1,7 +1,7 @@
 #include "engine/Object.hpp"
 #include <Engine.hpp>
 
-void Object::Draw(unsigned int x, unsigned int y) const {
+void Object::Draw(int x, int y) const {
   Graphics::Transform transform;
   auto[wi, hi] = img_->GetSize();
   transform.Move(x, y);

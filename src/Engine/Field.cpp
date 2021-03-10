@@ -18,12 +18,13 @@ void Field::Draw(float x, float y, float centerX, float centerY) const {
   int py = GetCellPos(x, y).second;
   px -= WindowCellWidth/2;
   py -= WindowCellHeight/2;
-  centerX -= (WindowCellWidth/2) * Engine::GetPixelWidth();
-  centerY -= (WindowCellHeight/2) * Engine::GetPixelHeight();
-  for (int i = px - Engine::GetBiggestObjectWidth() - 1; i < px + WindowCellWidth + 5; ++i) {
-    for (int j = py - Engine::GetBiggestObjectHeight() - 1; j < py + WindowCellHeight + 5; ++j) {
-      GetCell(i, j).Draw(round(centerX + (i-px) * Engine::GetPixelWidth()),
-                         round(centerY + (j-py) * Engine::GetPixelHeight()));
+  centerX -= (Engine::GetWindow()->GetSizeWindow().first / Engine::GetPixelWidth() / 2) * Engine::GetPixelWidth();
+  centerY -= (Engine::GetWindow()->GetSizeWindow().second / Engine::GetPixelHeight() / 2) * Engine::GetPixelHeight();
+  for (int i = px - static_cast<int>(Engine::GetBiggestObjectWidth()) - 10; i < px + WindowCellWidth + 5; ++i) {
+    for (int j = py - static_cast<int>(Engine::GetBiggestObjectHeight()) - 10; j < py + WindowCellHeight + 5; ++j) {
+      int X = round(centerX + (i-px) * static_cast<int>(Engine::GetPixelWidth()));
+      int Y = round(centerY + (j-py) * static_cast<int>(Engine::GetPixelHeight()));
+      GetCell(i, j).Draw(X, Y);
     }
   }
 }
@@ -36,7 +37,7 @@ Cell& Field::At(int X, int Y) {
 }
 const Cell& Field::At(int X, int Y) const {
   if (X < 0 || Y < 0 || X >= field_.size() || Y >= field_[X].size()) {
-    assert(true);
+    return *Engine::GetCellGroundEmpty();
   }
   return field_[X][Y];
 }
@@ -51,7 +52,7 @@ Field::Field(unsigned width, unsigned height, std::string file):
     field_(width, std::vector<Cell>(height)) {
   for (auto& i : field_) {
     for (auto& j : i) {
-      j.add(Engine::GetDirt());
+      j.add(Engine::GetStone());
     }
   }
 }

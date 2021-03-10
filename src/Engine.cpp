@@ -10,9 +10,10 @@ Graphics::Window* Engine::window_;
 Graphics::Shader* Engine::image_shader_;
 Graphics::Shader* Engine::shader_;
 
-GroundEmpty* Engine::_GroundEmpty_;
 Dirt* Engine::_Dirt_;
 Stone* Engine::_Stone_;
+GroundEmpty* Engine::_GroundEmpty_;
+Cell* Engine::_CellGroundEmpty_;
 
 Engine::Engine(Graphics::Window* window, unsigned width, unsigned height,
                unsigned windowWidth, unsigned windowHeight, const std::string& file):
@@ -24,13 +25,11 @@ Engine::Engine(Graphics::Window* window, unsigned width, unsigned height,
   Engine::SetImageShader(new Graphics::Shader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs"));
   Engine::SetShader(new Graphics::Shader("assets/shaders/shader.vs", "assets/shaders/shader.fs"));
 
-  /// TODO TIMOFEY
   _Dirt_ = new Dirt(new Graphics::Image("assets/img/dirt.png"));
-  //_Stone_ = new Stone(new Graphics::Image("assets/img/stone.png"));
-  //_GroundEmpty_ = new GroundEmpty(new Graphics::Image("assets/img/empty.png"));
-  //_GroundEmpty_->Draw(100, 100);
-  //window->Render();
-  //while (true) ;
+  _Stone_ = new Stone(new Graphics::Image("assets/img/stone.png"));
+  _GroundEmpty_ = new GroundEmpty(new Graphics::Image("assets/img/empty.png"));
+  _CellGroundEmpty_ = new Cell();
+  _CellGroundEmpty_->add(_GroundEmpty_);
 
   field_ = Field(width, height, file);
 
@@ -98,4 +97,7 @@ unsigned Engine::GetBiggestObjectWidth() {
 }
 unsigned Engine::GetBiggestObjectHeight() {
   return biggestObjectHeight_;
+}
+Cell *Engine::GetCellGroundEmpty() {
+  return _CellGroundEmpty_;
 }

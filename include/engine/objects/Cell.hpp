@@ -20,7 +20,7 @@ class Cell: public Object {
   void add(Ground* x);
   [[nodiscard]] size_t GetSize() const;
 
-  void Draw(unsigned x, unsigned y) const override;
+  void Draw(int x, int y) const override;
   void Tick() override;
 
  private:
