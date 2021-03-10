@@ -16,7 +16,9 @@ void Shader::Use() const {
 }
 
 void Shader::Set(const char* name, const Image& image) {
-  glUniform1i(glGetUniformLocation(id_, "ourTexture"), image.GetId());
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, image.GetId());
+  glUniform1i(glGetUniformLocation(id_, name), 0);
 }
 
 std::pair<std::string, std::string> Shader::LoadFromFile(const std::string& vertex_path,
