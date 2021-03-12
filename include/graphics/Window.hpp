@@ -15,6 +15,8 @@ class Window;
 namespace Graphics {
 class Window {
  public:
+  enum keys {LEFT_MOUSE, RIGHT_MOUSE, ESC, SPACE, ENTER, W, A, S, D, UP, LEFT, DOWN, RIGHT, SHIFT, CTRL};
+
   Window(int width, int height, const char* title_window);
 
   bool IsLive() const;
@@ -28,6 +30,8 @@ class Window {
     auto[w, h] = GetSizeWindow();
     return Transform().Move(-1, -1).Scale(2.0 / w, 2.0 / h);
   }
+
+  bool CheckPressButton(keys);
 
   operator bool() const;
 

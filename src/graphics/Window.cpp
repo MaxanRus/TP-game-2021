@@ -60,6 +60,29 @@ void Window::Render() {
   Clear();
 }
 
+bool Window::CheckPressButton(keys key) {
+  switch (key) {
+    case keys::LEFT_MOUSE: return glfwGetMouseButton(window_, GLFW_MOUSE_BUTTON_1);
+    case keys::RIGHT_MOUSE: return glfwGetMouseButton(window_, GLFW_MOUSE_BUTTON_2);
+    case keys::ESC: return glfwGetKey(window_, GLFW_KEY_ESCAPE) == GLFW_PRESS;
+    case keys::SPACE: return glfwGetKey(window_, GLFW_KEY_SPACE) == GLFW_PRESS;
+    case keys::ENTER: return glfwGetKey(window_, GLFW_KEY_ENTER) == GLFW_PRESS;
+    case keys::W: return glfwGetKey(window_, GLFW_KEY_W) == GLFW_PRESS;
+    case keys::A: return glfwGetKey(window_, GLFW_KEY_A) == GLFW_PRESS;
+    case keys::S: return glfwGetKey(window_, GLFW_KEY_S) == GLFW_PRESS;
+    case keys::D: return glfwGetKey(window_, GLFW_KEY_D) == GLFW_PRESS;
+    case keys::UP: return glfwGetKey(window_, GLFW_KEY_UP) == GLFW_PRESS;
+    case keys::LEFT: return glfwGetKey(window_, GLFW_KEY_LEFT) == GLFW_PRESS;
+    case keys::DOWN: return glfwGetKey(window_, GLFW_KEY_DOWN) == GLFW_PRESS;
+    case keys::RIGHT: return glfwGetKey(window_, GLFW_KEY_RIGHT) == GLFW_PRESS;
+    case keys::SHIFT: return glfwGetKey(window_, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS
+                              || glfwGetKey(window_, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS;
+    case keys::CTRL: return glfwGetKey(window_, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS
+                              || glfwGetKey(window_, GLFW_KEY_RIGHT_CONTROL) == GLFW_PRESS;
+    default: return false;
+  }
+}
+
 Window::operator bool() const {
   return window_;
 }
