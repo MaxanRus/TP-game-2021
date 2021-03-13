@@ -12,13 +12,12 @@ Graphics::Shader* Engine::shader_;
 
 Dirt* Engine::_Dirt_;
 Stone* Engine::_Stone_;
+Water* Engine::_Water_;
 GroundEmpty* Engine::_GroundEmpty_;
 Cell* Engine::_CellGroundEmpty_;
 
 Engine::Engine(Graphics::Window* window, unsigned width, unsigned height,
-               unsigned windowWidth, unsigned windowHeight, const std::string& file) :
-    windowWidth_(windowWidth),
-    windowHeight_(windowHeight),
+               const std::string& file):
     player_(width / 2, height / 2, &field_, new Graphics::Image("assets/img/dwarf.png")) {
 
   Engine::SetWindow(window);
@@ -27,6 +26,9 @@ Engine::Engine(Graphics::Window* window, unsigned width, unsigned height,
 
   _Dirt_ = new Dirt(new Graphics::Image("assets/img/dirt.png"));
   _Stone_ = new Stone(new Graphics::Image("assets/img/stone.png"));
+
+  _Water_ = new Water(new Graphics::Image("assets/img/water.png"));
+
   _GroundEmpty_ = new GroundEmpty(new Graphics::Image("assets/img/empty.png"));
   _CellGroundEmpty_ = new Cell();
   _CellGroundEmpty_->add(_GroundEmpty_);
@@ -74,9 +76,9 @@ Graphics::Window* Engine::GetWindow() {
 }
 
 Engine* Engine::GetEngine(Graphics::Window* window, unsigned width, unsigned height,
-                          unsigned windowWidth, unsigned windowHeight, const std::string& file) {
+                          const std::string& file) {
   if (!ptr) {
-    ptr = new Engine(window, width, height, windowWidth, windowHeight, file);
+    ptr = new Engine(window, width, height, file);
   }
   return ptr;
 }
@@ -115,4 +117,8 @@ unsigned Engine::GetBiggestObjectHeight() {
 
 Cell* Engine::GetCellGroundEmpty() {
   return _CellGroundEmpty_;
+}
+
+Water* Engine::GetWater() {
+  return _Water_;
 }

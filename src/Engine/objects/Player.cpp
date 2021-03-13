@@ -51,7 +51,7 @@ void Player::Tick() {
 
 Player::Player(float x, float y, Field* field, Graphics::Image* img, bool fly, bool rooted) :
     x_(x), y_(y), field_(field), fly_(fly), rooted_(rooted), Object(img),
-    speedX_(0), speedY_(0) {
+    speedX_(5), speedY_(5) {
 }
 
 float Player::GetX() const {

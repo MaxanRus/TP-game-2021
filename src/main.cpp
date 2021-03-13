@@ -22,6 +22,7 @@ int main() {
 //  while (true) ;
 
   while (window->IsLive()) {
+
     Engine::GetEngine()->Tick();
     Engine::GetEngine()->Draw();
   }
@@ -39,5 +40,5 @@ void Initialization(Graphics::Window *&window) {
     exit(-1);
   }
 
-  Engine::GetEngine(window, 100, 100, 20, 20);
+  Engine::GetEngine(window, 100, 100);
 }

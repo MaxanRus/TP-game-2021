@@ -12,21 +12,20 @@ std::pair<unsigned int, unsigned int> Field::GetCellPos(float x, float y) {
 }
 
 void Field::Draw(float x, float y, float centerX, float centerY) const {
-  int WindowCellWidth =
-      Engine::GetWindow()->GetSizeWindow().first / Engine::GetPixelWidth() + Engine::GetBiggestObjectWidth() + 5;
-  int WindowCellHeight =
-      Engine::GetWindow()->GetSizeWindow().second / Engine::GetPixelHeight() + Engine::GetBiggestObjectHeight() + 5;
-  int px = GetCellPos(x, y).first;
-  int py = GetCellPos(x, y).second;
-  px -= WindowCellWidth / 2;
-  py -= WindowCellHeight / 2;
-  centerX -= (Engine::GetWindow()->GetSizeWindow().first / Engine::GetPixelWidth() / 2) * Engine::GetPixelWidth();
-  centerY -= (Engine::GetWindow()->GetSizeWindow().second / Engine::GetPixelHeight() / 2) * Engine::GetPixelHeight();
-  for (int i = px - static_cast<int>(Engine::GetBiggestObjectWidth()) - 10; i < px + WindowCellWidth + 5; ++i) {
-    for (int j = py - static_cast<int>(Engine::GetBiggestObjectHeight()) - 10; j < py + WindowCellHeight + 5; ++j) {
-      int X = round(centerX + (i - px) * static_cast<int>(Engine::GetPixelWidth()));
-      int Y = round(centerY + (j - py) * static_cast<int>(Engine::GetPixelHeight()));
-      GetCell(i, j).Draw(X, Y);
+  int cellX = GetCellPos(x, y).first;
+  int cellY = GetCellPos(x, y).second;
+
+  float pixelPosX = centerX - x + cellX * Engine::GetPixelWidth();
+  float pixelPosY = centerY - y + cellY * Engine::GetPixelHeight();
+
+  int WindowCellWidth = Engine::GetWindow()->GetSizeWindow().first / Engine::GetPixelWidth();
+  int WindowCellHeight = Engine::GetWindow()->GetSizeWindow().second / Engine::GetPixelHeight();
+
+  for (int i = cellX - WindowCellWidth / 2 - Engine::GetBiggestObjectWidth() - 3; i < cellX + WindowCellWidth / 2 + 2; ++i) {
+    for (int j = cellY - WindowCellHeight / 2 - Engine::GetBiggestObjectHeight() - 3; j < cellY + WindowCellHeight / 2 + 2; ++j) {
+      int x = pixelPosX - (cellX - i) * static_cast<int>(Engine::GetPixelWidth());
+      int y = pixelPosY - (cellY - j) * static_cast<int>(Engine::GetPixelHeight());
+      At(i, j).Draw(x, y);
     }
   }
 }
@@ -56,9 +55,19 @@ unsigned int Field::GetHeight() const { return height_; }
 Field::Field(unsigned width, unsigned height, std::string file) :
     width_(width), height_(height),
     field_(width, std::vector<Cell>(height)) {
+  int c = 0;
   for (auto& i : field_) {
     for (auto& j : i) {
-      j.add(Engine::GetDirt());
+      c = (c+1) % 3;
+      if (c == 0) {
+        j.add(Engine::GetDirt());
+      }
+      if (c == 1) {
+        j.add(Engine::GetStone());
+      }
+      if (c == 2) {
+        j.add(Engine::GetWater());
+      }
     }
   }
 }
