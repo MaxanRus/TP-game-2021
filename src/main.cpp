@@ -25,10 +25,8 @@ int main() {
     Graphics::Transform transform;
     auto[wi, hi] = img.GetSize();
 
-    glm::mat4 projection = glm::ortho(0.0f, 1280.0f, 720.0f, 0.0f, -1.0f, 1.0f);
     image_shader.Use();
-    glUniformMatrix4fv(glGetUniformLocation(image_shader.GetId(), "projection"),
-                       1, GL_FALSE, window.GetTransformCoordinates().GetMatrix());
+    image_shader.SetProjectorMatrix(window.GetTransformCoordinates());
 
     transform.Move(300, 300);
     transform.Scale(10);
