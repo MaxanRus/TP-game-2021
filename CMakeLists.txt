@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project("Game")
 
+set(CMAKE_CXX_FLAGS "-O3")
+
 add_custom_target(copy_assets ALL
 		DEPENDS ${CMAKE_SOURCE_DIR}/assets
 		VERBATIM)
