@@ -1,11 +1,20 @@
+#include <exception>
+
 #include <stb_image.h>
 
 #include "graphics/GShape.hpp"
 
 using namespace Graphics;
 
-Triangle::Triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
-  float vertices[] = {x1, y1, x2, y2, x3, y3};
+void GShape::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
+  Transform transform;
+  transform.Move(x, y).Rotate(rotate).Scale(scale);
+  Draw(window, shader, transform);
+}
+
+Triangle::Triangle(int x1, int y1, int x2, int y2, int x3, int y3) : x1(x2), y1(y1), x2(x2), y2(y2), x3(x3), y3(y3) {
+  float vertices[] = {static_cast<float>(x1), static_cast<float>(y1), static_cast<float>(x2),
+                      static_cast<float>(y2), static_cast<float>(x3), static_cast<float>(y3)};
   // Генерируем
   glGenVertexArrays(1, &id_vertex_arrays_);
   glGenBuffers(1, &id_vertex_buffer_);
@@ -26,14 +35,19 @@ void Triangle::Draw(Window& window, Shader shader, const Transform& transform) c
   shader.Use();
 
   glUniformMatrix4fv(glGetUniformLocation(shader.GetId(), "transform"),
-                     1, GL_FALSE, (window.GetTransformCoordinates() * transform).GetMatrix());
+                     1, GL_FALSE, transform.GetMatrix());
 
   glBindVertexArray(id_vertex_arrays_);
   glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
-Quadrangle::Quadrangle(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
-  float vertices[] = {x1, y1, x2, y2, x3, y3, x4, y4};
+void Triangle::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
+  GShape::Draw(window, shader, x, y, scale, rotate);
+}
+
+Quadrangle::Quadrangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+  float vertices[] = {static_cast<float>(x1), static_cast<float>(y1), static_cast<float>(x2), static_cast<float>(y2),
+                      static_cast<float>(x3), static_cast<float>(y3), static_cast<float>(x4), static_cast<float>(y4)};
   unsigned int indices[] = {0, 1, 3, 1, 2, 3};
 
   glGenVertexArrays(1, &id_vertex_arrays_);
@@ -60,12 +74,17 @@ Quadrangle::Quadrangle(float x1, float y1, float x2, float y2, float x3, float y
 void Quadrangle::Draw(Window& window, Shader shader, const Transform& transform) const {
   shader.Use();
 
+  auto trans = (transform).GetMatrix();
   glUniformMatrix4fv(glGetUniformLocation(shader.GetId(), "transform"),
-                     1, GL_FALSE, (window.GetTransformCoordinates() * transform).GetMatrix());
+                     1, GL_FALSE, trans);
 
   glBindVertexArray(id_vertex_arrays_);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id_element_buffer_);
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+}
+
+void Quadrangle::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
+  GShape::Draw(window, shader, x, y, scale, rotate);
 }
 
 Image::Image(const char* path) : Quadrangle(0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0) {
@@ -73,10 +92,10 @@ Image::Image(const char* path) : Quadrangle(0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1
   glGenTextures(1, &id_);
   glBindTexture(GL_TEXTURE_2D, id_);
 
-  int width, height, nrChannels;
-  unsigned char* data = stbi_load(path, &width, &height, &nrChannels, 0);
+  int width, height, nr_channels;
+  unsigned char* data = stbi_load(path, &width, &height, &nr_channels, 0);
   if (data) {
-    if (nrChannels == 4)
+    if (nr_channels == 4)
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
     else
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -89,10 +108,18 @@ Image::Image(const char* path) : Quadrangle(0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1
 
   width_ = width;
   height_ = height;
-  nrChannels_ = nrChannels;
+  nr_channels_ = nr_channels;
 }
 
 void Image::Draw(Window& window, Shader shader, const Transform& transform) const {
   shader.Set("texture", *this);
   Quadrangle::Draw(window, shader, Transform(transform).Scale(width_, height_));
+}
+
+void Image::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
+  if (abs(rotate) < 1e-3)
+    Draw(window, shader, Transform().Move(x + scale * width_ / 2.0f, y + scale * height_ / 2.0f).Scale(scale)
+                                              .Rotate(rotate).Move(-width_ / 2.0f, -height_ / 2.0f));
+  else
+    Draw(window, shader, Transform().Move(x, y).Scale(scale));
 }

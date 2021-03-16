@@ -8,6 +8,7 @@ class Window;
 #include <GLFW/glfw3.h>
 
 #include <utility>
+#include <vector>
 
 #include "graphics/Shader.hpp"
 #include "graphics/Transform.hpp"
@@ -38,4 +39,5 @@ class Window {
  private:
   GLFWwindow* window_ = nullptr;
 };
+
 }
