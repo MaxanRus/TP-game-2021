@@ -39,7 +39,7 @@ set(SOURCE_FILES
 		src/graphics/GShape.cpp
 		include/graphics/Transform.hpp
 		src/graphics/Transform.cpp
-		)
+        include/graphics/ResourceManager.hpp)
 
 add_executable(game ${SOURCE_FILES})
 

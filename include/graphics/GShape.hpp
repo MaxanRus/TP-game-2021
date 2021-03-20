@@ -25,6 +25,9 @@ class GShape {
 class Triangle : public GShape {
  public:
   ~Triangle() override = default;
+  Triangle() = default;
+  Triangle(const Triangle&) = default;
+  Triangle& operator=(const Triangle&) = default;
   Triangle(int x1, int y1, int x2, int y2, int x3, int y3);
   void Draw(Window&, Shader, const Transform& = Transform()) const override;
   virtual void Draw(Window&, Shader, int x, int y, float scale = 1, float rotate = 0) const;
@@ -35,6 +38,9 @@ class Triangle : public GShape {
 class Quadrangle : public GShape {
  public:
   ~Quadrangle() override = default;
+  Quadrangle() = default;
+  Quadrangle(const Quadrangle&) = default;
+  Quadrangle& operator=(const Quadrangle&) = default;
   Quadrangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
   void Draw(Window&, Shader, const Transform& = Transform()) const override;
   virtual void Draw(Window&, Shader, int x, int y, float scale = 1, float rotate = 0) const;
@@ -47,6 +53,9 @@ class Quadrangle : public GShape {
 class Image : public Quadrangle {
  public:
   ~Image() = default;
+  Image() = default;
+  Image(const Image&) = default;
+  Image& operator=(const Image&) = default;
   Image(const char* path);
   [[nodiscard]] std::pair<unsigned int, unsigned int> GetSize() const { return std::make_pair(width_, height_); }
   [[nodiscard]] unsigned int GetId() const { return id_; }

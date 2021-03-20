@@ -3,6 +3,7 @@
 #include "graphics/Window.hpp"
 #include "graphics/GShape.hpp"
 #include "graphics/Transform.hpp"
+#include "graphics/ResourceManager.hpp"
 
 int main() {
   Graphics::Window window(1280, 720, "Game");
@@ -12,21 +13,16 @@ int main() {
     return -1;
   }
 
-  Graphics::GShape&& shape = Graphics::Triangle(10.0, 10.0, 1280.0, 10.0, 1280.0, 720.0);
-  Graphics::Shader shader("assets/shaders/shader.vs", "assets/shaders/shader.fs");
-
-  Graphics::Image img("assets/img/dwarf_debug.png");
-  Graphics::Quadrangle quadrangle(0.0, 0.0, 50.0, 0.0, 75.0, 100.0, 0.0, 50.0);
-  Graphics::Shader image_shader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs");
-
+  Graphics::ResourceManager::LoadImage("assets/img/dwarf_debug.png", "dwarf_d");
+  Graphics::ResourceManager::LoadShader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs", "image");
 
   while (window.IsLive()) {
     double t = glfwGetTime();
     Graphics::Transform transform;
+    auto img = Graphics::ResourceManager::GetImage("dwarf_d");
+    auto sh = Graphics::ResourceManager::GetShader("image");
+    sh.SetProjectorMatrix(window.GetTransformCoordinates());
     auto[wi, hi] = img.GetSize();
-
-    image_shader.Use();
-    image_shader.SetProjectorMatrix(window.GetTransformCoordinates());
 
     transform.Move(300, 300);
     transform.Scale(10);
@@ -34,14 +30,14 @@ int main() {
     transform.Move(-(float)wi / 2, -(float)hi / 2);
 
     // img.Draw(window, image_shader, transform);
-    img.Draw(window, image_shader, 0.0, 0.0, 3.0, glfwGetTime() * 100);
-    img.Draw(window, image_shader, 100, 100);
+    img.Draw(window, sh, 0.0, 0.0, 3.0, glfwGetTime() * 100);
+    img.Draw(window, sh, 100, 100);
     Graphics::GShape& test = img;
     // test.Draw(window, image_shader, 10.0, 10.0, 3.0, 0.0);
 
     for (int i = 0; i < 50; ++i) {
       for (int j = 0; j < 22; ++j) {
-        // img.Draw(window, image_shader, Graphics::Transform().Move(i * 32, j * 32).Rotate(glfwGetTime() * 100));
+         img.Draw(window, sh, i * 32, j * 32, 1, 100 * glfwGetTime());
       }
     }
 

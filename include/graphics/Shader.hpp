@@ -11,6 +11,9 @@ class Shader;
 namespace Graphics {
 class Shader {
  public:
+  Shader() = default;
+  Shader(const Shader&) = default;
+  Shader& operator=(const Shader&) = default;
   Shader(const std::string& vertex_path, const std::string& fragment_path);
   unsigned int GetId() const { return id_; }
   void Use() const;

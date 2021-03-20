@@ -117,7 +117,7 @@ void Image::Draw(Window& window, Shader shader, const Transform& transform) cons
 }
 
 void Image::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
-  if (abs(rotate) < 1e-3)
+  if (abs(rotate) > 1e-3)
     Draw(window, shader, Transform().Move(x + scale * width_ / 2.0f, y + scale * height_ / 2.0f).Scale(scale)
                                               .Rotate(rotate).Move(-width_ / 2.0f, -height_ / 2.0f));
   else
