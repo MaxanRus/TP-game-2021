@@ -11,7 +11,7 @@ float Cell::GetSpeed() const { return speed_; }
 
 size_t Cell::GetSize() const { return items_.size(); }
 
-void Cell::add(Ground* x) {
+void Cell::Add(Ground* x) {
   if (!x) {
     throw std::runtime_error("adding nullptr in Cell");
   }
@@ -22,16 +22,4 @@ void Cell::Tick() {
   for (auto& it : items_) {
     it->Tick();
   }
-}
-
-void add_all() {}
-template<typename T, typename... Args>
-void add_all(T t, Args... args) {
-  add(t);
-  add_all(args...);
-}
-
-template<typename... Args>
-Cell::Cell(Args... args) {
-  add_all(args...);
 }

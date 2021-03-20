@@ -1,4 +1,5 @@
 #include "engine/objects/ground/Mineral.hpp"
+#include "../../../../include/engine/objects/ground/Mineral.hpp"
 
-Mineral::Mineral(Graphics::Image* x) : Ground(x) {
+Mineral::Mineral(const std::string& x) : Ground(x) {
 }

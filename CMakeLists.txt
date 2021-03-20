@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project("Game")
 
+set(CMAKE_CXX_FLAGS "-O3")
+
 add_custom_target(copy_assets ALL
 		DEPENDS ${CMAKE_SOURCE_DIR}/assets
 		VERBATIM)
@@ -62,6 +64,7 @@ set(SOURCE_FILES
 		src/Engine.cpp
 		include/Engine.hpp
 		src/Engine/objects/ground/water/Water.cpp
+		include/graphics/ResourceManager.hpp
 		include/engine/objects/ground/water/Water.hpp src/Engine/Tickable.cpp include/engine/Tickable.hpp src/Engine/Movable.cpp include/engine/Movable.hpp src/GlobalVariablesManager.cpp include/GlobalVariablesManager.hpp src/GlobalClassManager.cpp include/GlobalClassManager.hpp)
 
 add_executable(game ${SOURCE_FILES})

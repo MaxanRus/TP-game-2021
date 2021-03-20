@@ -21,6 +21,12 @@ void Shader::Set(const char* name, const Image& image) {
   glUniform1i(glGetUniformLocation(id_, name), 0);
 }
 
+void Shader::SetProjectorMatrix(const Transform& transfrom) const {
+  Use();
+  glUniformMatrix4fv(glGetUniformLocation(id_, "projection"),
+                     1, GL_FALSE, transfrom.GetMatrix());
+}
+
 std::pair<std::string, std::string> Shader::LoadFromFile(const std::string& vertex_path,
                                                          const std::string& fragment_path) {
   std::string buffer;

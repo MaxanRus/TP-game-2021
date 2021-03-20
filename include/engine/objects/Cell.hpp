@@ -9,11 +9,10 @@ class Cell;
 
 class Cell: public Drawable, public Tickable {
  public:
-  template<typename... Args>
-  Cell(Args... args);
+  Cell() = default;
   ~Cell() override = default;
 
-  void add(Ground* x);
+  void Add(Ground* x);
   [[nodiscard]] float GetSpeed() const;
   [[nodiscard]] size_t GetSize() const;
 

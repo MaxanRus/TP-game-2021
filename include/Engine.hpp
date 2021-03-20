@@ -14,7 +14,7 @@ class Engine;
 
 class Engine {
  public:
-  static Engine* GetEngine(Graphics::Window* window = nullptr, unsigned width = 0, unsigned height = 0,
+  static Engine* GetEngine(unsigned width = 0, unsigned height = 0,
                            const std::string& file = "");
   ~Engine();
 
@@ -27,6 +27,6 @@ class Engine {
 
   static Engine* ptr;
 
-  explicit Engine(Graphics::Window* window, unsigned width, unsigned height,
+  explicit Engine(unsigned width, unsigned height,
                   const std::string& file = "");
 };

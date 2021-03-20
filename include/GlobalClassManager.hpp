@@ -10,6 +10,8 @@ class GlobalClassManager;
 
 class GlobalClassManager {
  public:
+  GlobalClassManager();
+
   static Dirt* GetDirt();
   static Stone* GetStone();
   static Water* GetWater();

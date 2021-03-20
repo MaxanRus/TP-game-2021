@@ -25,7 +25,3 @@ Transform& Transform::Rotate(float degree) {
 const float* Transform::GetMatrix() const {
   return glm::value_ptr(transform_);
 }
-
-Transform::Transform(const glm::mat4& transfrom) {
-  transform_ = transfrom;
-}

@@ -2,7 +2,8 @@
 #include <Engine.hpp>
 
 void Drawable::Draw(int x, int y) const {
-  ResourceManager::GetImage(image_)->Draw(ResourceManager::GetWindow(), ResourceManager::GetShader(), x, y);
+  Graphics::ResourceManager::GetImage(image_).Draw(Graphics::ResourceManager::GetWindow(),
+                                                   Graphics::ResourceManager::GetShader("image"), x, y);
 }
 
 void Drawable::Draw(std::pair<unsigned int, unsigned int> p) const {
