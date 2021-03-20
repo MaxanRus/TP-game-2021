@@ -62,17 +62,37 @@ Field::Field(unsigned width, unsigned height, const std::string& file) :
     for (auto& j : i) {
       c = (c+1) % 3;
       if (c == 0) {
-        j.add(GlobalClassManager::GetDirt());
+        j.Add(GlobalClassManager::GetDirt());
       }
       if (c == 1) {
-        j.add(GlobalClassManager::GetStone());
+        j.Add(GlobalClassManager::GetStone());
       }
       if (c == 2) {
-        j.add(GlobalClassManager::GetWater());
+        j.Add(GlobalClassManager::GetWater());
       }
     }
   }
 }
 
 void Field::Tick() {
+  for (auto& i : field_) {
+    for (auto& j : i) {
+      if (!j.GetBuilding() && j.GetBuilding()->GetLife() <= 0) {
+        delete j.GetBuilding();
+        j.SetBuilding(nullptr);
+      }
+    }
+  }
+}
+
+Building* Field::GetBuilding(float x, float y) const {
+  auto [posX, posY] = GetCellPos(x, y);
+  for (size_t i = posX; i > posX - GlobalVariablesManager::size_biggest_object; --i) {
+    for (size_t j = posY; j > posY - GlobalVariablesManager::size_biggest_object; --j) {
+      if (!field_[i][j].GetBuilding()) {
+        return field_[i][j].GetBuilding();
+      }
+    }
+  }
+  return nullptr;
 }

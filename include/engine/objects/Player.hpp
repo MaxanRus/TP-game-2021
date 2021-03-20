@@ -12,9 +12,6 @@ class Player: public Drawable, public Movable {
   Player(float x, float y, Field* field, const std::string& img, bool fly = false, bool rooted = false);
   ~Player() override = default;
 
-  [[nodiscard]] float GetX() const;
-  [[nodiscard]] float GetY() const;
-
   void Stop();
   void SpeedSet(float x, float y);
   void SpeedInc(float x, float y);

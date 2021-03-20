@@ -29,3 +29,15 @@ void Movable::IncSpeed(float x, float y) {
 Movable::Movable(float x, float y, Field* ptr, bool fly, bool rooted, float sx, float sy):
     x_(x), y_(y), field_(ptr), fly_(fly), rooted_(rooted), speedX_(sx), speedY_(sy) {
 }
+
+float Movable::dist(const Movable& a, const Movable& b) {
+  return sqrtf((a.x_-b.x_)*(a.x_-b.x_) + (a.y_-b.y_)*(a.y_-b.y_));
+}
+
+float Movable::GetX() const {
+  return x_;
+}
+
+float Movable::GetY() const {
+  return y_;
+}

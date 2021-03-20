@@ -5,13 +5,14 @@ void Cell::Draw(int x, int y) const {
   for (auto& it : items_) {
     it->Draw(x, y);
   }
+  building_->Draw(x, y);
 }
 
 float Cell::GetSpeed() const { return speed_; }
 
 size_t Cell::GetSize() const { return items_.size(); }
 
-void Cell::add(Ground* x) {
+void Cell::Add(Ground* x) {
   if (!x) {
     throw std::runtime_error("adding nullptr in Cell");
   }
@@ -32,6 +33,14 @@ void add_all(T t, Args... args) {
 }
 
 template<typename... Args>
-Cell::Cell(Args... args) {
+Cell::Cell(Building* build, Args... args): building_(build) {
   add_all(args...);
+}
+
+Building* Cell::GetBuilding() const {
+  return building_;
+}
+
+void Cell::SetBuilding(Building* x) {
+  building_ = x;
 }

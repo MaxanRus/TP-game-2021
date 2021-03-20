@@ -62,7 +62,7 @@ set(SOURCE_FILES
 		src/Engine.cpp
 		include/Engine.hpp
 		src/Engine/objects/ground/water/Water.cpp
-		include/engine/objects/ground/water/Water.hpp src/Engine/Tickable.cpp include/engine/Tickable.hpp src/Engine/Movable.cpp include/engine/Movable.hpp src/GlobalVariablesManager.cpp include/GlobalVariablesManager.hpp src/GlobalClassManager.cpp include/GlobalClassManager.hpp)
+		include/engine/objects/ground/water/Water.hpp src/Engine/Tickable.cpp include/engine/Tickable.hpp src/Engine/Movable.cpp include/engine/Movable.hpp src/GlobalVariablesManager.cpp include/GlobalVariablesManager.hpp src/GlobalClassManager.cpp include/GlobalClassManager.hpp src/Engine/objects/UnitGroup.cpp include/engine/objects/UnitGroup.hpp src/Engine/objects/Unit.cpp include/engine/objects/Unit.hpp src/Timer.cpp include/Timer.hpp src/Engine/objects/Building.cpp include/engine/objects/Building.hpp)
 
 add_executable(game ${SOURCE_FILES})
 

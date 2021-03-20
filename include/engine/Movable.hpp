@@ -11,6 +11,10 @@ class Movable: Tickable {
   virtual void Move(float x, float y);
   void Tick() override;
   void IncSpeed(float x, float y);
+  [[nodiscard]] virtual float GetX() const;
+  [[nodiscard]] virtual float GetY() const;
+
+  static float dist(const Movable& a, const Movable& b);
 
  protected:
   float x_;

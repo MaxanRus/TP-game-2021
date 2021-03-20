@@ -5,6 +5,7 @@ class Field;
 #include <vector>
 #include <engine/objects/Cell.hpp>
 #include <cmath>
+#include <engine/objects/Building.hpp>
 
 class Engine;
 
@@ -21,6 +22,8 @@ class Field {
 
   [[nodiscard]] const Cell& GetCell(float x, float y) const;
   [[nodiscard]] static std::pair<unsigned int, unsigned int> GetCellPos(float x, float y);
+
+  [[nodiscard]] Building* GetBuilding(float x, float y) const;
 
   void Draw(float x, float y, float centerX, float centerY) const;
 

@@ -8,6 +8,7 @@ class Drawable;
 
 class Drawable {
  public:
+  Drawable() = default;
   explicit Drawable(const std::string& img);
   virtual void Draw(int x, int y) const;
   virtual void Draw(std::pair<unsigned int, unsigned int> p) const;
