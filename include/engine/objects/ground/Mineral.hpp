@@ -2,7 +2,7 @@ class Mineral;
 
 #pragma once
 
-#include <engine/objects/Ground.hpp>
+#include <engine/objects/Cell.hpp>
 
 class Mineral: public Ground {
  public:

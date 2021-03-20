@@ -11,12 +11,13 @@ class Engine;
 #include <engine/objects/ground/earth/Stone.hpp>
 #include <engine/objects/ground/water/Water.hpp>
 #include <engine/objects/ground/mineral/Iron.hpp>
+#include <engine/objects/UnitGroup.hpp>
 
 class Engine {
  public:
-  static Engine* GetEngine(Graphics::Window* window = nullptr, unsigned width = 0, unsigned height = 0,
+  static Engine* GetEngine(unsigned width = 0, unsigned height = 0,
                            const std::string& file = "");
-  ~Engine();
+  ~Engine() = default;
 
   void Tick();
   void Draw() const;
@@ -24,9 +25,9 @@ class Engine {
  private:
   Player player_;
   Field field_;
+  std::vector<UnitGroup*> enemies;
 
   static Engine* ptr;
 
-  explicit Engine(Graphics::Window* window, unsigned width, unsigned height,
-                  const std::string& file = "");
+  explicit Engine(unsigned width, unsigned height, const std::string& file = "");
 };

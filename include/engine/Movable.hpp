@@ -7,10 +7,11 @@ class Movable;
 
 class Movable: Tickable {
  public:
-  Movable(float x, float y, Field* ptr, bool fly, bool rooted, float sx, float sy);
+  Movable(float x, float y, Field* ptr, bool fly, bool rooted, float sx = 0.0, float sy = 0.0);
   virtual void Move(float x, float y);
   void Tick() override;
   void IncSpeed(float x, float y);
+  void SetSpeed(float x, float y);
   [[nodiscard]] virtual float GetX() const;
   [[nodiscard]] virtual float GetY() const;
 

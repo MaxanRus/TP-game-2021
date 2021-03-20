@@ -8,6 +8,7 @@ class Window;
 #include <GLFW/glfw3.h>
 
 #include <utility>
+#include <vector>
 
 #include "graphics/Shader.hpp"
 #include "graphics/Transform.hpp"
@@ -15,6 +16,8 @@ class Window;
 namespace Graphics {
 class Window {
  public:
+  enum class keys {LEFT_MOUSE, RIGHT_MOUSE, ESC, SPACE, ENTER, W, A, S, D, UP, LEFT, DOWN, RIGHT, SHIFT, CTRL};
+
   Window(int width, int height, const char* title_window);
 
   bool IsLive() const;
@@ -29,9 +32,12 @@ class Window {
     return Transform().Move(-1, -1).Scale(2.0 / w, 2.0 / h);
   }
 
+  bool CheckPressButton(keys);
+
   operator bool() const;
 
  private:
   GLFWwindow* window_ = nullptr;
 };
+
 }

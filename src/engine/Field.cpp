@@ -20,8 +20,8 @@ void Field::Draw(float x, float y, float centerX, float centerY) const {
   float pixelPosX = centerX - x + cellX * GlobalVariablesManager::size_cell;
   float pixelPosY = centerY - y + cellY * GlobalVariablesManager::size_cell;
 
-  int WindowCellWidth = ResourceManager::GetWindow()->GetSizeWindow().first / GlobalVariablesManager::size_cell;
-  int WindowCellHeight = ResourceManager::GetWindow()->GetSizeWindow().second / GlobalVariablesManager::size_cell;
+  int WindowCellWidth = Graphics::ResourceManager::GetWindow().GetSizeWindow().first / GlobalVariablesManager::size_cell;
+  int WindowCellHeight = Graphics::ResourceManager::GetWindow().GetSizeWindow().second / GlobalVariablesManager::size_cell;
 
   for (int i = cellX - WindowCellWidth / 2 - GlobalVariablesManager::size_biggest_object - 3; i < cellX + WindowCellWidth / 2 + 2; ++i) {
     for (int j = cellY - WindowCellHeight / 2 - GlobalVariablesManager::size_biggest_object - 3; j < cellY + WindowCellHeight / 2 + 2; ++j) {
@@ -75,6 +75,7 @@ Field::Field(unsigned width, unsigned height, const std::string& file) :
 }
 
 void Field::Tick() {
+  //return ;
   for (auto& i : field_) {
     for (auto& j : i) {
       if (!j.GetBuilding() && j.GetBuilding()->GetLife() <= 0) {
@@ -87,9 +88,9 @@ void Field::Tick() {
 
 Building* Field::GetBuilding(float x, float y) const {
   auto [posX, posY] = GetCellPos(x, y);
-  for (size_t i = posX; i > posX - GlobalVariablesManager::size_biggest_object; --i) {
-    for (size_t j = posY; j > posY - GlobalVariablesManager::size_biggest_object; --j) {
-      if (!field_[i][j].GetBuilding()) {
+  for (size_t i = std::min(size_t(posX), field_.size()-1); i > std::max(-1U, posX - GlobalVariablesManager::size_biggest_object); --i) {
+    for (size_t j = std::min(size_t(posY), field_[i].size()-1); j > std::max(-1U, posY - GlobalVariablesManager::size_biggest_object); --j) {
+      if (field_[i][j].GetBuilding() != nullptr) {
         return field_[i][j].GetBuilding();
       }
     }

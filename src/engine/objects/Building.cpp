@@ -1,7 +1,8 @@
 #include "engine/objects/Building.hpp"
 
 float Building::GetLife() const {
-  return life_;
+  /// TODO life_
+  return 0;
 }
 
 void Building::DealDamage(float damage) {

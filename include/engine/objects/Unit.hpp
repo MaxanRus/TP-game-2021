@@ -9,7 +9,10 @@ class Unit: public Drawable, public Movable {
   explicit Unit(float power, const std::string& img, float x, float y, Field* ptr,
                 bool fly = true, bool rooted = false, float sx = 0.0, float sy = 0.0);
   void Tick() override;
-  void IncSpeedRandomly(float x, float y);
+  void IncSpeedRandomly();
+
+  [[nodiscard]] float GetRandomize() const;
+  [[nodiscard]] float GetPower() const;
 
   [[nodiscard]] float GetLife() const;
 

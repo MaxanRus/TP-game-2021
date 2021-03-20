@@ -5,41 +5,56 @@
 #include <engine/objects/ground/GroundEarth.hpp>
 #include <Engine.hpp>
 #include <memory>
+#include <GlobalClassManager.hpp>
+#include <engine/objects/ground/mineral/Copper.hpp>
 #include "graphics/Window.hpp"
 #include "graphics/GShape.hpp"
 #include "graphics/Transform.hpp"
+#include "graphics/ResourceManager.hpp"
+#include "Timer.hpp"
 
-void Initialization(Graphics::Window *&window);
+void Initialization();
 
 int main() {
-  Graphics::Window *window;
-  Initialization(window);
-
+  Initialization();
 //
 //  Engine::GetDirt()->Draw(1, 1);
 //  window->Render();
 //
 //  while (true) ;
 
-  while (window->IsLive()) {
+  while (Graphics::ResourceManager::GetWindow().IsLive()) {
     double t = glfwGetTime();
+
+    /// events
+
     Engine::GetEngine()->Tick();
     Engine::GetEngine()->Draw();
+
     std::cout << 1 / (glfwGetTime() - t) << "\n";
   }
-
-  delete window;
 
   return 0;
 }
 
-void Initialization(Graphics::Window *&window) {
-  window = new Graphics::Window(1280, 720, "Game");
+void Initialization() {
+  Graphics::ResourceManager::CreateWindow(1280, 720, "Game");
 
-  if (!window) {
-    std::cout << "Ошибка создания окна" << std::endl;
-    exit(-1);
-  }
+  Graphics::ResourceManager::LoadImage("assets/img/dirt.png", "dirt");
+  Graphics::ResourceManager::LoadImage("assets/img/stone.png", "stone");
+  Graphics::ResourceManager::LoadImage("assets/img/water.png", "water");
+  Graphics::ResourceManager::LoadImage("assets/img/empty.png", "empty");
+  Graphics::ResourceManager::LoadImage("assets/img/iron.png", "iron");
+  //Graphics::ResourceManager::LoadImage("assets/img/copper.png", "copper");
+  Graphics::ResourceManager::LoadImage("assets/img/unit.png", "unit");
+  //Graphics::ResourceManager::LoadImage("assets/img/dwarf_debug.png", "player");
+  Graphics::ResourceManager::LoadShader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs", "image");
 
-  Engine::GetEngine(window, 100, 100);
+  Graphics::ResourceManager::GetShader("image").SetProjectorMatrix(Graphics::ResourceManager::GetWindow().GetTransformCoordinates());
+
+  std::cout << "pictures are loaded" << std::endl;
+
+  GlobalClassManager::Init();
+
+  Engine::GetEngine(100, 100);
 }

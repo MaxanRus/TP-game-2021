@@ -24,5 +24,5 @@ void Player::Tick() {
 }
 
 Player::Player(float x, float y, Field* field, const std::string& img, bool fly, bool rooted) :
-    Movable(x, y, field, fly, rooted, 0, 0), Drawable(img) {
+    Movable(x, y, field, fly, rooted), Drawable(img) {
 }

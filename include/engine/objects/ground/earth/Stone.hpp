@@ -2,7 +2,6 @@ class Stone;
 
 #pragma once
 
-#include <engine/Drawable.hpp>
 #include <engine/objects/ground/GroundEarth.hpp>
 
 class Stone: public GroundEarth {

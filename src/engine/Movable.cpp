@@ -41,3 +41,8 @@ float Movable::GetX() const {
 float Movable::GetY() const {
   return y_;
 }
+
+void Movable::SetSpeed(float x, float y) {
+  speedX_ = x;
+  speedY_ = y;
+}

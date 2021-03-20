@@ -6,14 +6,14 @@ class UnitGroup;
 #include "Unit.hpp"
 #include <list>
 
-class UnitGroup: Movable {
+class UnitGroup: public Movable {
  public:
   explicit UnitGroup(float power, float x, float y, Field* ptr);
   void Tick() override;
-  void Draw(int x, int y) const;
+  void Draw(int fromX, int fromY, int toX, int toY) const;
 
  private:
-  float magnetic_radius_;
+  float radius_;
   float magnetic_power_;
   std::list<Unit*> units;
 };

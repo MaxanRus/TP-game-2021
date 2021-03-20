@@ -11,5 +11,4 @@ class Dirt: public GroundEarth {
   void Tick() override;
 
  private:
-
 };

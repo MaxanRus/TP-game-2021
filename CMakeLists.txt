@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project("Game")
 
+# set(CMAKE_CXX_FLAGS "-O3")
+
 add_custom_target(copy_assets ALL
 		DEPENDS ${CMAKE_SOURCE_DIR}/assets
 		VERBATIM)
@@ -35,34 +37,66 @@ set(SOURCE_FILES
 		src/graphics/Shader.cpp
 		include/graphics/GShape.hpp
 		src/graphics/GShape.cpp
-        src/Engine/Drawable.cpp
+		src/engine/Drawable.cpp
         include/engine/Drawable.hpp
-		src/Engine/Field.cpp
+		src/engine/Field.cpp
 		include/engine/Field.hpp
-		src/Engine/objects/Player.cpp
+		src/engine/objects/Player.cpp
 		include/engine/objects/Player.hpp
-		src/Engine/objects/Cell.cpp
+		src/engine/objects/Cell.cpp
 		include/engine/objects/Cell.hpp
-		src/Engine/objects/ground/GroundEarth.cpp
+		src/engine/objects/ground/GroundEarth.cpp
 		include/engine/objects/ground/GroundEarth.hpp
-		src/Engine/objects/ground/GroundWater.cpp
+		src/engine/objects/ground/GroundWater.cpp
 		include/engine/objects/ground/GroundWater.hpp
-		src/Engine/objects/Ground.cpp
+		src/engine/objects/Ground.cpp
 		include/engine/objects/Ground.hpp
 		include/Console.hpp
-		src/Engine/objects/ground/GroundEmpty.cpp
+		src/engine/objects/ground/GroundEmpty.cpp
 		include/engine/objects/ground/GroundEmpty.hpp
 		src/Console.cpp
-		src/Engine/objects/ground/earth/Dirt.cpp
+		src/engine/objects/ground/earth/Dirt.cpp
 		include/engine/objects/ground/earth/Dirt.hpp
-		src/Engine/objects/ground/earth/Stone.cpp
+		src/engine/objects/ground/earth/Stone.cpp
 		include/engine/objects/ground/earth/Stone.hpp
 		include/graphics/Transform.hpp
 		src/graphics/Transform.cpp
 		src/Engine.cpp
 		include/Engine.hpp
-		src/Engine/objects/ground/water/Water.cpp
-		include/engine/objects/ground/water/Water.hpp src/Engine/Tickable.cpp include/engine/Tickable.hpp src/Engine/Movable.cpp include/engine/Movable.hpp src/GlobalVariablesManager.cpp include/GlobalVariablesManager.hpp src/GlobalClassManager.cpp include/GlobalClassManager.hpp src/Engine/objects/UnitGroup.cpp include/engine/objects/UnitGroup.hpp src/Engine/objects/Unit.cpp include/engine/objects/Unit.hpp src/Timer.cpp include/Timer.hpp src/Engine/objects/Building.cpp include/engine/objects/Building.hpp)
+		src/engine/objects/ground/water/Water.cpp
+		include/engine/objects/ground/water/Water.hpp
+		src/engine/Tickable.cpp
+		include/engine/Tickable.hpp
+		src/engine/Movable.cpp
+		include/engine/Movable.hpp
+		src/GlobalVariablesManager.cpp
+		include/GlobalVariablesManager.hpp
+		src/GlobalClassManager.cpp
+		include/GlobalClassManager.hpp
+		src/engine/objects/UnitGroup.cpp
+		include/engine/objects/UnitGroup.hpp
+		src/engine/objects/Unit.cpp
+		include/engine/objects/Unit.hpp
+		src/Timer.cpp
+		include/Timer.hpp
+		src/engine/objects/Building.cpp
+		include/engine/objects/Building.hpp
+		include/graphics/ResourceManager.hpp
+		include/engine/objects/ground/water/Water.hpp
+		src/engine/Tickable.cpp
+		include/engine/Tickable.hpp
+		src/engine/Movable.cpp
+		include/engine/Movable.hpp
+		src/GlobalVariablesManager.cpp
+		include/GlobalVariablesManager.hpp
+		src/GlobalClassManager.cpp
+		include/GlobalClassManager.hpp
+		src/engine/objects/ground/Mineral.cpp
+		include/engine/objects/ground/Mineral.hpp
+		src/engine/objects/ground/mineral/Iron.cpp
+		include/engine/objects/ground/mineral/Iron.hpp
+		src/engine/objects/ground/mineral/Copper.cpp
+		include/engine/objects/ground/mineral/Copper.hpp)
 
 add_executable(game ${SOURCE_FILES})
 

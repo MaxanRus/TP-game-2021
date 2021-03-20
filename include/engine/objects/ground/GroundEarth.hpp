@@ -4,8 +4,6 @@ class GroundEarth;
 
 #include <engine/objects/Cell.hpp>
 
-#include <graphics/GShape.hpp>
-
 class GroundEarth: public Ground {
  public:
   ~GroundEarth() override = default;

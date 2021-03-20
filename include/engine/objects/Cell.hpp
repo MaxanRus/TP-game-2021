@@ -10,9 +10,6 @@ class Cell;
 
 class Cell: public Drawable, public Tickable {
  public:
-  template<typename... Args>
-  Cell(Building* building, Args... args);
-
   Cell() = default;
   Cell(const Cell&) = default;
   Cell& operator=(const Cell&) = default;
@@ -25,12 +22,12 @@ class Cell: public Drawable, public Tickable {
 
   [[nodiscard]] Building* GetBuilding() const;
 
-  void Draw(int x, int y) const override;
+  void Draw(int x, int y) const;
   void Tick() override;
 
  private:
   float speed_ = 1.0;
 
   std::vector<Ground*> items_;
-  Building* building_;
+  Building* building_ = nullptr;
 };
