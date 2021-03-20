@@ -2,13 +2,13 @@ class Ground;
 
 #pragma once
 
-#include <engine/Object.hpp>
+#include <engine/Drawable.hpp>
+#include <engine/Tickable.hpp>
 
-class Ground: public Object {
+class Ground: public Drawable, public Tickable {
  public:
   ~Ground() override = default;
-  Ground();
-  explicit Ground(Graphics::Image* x);
+  explicit Ground(const std::string& x);
 
  private:
 

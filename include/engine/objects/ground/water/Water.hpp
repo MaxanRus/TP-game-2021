@@ -7,7 +7,7 @@ class Water;
 class Water: public GroundWater {
  public:
   ~Water() override = default;
-  explicit Water(Graphics::Image* x);
+  explicit Water(const std::string& x);
   void Tick() override;
 
  private:

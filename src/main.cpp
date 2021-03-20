@@ -22,9 +22,10 @@ int main() {
 //  while (true) ;
 
   while (window->IsLive()) {
-
+    double t = glfwGetTime();
     Engine::GetEngine()->Tick();
     Engine::GetEngine()->Draw();
+    std::cout << 1 / (glfwGetTime() - t) << "\n";
   }
 
   delete window;

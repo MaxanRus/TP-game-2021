@@ -9,6 +9,6 @@ class GroundEmpty;
 class GroundEmpty: public Ground {
  public:
   ~GroundEmpty() override = default;
-  explicit GroundEmpty(Graphics::Image* x);
+  explicit GroundEmpty(const std::string& x);
   void Tick() override;
 };

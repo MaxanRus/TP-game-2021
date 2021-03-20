@@ -7,7 +7,7 @@ class Dirt;
 class Dirt: public GroundEarth {
  public:
   ~Dirt() override = default;
-  explicit Dirt(Graphics::Image* x);
+  explicit Dirt(const std::string& x);
   void Tick() override;
 
  private:

@@ -2,5 +2,5 @@
 
 void GroundEmpty::Tick() {}
 
-GroundEmpty::GroundEmpty(Graphics::Image* x) : Ground(x) {
+GroundEmpty::GroundEmpty(const std::string& x) : Ground(x) {
 }

@@ -1,4 +1,4 @@
 #include "engine/objects/ground/GroundWater.hpp"
 
-GroundWater::GroundWater(Graphics::Image* x) : Ground(x) {
+GroundWater::GroundWater(const std::string& x) : Ground(x) {
 }

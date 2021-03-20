@@ -9,6 +9,6 @@ class GroundEarth;
 class GroundEarth: public Ground {
  public:
   ~GroundEarth() override = default;
-  explicit GroundEarth(Graphics::Image* x);
+  explicit GroundEarth(const std::string& x);
  private:
 };

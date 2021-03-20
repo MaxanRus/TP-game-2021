@@ -35,8 +35,8 @@ set(SOURCE_FILES
 		src/graphics/Shader.cpp
 		include/graphics/GShape.hpp
 		src/graphics/GShape.cpp
-		src/Engine/Object.cpp
-		include/engine/Object.hpp
+        src/Engine/Drawable.cpp
+        include/engine/Drawable.hpp
 		src/Engine/Field.cpp
 		include/engine/Field.hpp
 		src/Engine/objects/Player.cpp
@@ -62,7 +62,7 @@ set(SOURCE_FILES
 		src/Engine.cpp
 		include/Engine.hpp
 		src/Engine/objects/ground/water/Water.cpp
-		include/engine/objects/ground/water/Water.hpp)
+		include/engine/objects/ground/water/Water.hpp src/Engine/Tickable.cpp include/engine/Tickable.hpp src/Engine/Movable.cpp include/engine/Movable.hpp src/GlobalVariablesManager.cpp include/GlobalVariablesManager.hpp src/GlobalClassManager.cpp include/GlobalClassManager.hpp)
 
 add_executable(game ${SOURCE_FILES})
 

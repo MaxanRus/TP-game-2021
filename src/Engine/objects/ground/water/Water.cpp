@@ -1,6 +1,6 @@
 #include "engine/objects/ground/water/Water.hpp"
 
-Water::Water(Graphics::Image* x) : GroundWater(x) {
+Water::Water(const std::string& x) : GroundWater(x) {
 }
 
 void Water::Tick() {

@@ -1,6 +1,6 @@
 #include "engine/objects/ground/earth/Stone.hpp"
 
-Stone::Stone(Graphics::Image* x) : GroundEarth(x) {
+Stone::Stone(const std::string& x) : GroundEarth(x) {
 }
 
 void Stone::Tick() {

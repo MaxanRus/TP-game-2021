@@ -23,3 +23,15 @@ void Cell::Tick() {
     it->Tick();
   }
 }
+
+void add_all() {}
+template<typename T, typename... Args>
+void add_all(T t, Args... args) {
+  add(t);
+  add_all(args...);
+}
+
+template<typename... Args>
+Cell::Cell(Args... args) {
+  add_all(args...);
+}
