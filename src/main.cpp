@@ -1,6 +1,6 @@
 #include <iostream>
 #include <Engine.hpp>
-#include <GlobalClassManager.hpp>
+#include <SpritesManager.hpp>
 #include "graphics/ResourceManager.hpp"
 #include "Timer.hpp"
 
@@ -33,14 +33,14 @@ void Initialization() {
   Graphics::ResourceManager::LoadImage("assets/img/iron.png", "iron");
   //Graphics::ResourceManager::LoadImage("assets/img/copper.png", "copper");
   Graphics::ResourceManager::LoadImage("assets/img/unit.png", "unit");
-  //Graphics::ResourceManager::LoadImage("assets/img/dwarf_debug.png", "player");
+  Graphics::ResourceManager::LoadImage("assets/img/dwarf_debug.png", "player");
   Graphics::ResourceManager::LoadShader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs", "image");
 
   Graphics::ResourceManager::GetShader("image").SetProjectorMatrix(Graphics::ResourceManager::GetWindow().GetTransformCoordinates());
 
   std::cout << "pictures are loaded" << std::endl;
 
-  GlobalClassManager::Init();
+  SpritesManager::Init();
 
   Engine::GetEngine(100, 100);
 }

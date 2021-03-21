@@ -8,5 +8,5 @@ class Timer;
 class Timer {
  public:
   static unsigned GetTime();
-  static void Sleep(unsigned x);
+  static void Sleep(unsigned seconds);
 };

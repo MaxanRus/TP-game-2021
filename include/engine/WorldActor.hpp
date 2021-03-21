@@ -1,13 +1,13 @@
-class Movable;
+class WorldActor;
 
 #pragma once
 
 #include "Tickable.hpp"
 #include "Field.hpp"
 
-class Movable: Tickable {
+class WorldActor : Tickable {
  public:
-  Movable(float x, float y, Field* ptr, bool fly, bool rooted, float sx = 0.0, float sy = 0.0);
+  WorldActor(float x, float y, Field* ptr, bool fly, bool rooted, float sx = 0.0, float sy = 0.0);
   virtual void Move(float x, float y);
   void Tick() override;
   void IncSpeed(float x, float y);
@@ -15,13 +15,13 @@ class Movable: Tickable {
   [[nodiscard]] virtual float GetX() const;
   [[nodiscard]] virtual float GetY() const;
 
-  static float dist(const Movable& a, const Movable& b);
+  static float Distance(const WorldActor& first, const WorldActor& second);
 
  protected:
   float x_;
   float y_;
-  float speedX_ = 0.0;
-  float speedY_ = 0.0;
+  float speed_x_ = 0.0;
+  float speed_y_ = 0.0;
   bool fly_;
   bool rooted_;
   Field* field_;

@@ -4,10 +4,10 @@ class Iron;
 
 #include <engine/objects/ground/Mineral.hpp>
 
-class Iron: public Mineral {
+class Iron : public Mineral {
  public:
   ~Iron() override = default;
-  explicit Iron(const std::string& x);
+  explicit Iron(const std::string& image_name);
   void Tick() override;
 
  private:

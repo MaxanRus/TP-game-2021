@@ -7,14 +7,9 @@ void Drawable::Draw(int x, int y, float size) const {
                                                    x, y, size);
 }
 
-const std::string& Drawable::GetImg() const {
-  return image_;
-}
+const std::string& Drawable::GetImg() const { return image_; }
 
-void Drawable::SetImage(const std::string& img) {
-  image_ = img;
-}
+void Drawable::SetImage(const std::string& image) { image_ = image; }
 
-Drawable::Drawable(const std::string& img) : image_(img) {
-}
+Drawable::Drawable(const std::string& image) : image_(image) {}
 

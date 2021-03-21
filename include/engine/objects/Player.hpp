@@ -4,9 +4,9 @@ class Player;
 
 #include <engine/Drawable.hpp>
 #include <engine/Field.hpp>
-#include <engine/Movable.hpp>
+#include <engine/WorldActor.hpp>
 
-class Player: public Drawable, public Movable {
+class Player : public Drawable, public WorldActor {
  public:
   Player() = default;
   Player(float x, float y, Field* field, const std::string& img, bool fly = false, bool rooted = false);
@@ -19,5 +19,5 @@ class Player: public Drawable, public Movable {
   void Tick() override;
 
  private:
-  float frameNumber_ = 0;
+  float frame_number_ = 0;
 };

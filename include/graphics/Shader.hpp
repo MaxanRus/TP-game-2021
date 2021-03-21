@@ -20,7 +20,8 @@ class Shader {
   void Set(const char* name, const Image&);
   void SetProjectorMatrix(const Transform&) const;
  private:
-  static std::pair<std::string, std::string> LoadFromFile(const std::string& vertex_path, const std::string& fragment_path);
+  static std::pair<std::string, std::string> LoadFromFile(const std::string& vertex_path,
+                                                          const std::string& fragment_path);
   void Compile(const std::string& vertex_code_shader, const std::string& fragment_code_shader);
   static void CheckCompileErrors();
 

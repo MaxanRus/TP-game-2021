@@ -5,10 +5,10 @@ class Ground;
 #include <engine/Drawable.hpp>
 #include <engine/Tickable.hpp>
 
-class Ground: public Drawable, public Tickable {
+class Ground : public Drawable, public Tickable {
  public:
   ~Ground() override = default;
-  explicit Ground(const std::string& x);
+  explicit Ground(const std::string& image_name);
 
  private:
 

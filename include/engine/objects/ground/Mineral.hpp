@@ -4,9 +4,9 @@ class Mineral;
 
 #include <engine/objects/Cell.hpp>
 
-class Mineral: public Ground {
+class Mineral : public Ground {
  public:
   ~Mineral() override = default;
-  explicit Mineral(const std::string& x);
+  explicit Mineral(const std::string& image_name);
  private:
 };

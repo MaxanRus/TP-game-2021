@@ -4,9 +4,9 @@ class GroundEarth;
 
 #include <engine/objects/Cell.hpp>
 
-class GroundEarth: public Ground {
+class GroundEarth : public Ground {
  public:
   ~GroundEarth() override = default;
-  explicit GroundEarth(const std::string& x);
+  explicit GroundEarth(const std::string& image_name);
  private:
 };

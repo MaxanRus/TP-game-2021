@@ -5,11 +5,11 @@ class Building;
 #include <engine/Drawable.hpp>
 #include <engine/Tickable.hpp>
 
-class Building: public Drawable, public Tickable {
+class Building : public Drawable, public Tickable {
  public:
   [[nodiscard]] float GetLife() const;
   void DealDamage(float damage);
-  void Repare(float to);
+  void Repair(float to);
   explicit Building(const std::string& img, float life);
 
  private:

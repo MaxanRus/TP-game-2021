@@ -4,10 +4,10 @@ class Copper;
 
 #include <engine/objects/ground/Mineral.hpp>
 
-class Copper: public Mineral {
+class Copper : public Mineral {
  public:
   ~Copper() override = default;
-  explicit Copper(const std::string& x);
+  explicit Copper(const std::string& image_name);
   void Tick() override;
 
  private:

@@ -13,7 +13,10 @@ class ResourceManager;
 namespace Graphics {
 class ResourceManager {
  public:
-  ResourceManager* GetResourceManager() { if (!me) me = new ResourceManager; return me; }
+  ResourceManager* GetResourceManager() {
+    if (!me) me = new ResourceManager;
+    return me;
+  }
   static Shader& LoadShader(const std::string& v_path, const std::string& f_path, const std::string& name) {
     return shaders_[name] = Shader(v_path, f_path);
   }

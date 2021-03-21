@@ -4186,7 +4186,7 @@ static int stbi__parse_huffman_block(stbi__zbuf *a)
          if (z < 0) return stbi__err("bad huffman code","Corrupt PNG");
          dist = stbi__zdist_base[z];
          if (stbi__zdist_extra[z]) dist += stbi__zreceive(a, stbi__zdist_extra[z]);
-         if (zout - a->zout_start < dist) return stbi__err("bad dist","Corrupt PNG");
+         if (zout - a->zout_start < dist) return stbi__err("bad Distance","Corrupt PNG");
          if (zout + len > a->zout_end) {
             if (!stbi__zexpand(a, zout, len)) return 0;
             zout = a->zout;

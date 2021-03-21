@@ -15,7 +15,7 @@ class Field {
   [[nodiscard]] unsigned int GetHeight() const;
 
   Field() = default;
-  Field(unsigned int width, unsigned int height, const std::string& file);
+  Field(unsigned int width, unsigned int height, const std::string& path_file);
 
   [[nodiscard]] std::vector<Cell>& operator[](unsigned int i);
   [[nodiscard]] const std::vector<Cell>& operator[](unsigned int i) const;
@@ -25,12 +25,12 @@ class Field {
 
   [[nodiscard]] Building* GetBuilding(float x, float y) const;
 
-  void Draw(float x, float y, float centerX, float centerY) const;
+  void Draw(float x, float y, float center_x, float center_y) const;
 
   void Tick();
 
  private:
-  unsigned int width_=0, height_=0;
+  unsigned int width_ = 0, height_ = 0;
   std::vector<std::vector<Cell>> field_;
 
   [[nodiscard]] Cell& At(int x, int y);

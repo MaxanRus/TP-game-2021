@@ -8,7 +8,7 @@ class Cell;
 #include "Ground.hpp"
 #include "Building.hpp"
 
-class Cell: public Drawable, public Tickable {
+class Cell : public Drawable, public Tickable {
  public:
   Cell() = default;
   Cell(const Cell&) = default;
@@ -26,7 +26,7 @@ class Cell: public Drawable, public Tickable {
   void Tick() override;
 
  private:
-  float speed_ = 1.0;
+  float speed_coefficient_ = 1.0;
 
   std::vector<Ground*> items_;
   Building* building_ = nullptr;

@@ -2,18 +2,18 @@ class UnitGroup;
 
 #pragma once
 
-#include <engine/Movable.hpp>
+#include <engine/WorldActor.hpp>
 #include "Unit.hpp"
 #include <list>
 
-class UnitGroup: public Movable {
+class UnitGroup : public WorldActor {
  public:
   explicit UnitGroup(float power, float x, float y, Field* ptr);
   void Tick() override;
-  void Draw(int fromX, int fromY, int toX, int toY) const;
+  void Draw(int from_x, int from_y, int to_x, int to_y) const;
 
  private:
   float radius_;
   float magnetic_power_;
-  std::list<Unit*> units;
+  std::list<Unit*> units_;
 };

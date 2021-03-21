@@ -4,7 +4,7 @@
 
 Unit::Unit(float power, const std::string& img, float x, float y,
            Field* ptr, bool fly, bool rooted, float sx, float sy) :
-    Movable(x, y, ptr, fly, rooted, sx, sy),
+    WorldActor(x, y, ptr, fly, rooted, sx, sy),
     Drawable(img), power_(power), last_attack_(0) {
   damage_ = power;
   move_speed_ = 1.0;
@@ -15,7 +15,7 @@ Unit::Unit(float power, const std::string& img, float x, float y,
 }
 
 void Unit::Tick() {
-  Movable::Tick();
+  WorldActor::Tick();
   auto time = Timer::GetTime();
   if (last_attack_ <= time) {
     last_attack_ = time + attack_speed_;
@@ -27,20 +27,20 @@ void Unit::Tick() {
 }
 
 void Unit::IncSpeedRandomly() {
-  if (speedX_ * speedX_ + speedY_ * speedY_ >= 2 * randomize_) {
-    if (speedX_ > 0) {
-      speedX_ = std::min(0.f, speedX_ - randomize_ * (rand() % 1000) / 1000);
+  if (speed_x_ * speed_x_ + speed_y_ * speed_y_ >= 2 * randomize_) {
+    if (speed_x_ > 0) {
+      speed_x_ = std::min(0.f, speed_x_ - randomize_ * (rand() % 1000) / 1000);
     } else {
-      speedX_ = std::max(0.f, speedX_ + randomize_ * (rand() % 1000) / 1000);
+      speed_x_ = std::max(0.f, speed_x_ + randomize_ * (rand() % 1000) / 1000);
     }
-    if (speedY_ > 0) {
-      speedY_ = std::min(0.f, speedY_ - randomize_ * (rand() % 1000) / 1000);
+    if (speed_y_ > 0) {
+      speed_y_ = std::min(0.f, speed_y_ - randomize_ * (rand() % 1000) / 1000);
     } else {
-      speedY_ = std::max(0.f, speedY_ + randomize_ * (rand() % 1000) / 1000);
+      speed_y_ = std::max(0.f, speed_y_ + randomize_ * (rand() % 1000) / 1000);
     }
   } else {
-    speedX_ += randomize_ * (rand() % 2000 - 1000) / 1000;
-    speedY_ += randomize_ * (rand() % 2000 - 1000) / 1000;
+    speed_x_ += randomize_ * (rand() % 2000 - 1000) / 1000;
+    speed_y_ += randomize_ * (rand() % 2000 - 1000) / 1000;
   }
 }
 

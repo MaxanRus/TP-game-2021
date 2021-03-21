@@ -2,20 +2,20 @@
 #include <iostream>
 
 UnitGroup::UnitGroup(float power, float x, float y, Field* ptr) :
-    Movable(x, y, ptr, false, false, 1, 1) {
+    WorldActor(x, y, ptr, false, false, 1, 1) {
   radius_ = 100.0;
   magnetic_power_ = 3.0;
   while (power > 0) {
-    float p = 4.0 * (rand() % 1000) / 1000;
+    float p = 6.0 * (rand() % 1000) / 1000;
     power -= 1;
-    units.push_back(new Unit(p, "unit", x, y, ptr));
+    units_.push_back(new Unit(p, "unit", x, y, ptr));
   }
 }
 
 void UnitGroup::Tick() {
-  Movable::Tick();
-  for (auto& it : units) {
-    if (dist(*this, *it) <= radius_) {
+  WorldActor::Tick();
+  for (auto& it : units_) {
+    if (Distance(*this, *it) <= radius_) {
       it->IncSpeedRandomly();
       it->Tick();
     } else {
@@ -28,17 +28,17 @@ void UnitGroup::Tick() {
       it->IncSpeed(0, 0);
     }
   }
-  for (auto it = units.begin(); it != units.end(); ++it) {
-    while (it != units.end() && (*it)->GetLife() <= 0) {
+  for (auto it = units_.begin(); it != units_.end(); ++it) {
+    while (it != units_.end() && (*it)->GetLife() <= 0) {
       auto copy = it;
       ++it;
-      units.erase(copy);
+      units_.erase(copy);
     }
   }
 }
 
-void UnitGroup::Draw(int fromX, int fromY, int toX, int toY) const {
-  for (auto it : units) {
-    it->Draw(toX - fromX + it->GetX(), toY - fromY + it->GetY(), it->GetPower());
+void UnitGroup::Draw(int from_x, int from_y, int to_x, int to_y) const {
+  for (auto it : units_) {
+    it->Draw(to_x - from_x + it->GetX(), to_y - from_y + it->GetY(), it->GetPower());
   }
 }

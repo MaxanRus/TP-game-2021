@@ -29,5 +29,5 @@ class Engine {
 
   static Engine* ptr;
 
-  explicit Engine(unsigned width, unsigned height, const std::string& file = "");
+  explicit Engine(unsigned width, unsigned height, const std::string& path_file = "");
 };

@@ -5,11 +5,11 @@
 #include <engine/objects/ground/mineral/Iron.hpp>
 #include <engine/objects/ground/mineral/Copper.hpp>
 
-class GlobalClassManager;
+class SpritesManager;
 
 #pragma once
 
-class GlobalClassManager {
+class SpritesManager {
  public:
   static void Init();
 

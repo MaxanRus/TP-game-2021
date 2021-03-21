@@ -1,14 +1,14 @@
 #include <Console.hpp>
 
-void Console::Init(unsigned int n, unsigned int m) {
-  pixels.resize(n);
+void Console::Init(unsigned int height, unsigned int m) {
+  pixels.resize(height);
   for (auto& i : pixels) {
     i = "";
     for (int q = 0; q < m; ++q) {
       i += " ";
     }
   }
-  buildImages();
+  BuildImages();
 }
 
 void Clear() {
@@ -26,7 +26,7 @@ void Console::Redraw() {
   }
 }
 
-void Console::buildImages() {
+void Console::BuildImages() {
   if (!images.empty()) return;
   images.resize(100);
   images[0] = Image({" "});
@@ -36,11 +36,11 @@ void Console::buildImages() {
 }
 
 void Console::Image::Draw(unsigned int x, unsigned int y) {
-  for (int i = 0; i < img_.size() && i + x < pixels.size(); ++i) {
-    for (int j = 0; j < img_[i].size() && j + y < pixels[i + x].size(); ++j) {
-      pixels[i + x][j + y] = img_[i][j];
+  for (int i = 0; i < images_.size() && i + x < pixels.size(); ++i) {
+    for (int j = 0; j < images_[i].size() && j + y < pixels[i + x].size(); ++j) {
+      pixels[i + x][j + y] = images_[i][j];
     }
   }
 }
 
-Console::Image::Image(std::vector<std::string> img) : img_(std::move(img)) {}
+Console::Image::Image(std::vector<std::string> img) : images_(std::move(img)) {}

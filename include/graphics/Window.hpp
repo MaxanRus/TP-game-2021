@@ -16,7 +16,7 @@ class Window;
 namespace Graphics {
 class Window {
  public:
-  enum class keys {LEFT_MOUSE, RIGHT_MOUSE, ESC, SPACE, ENTER, W, A, S, D, UP, LEFT, DOWN, RIGHT, SHIFT, CTRL};
+  enum class keys { LEFT_MOUSE, RIGHT_MOUSE, ESC, SPACE, ENTER, W, A, S, D, UP, LEFT, DOWN, RIGHT, SHIFT, CTRL };
 
   Window(int width, int height, const char* title_window);
 

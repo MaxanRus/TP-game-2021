@@ -4,10 +4,10 @@ class Water;
 
 #include <engine/objects/ground/GroundWater.hpp>
 
-class Water: public GroundWater {
+class Water : public GroundWater {
  public:
   ~Water() override = default;
-  explicit Water(const std::string& x);
+  explicit Water(const std::string& image_name);
   void Tick() override;
 
  private:

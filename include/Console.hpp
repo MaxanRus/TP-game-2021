@@ -7,34 +7,34 @@
 #include <string>
 
 namespace Console {
-  const unsigned int WindowCellWidth = 30;
-  const unsigned int WindowCellHeight = 50;
+const unsigned int kWindowCellWidth = 30;
+const unsigned int kWindowCellHeight = 50;
 
-  constexpr float CellWidth = 1;
-  constexpr float CellHeight = 1;
+constexpr float kCellWidth = 1;
+constexpr float kCellHeight = 1;
 
-  const int imgNull = 0;
-  const int imgPlayer = 1;
-  const int imgEarth = 2;
-  const int imgStone = 3;
+const int kImgNull = 0;
+const int kImgPlayer = 1;
+const int kImgEarth = 2;
+const int kImgStone = 3;
 
-  static std::vector<std::string> pixels;
+static std::vector<std::string> pixels;
 
-  class Image{
-   public:
-    void Draw(unsigned int x, unsigned int y);
-    Image() = default;
-    explicit Image(std::vector<std::string> img);
+class Image {
+ public:
+  void Draw(unsigned int x, unsigned int y);
+  Image() = default;
+  explicit Image(std::vector<std::string> img);
 
-   private:
-    std::vector<std::string> img_;
+ private:
+  std::vector<std::string> images_;
 
-  };
+};
 
-  static std::vector<Image> images;
+static std::vector<Image> images;
 
-  void buildImages();;
-  void Init(unsigned int n, unsigned int m);
-  void DeInit();
-  void Redraw();
+void BuildImages();;
+void Init(unsigned int height, unsigned int m);
+void DeInit();
+void Redraw();
 }

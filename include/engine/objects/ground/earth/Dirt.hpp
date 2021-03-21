@@ -4,10 +4,10 @@ class Dirt;
 
 #include <engine/objects/ground/GroundEarth.hpp>
 
-class Dirt: public GroundEarth {
+class Dirt : public GroundEarth {
  public:
   ~Dirt() override = default;
-  explicit Dirt(const std::string& x);
+  explicit Dirt(const std::string& image_name);
   void Tick() override;
 
  private:

@@ -3,10 +3,10 @@
 
 Engine* Engine::ptr = nullptr;
 
-Engine::Engine(unsigned width, unsigned height, const std::string& file) :
+Engine::Engine(unsigned width, unsigned height, const std::string& path_file) :
     player_(200, 200, &field_, "player"),
-    field_(width, height, file) {
-  enemies.push_back(new UnitGroup(3000, 30.0, 30.0, &field_));
+    field_(width, height, path_file) {
+  enemies.push_back(new UnitGroup(100, 30.0, 30.0, &field_));
 }
 
 void Engine::Tick() {
@@ -32,8 +32,7 @@ void Engine::Draw() const {
 }
 
 Engine* Engine::GetEngine(unsigned width, unsigned height, const std::string& file) {
-  if (!ptr) {
+  if (!ptr)
     ptr = new Engine(width, height, file);
-  }
   return ptr;
 }

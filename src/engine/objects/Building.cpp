@@ -9,10 +9,9 @@ void Building::DealDamage(float damage) {
   life_ -= damage;
 }
 
-Building::Building(const std::string& img, float life) : Drawable(img), life_(life), max_life_(life) {
-}
+Building::Building(const std::string& img, float life) : Drawable(img), life_(life), max_life_(life) {}
 
-void Building::Repare(float to) {
+void Building::Repair(float to) {
   life_ += to;
   life_ = std::min(life_, max_life_);
 }

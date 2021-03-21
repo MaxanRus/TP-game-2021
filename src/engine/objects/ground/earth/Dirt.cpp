@@ -1,7 +1,5 @@
 #include "engine/objects/ground/earth/Dirt.hpp"
 
-Dirt::Dirt(const std::string& x) : GroundEarth(x) {
-}
+Dirt::Dirt(const std::string& image_name) : GroundEarth(image_name) {}
 
-void Dirt::Tick() {
-}
+void Dirt::Tick() {}

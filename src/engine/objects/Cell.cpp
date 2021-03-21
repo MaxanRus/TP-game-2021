@@ -10,7 +10,7 @@ void Cell::Draw(int x, int y) const {
   }
 }
 
-float Cell::GetSpeed() const { return speed_; }
+float Cell::GetSpeed() const { return speed_coefficient_; }
 
 size_t Cell::GetSize() const { return items_.size(); }
 
