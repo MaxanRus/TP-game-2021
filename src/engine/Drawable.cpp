@@ -15,6 +15,6 @@ void Drawable::SetImage(const std::string& img) {
   image_ = img;
 }
 
-Drawable::Drawable(const std::string& img): image_(img) {
+Drawable::Drawable(const std::string& img) : image_(img) {
 }
 

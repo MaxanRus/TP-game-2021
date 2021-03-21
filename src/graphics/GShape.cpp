@@ -26,7 +26,7 @@ Triangle::Triangle(int x1, int y1, int x2, int y2, int x3, int y3) : x1(x2), y1(
   glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6, vertices, GL_STATIC_DRAW);
   glEnableVertexAttribArray(0);
 
-  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*) 0);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindVertexArray(0);
 }
@@ -64,7 +64,7 @@ Quadrangle::Quadrangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, i
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, id_element_buffer_);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * 6, indices, GL_STATIC_DRAW);
 
-  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*) 0);
   glEnableVertexAttribArray(0);
 
   glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -119,7 +119,7 @@ void Image::Draw(Window& window, Shader shader, const Transform& transform) cons
 void Image::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
   if (abs(rotate) > 1e-3)
     Draw(window, shader, Transform().Move(x + scale * width_ / 2.0f, y + scale * height_ / 2.0f).Scale(scale)
-                                              .Rotate(rotate).Move(-width_ / 2.0f, -height_ / 2.0f));
+        .Rotate(rotate).Move(-width_ / 2.0f, -height_ / 2.0f));
   else
     Draw(window, shader, Transform().Move(x, y).Scale(scale));
 }

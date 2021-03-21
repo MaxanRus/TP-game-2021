@@ -3,7 +3,7 @@
 
 Engine* Engine::ptr = nullptr;
 
-Engine::Engine(unsigned width, unsigned height, const std::string& file):
+Engine::Engine(unsigned width, unsigned height, const std::string& file) :
     player_(200, 200, &field_, "player"),
     field_(width, height, file) {
   enemies.push_back(new UnitGroup(3000, 30.0, 30.0, &field_));

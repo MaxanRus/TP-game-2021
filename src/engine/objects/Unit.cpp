@@ -3,7 +3,7 @@
 #include <iostream>
 
 Unit::Unit(float power, const std::string& img, float x, float y,
-           Field* ptr, bool fly, bool rooted, float sx, float sy):
+           Field* ptr, bool fly, bool rooted, float sx, float sy) :
     Movable(x, y, ptr, fly, rooted, sx, sy),
     Drawable(img), power_(power), last_attack_(0) {
   damage_ = power;
@@ -27,7 +27,7 @@ void Unit::Tick() {
 }
 
 void Unit::IncSpeedRandomly() {
-  if (speedX_*speedX_ + speedY_*speedY_ >= 2*randomize_) {
+  if (speedX_ * speedX_ + speedY_ * speedY_ >= 2 * randomize_) {
     if (speedX_ > 0) {
       speedX_ = std::min(0.f, speedX_ - randomize_ * (rand() % 1000) / 1000);
     } else {

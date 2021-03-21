@@ -1,7 +1,7 @@
 #include "engine/objects/UnitGroup.hpp"
 #include <iostream>
 
-UnitGroup::UnitGroup(float power, float x, float y, Field* ptr):
+UnitGroup::UnitGroup(float power, float x, float y, Field* ptr) :
     Movable(x, y, ptr, false, false, 1, 1) {
   radius_ = 100.0;
   magnetic_power_ = 3.0;
@@ -21,7 +21,7 @@ void UnitGroup::Tick() {
     } else {
       float sx = it->GetX() - x_;
       float sy = it->GetY() - y_;
-      float d = sqrtf(magnetic_power_ / sqrtf(sx*sx + sy*sy));
+      float d = sqrtf(magnetic_power_ / sqrtf(sx * sx + sy * sy));
       sx *= d, sy *= d;
       it->IncSpeed(-sx, -sy);
       it->Tick();

@@ -15,7 +15,7 @@ Window::Window(int width, int height, const char* title_window) {
     return;
 
   glfwMakeContextCurrent(window_);
-  gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+  gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
 
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -75,10 +75,12 @@ bool Window::CheckPressButton(keys key) {
     case keys::LEFT: return glfwGetKey(window_, GLFW_KEY_LEFT) == GLFW_PRESS;
     case keys::DOWN: return glfwGetKey(window_, GLFW_KEY_DOWN) == GLFW_PRESS;
     case keys::RIGHT: return glfwGetKey(window_, GLFW_KEY_RIGHT) == GLFW_PRESS;
-    case keys::SHIFT: return glfwGetKey(window_, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS
-                              || glfwGetKey(window_, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS;
-    case keys::CTRL: return glfwGetKey(window_, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS
-                              || glfwGetKey(window_, GLFW_KEY_RIGHT_CONTROL) == GLFW_PRESS;
+    case keys::SHIFT:
+      return glfwGetKey(window_, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS
+          || glfwGetKey(window_, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS;
+    case keys::CTRL:
+      return glfwGetKey(window_, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS
+          || glfwGetKey(window_, GLFW_KEY_RIGHT_CONTROL) == GLFW_PRESS;
     default: return false;
   }
 }

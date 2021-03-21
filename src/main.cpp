@@ -1,15 +1,6 @@
 #include <iostream>
-#include <Console.hpp>
-#include <engine/Field.hpp>
-#include <engine/objects/Player.hpp>
-#include <engine/objects/ground/GroundEarth.hpp>
 #include <Engine.hpp>
-#include <memory>
 #include <GlobalClassManager.hpp>
-#include <engine/objects/ground/mineral/Copper.hpp>
-#include "graphics/Window.hpp"
-#include "graphics/GShape.hpp"
-#include "graphics/Transform.hpp"
 #include "graphics/ResourceManager.hpp"
 #include "Timer.hpp"
 
@@ -17,11 +8,6 @@ void Initialization();
 
 int main() {
   Initialization();
-//
-//  Engine::GetDirt()->Draw(1, 1);
-//  window->Render();
-//
-//  while (true) ;
 
   while (Graphics::ResourceManager::GetWindow().IsLive()) {
     double t = glfwGetTime();
