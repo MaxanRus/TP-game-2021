@@ -6,9 +6,11 @@ class ResourceManager;
 
 #include <map>
 #include <string>
+#include <memory>
 
 #include "graphics/Shader.hpp"
 #include "graphics/GShape.hpp"
+
 
 namespace Graphics {
 class ResourceManager {
@@ -30,10 +32,7 @@ class ResourceManager {
     return images_[name];
   }
   static Window& CreateWindow(size_t width, size_t height, std::string title) {
-    if (!window_) {
-      delete[] window_;
-    }
-    window_ = new Window(width, height, title.c_str());
+    window_ = std::make_unique<Window>(width, height, title.c_str());
     return *window_;
   }
   static Window& GetWindow() { return *window_; }
@@ -44,6 +43,6 @@ class ResourceManager {
 
   static inline std::map<std::string, Shader> shaders_;
   static inline std::map<std::string, Image> images_;
-  static inline Window* window_ = nullptr;
+  static inline std::unique_ptr<Window> window_ = nullptr;
 };
 }
