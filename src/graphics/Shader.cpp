@@ -1,12 +1,14 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <fstream>
+#include <iostream>
+#include <tuple>
 
 #include "graphics/Shader.hpp"
 
 using namespace Graphics;
 
-Shader::Shader(const std::string& vertex_path, const std::string& fragment_path) {
+Shader::Shader(const std::string_view& vertex_path, const std::string_view& fragment_path) {
   auto[vertex_code_shader, fragment_code_shader] = LoadFromFile(vertex_path, fragment_path);
   Compile(vertex_code_shader, fragment_code_shader);
 }
@@ -27,11 +29,11 @@ void Shader::SetProjectorMatrix(const Transform& transfrom) const {
                      1, GL_FALSE, transfrom.GetMatrix());
 }
 
-std::pair<std::string, std::string> Shader::LoadFromFile(const std::string& vertex_path,
-                                                         const std::string& fragment_path) {
-  std::string buffer;
+std::pair<std::string, std::string> Shader::LoadFromFile(const std::string_view& vertex_path,
+                                                                   const std::string_view& fragment_path) {
+  std::string buffer = "";
 
-  std::ifstream vertex_shader_file(vertex_path);
+  std::ifstream vertex_shader_file((std::string(vertex_path)));
   std::string vertex_code_shader;
 
   while (getline(vertex_shader_file, buffer)) {
@@ -40,7 +42,7 @@ std::pair<std::string, std::string> Shader::LoadFromFile(const std::string& vert
   }
   vertex_shader_file.close();
 
-  std::ifstream fragment_shader_file(fragment_path);
+  std::ifstream fragment_shader_file((std::string(fragment_path)));
 
   std::string fragment_code_shader;
   while (getline(fragment_shader_file, buffer)) {
@@ -49,7 +51,7 @@ std::pair<std::string, std::string> Shader::LoadFromFile(const std::string& vert
   }
   fragment_shader_file.close();
 
-  return make_pair(vertex_code_shader, fragment_code_shader);
+  return std::make_pair(vertex_code_shader, fragment_code_shader);
 }
 
 void Shader::Compile(const std::string& vertex_code_shader, const std::string& fragment_code_shader) {

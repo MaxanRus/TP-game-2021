@@ -1,7 +1,7 @@
 #pragma once
 
 #include <map>
-#include <string>
+#include <string_view>
 #include <memory>
 
 #include "graphics/Shader.hpp"
@@ -15,14 +15,14 @@ class ResourceManager {
     if (!me) me = new ResourceManager;
     return me;
   }
-  static Shader& LoadShader(const std::string& v_path, const std::string& f_path, const std::string& name) {
+  static Shader& LoadShader(const std::string_view& v_path, const std::string_view& f_path, const std::string_view& name) {
     return shaders_[name] = Shader(v_path, f_path);
   }
-  static Shader& GetShader(std::string name) {
+  static Shader& GetShader(std::string_view name) {
     return shaders_[name];
   }
-  static Image& LoadImage(const std::string& path, const std::string& name) {
-    return images_[name] = Image(path.c_str());
+  static Image& LoadImage(const std::string_view& path, const std::string_view& name) {
+    return images_[name] = Image(path);
   }
   static Image& GetImage(const std::string_view& name) {
     return images_[name];
