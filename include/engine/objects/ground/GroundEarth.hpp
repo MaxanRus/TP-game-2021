@@ -1,12 +1,10 @@
-class GroundEarth;
-
 #pragma once
 
-#include <engine/objects/Cell.hpp>
+#include <engine/objects/Ground.hpp>
 
 class GroundEarth : public Ground {
  public:
   ~GroundEarth() override = default;
-  explicit GroundEarth(const std::string& image_name);
+  explicit GroundEarth(const std::string_view& image_name);
  private:
 };

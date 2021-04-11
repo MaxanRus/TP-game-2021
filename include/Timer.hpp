@@ -1,12 +1,9 @@
-class Timer;
-
 #pragma once
 
-#include <chrono>
-#include <unistd.h>
+#include <cstdint>
 
 class Timer {
  public:
-  static unsigned GetTime();
-  static void Sleep(unsigned seconds);
+  static uint32_t GetTime();
+  static void Sleep(uint32_t seconds);
 };

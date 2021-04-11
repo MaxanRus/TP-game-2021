@@ -1,5 +1,6 @@
 #include "engine/objects/UnitGroup.hpp"
 #include <iostream>
+#include <cmath>
 
 UnitGroup::UnitGroup(float power, float x, float y, Field* ptr) :
     WorldActor(x, y, ptr, false, false, 1, 1) {

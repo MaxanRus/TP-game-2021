@@ -2,4 +2,4 @@
 
 void GroundEmpty::Tick() {}
 
-GroundEmpty::GroundEmpty(const std::string& image_name) : Ground(image_name) {}
+GroundEmpty::GroundEmpty(const std::string_view& image_name) : Ground(image_name) {}

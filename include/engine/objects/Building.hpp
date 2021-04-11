@@ -1,5 +1,3 @@
-class Building;
-
 #pragma once
 
 #include <engine/Drawable.hpp>
@@ -10,7 +8,7 @@ class Building : public Drawable, public Tickable {
   [[nodiscard]] float GetLife() const;
   void DealDamage(float damage);
   void Repair(float to);
-  explicit Building(const std::string& img, float life);
+  explicit Building(const std::string_view& img, float life);
 
  private:
   float life_;

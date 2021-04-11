@@ -1,11 +1,11 @@
 #include <Console.hpp>
 
-void Console::Init(unsigned int height, unsigned int m) {
+void Console::Init(uint32_t height, uint32_t m) {
   pixels.resize(height);
   for (auto& i : pixels) {
     i = "";
     for (int q = 0; q < m; ++q) {
-      i += " ";
+      //i += " ";
     }
   }
   BuildImages();
@@ -35,12 +35,12 @@ void Console::BuildImages() {
   images[3] = Image({","});
 }
 
-void Console::Image::Draw(unsigned int x, unsigned int y) {
+void Console::Image::Draw(uint32_t x, uint32_t y) {
   for (int i = 0; i < images_.size() && i + x < pixels.size(); ++i) {
     for (int j = 0; j < images_[i].size() && j + y < pixels[i + x].size(); ++j) {
-      pixels[i + x][j + y] = images_[i][j];
+      //pixels[i + x][j + y] = images_[i][j];
     }
   }
 }
 
-Console::Image::Image(std::vector<std::string> img) : images_(std::move(img)) {}
+Console::Image::Image(std::vector<std::string_view> img) : images_(std::move(img)) {}

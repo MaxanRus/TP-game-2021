@@ -1,10 +1,8 @@
-class Cell;
-
 #pragma once
 
 #include <engine/Drawable.hpp>
-#include <vector>
 #include <engine/Tickable.hpp>
+#include <vector>
 #include "Ground.hpp"
 #include "Building.hpp"
 

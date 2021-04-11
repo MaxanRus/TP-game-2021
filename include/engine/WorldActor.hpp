@@ -1,8 +1,5 @@
-class WorldActor;
-
 #pragma once
 
-#include "Tickable.hpp"
 #include "Field.hpp"
 
 class WorldActor : Tickable {

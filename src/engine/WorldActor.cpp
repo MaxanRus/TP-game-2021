@@ -1,4 +1,5 @@
 #include "engine/WorldActor.hpp"
+#include <cmath>
 
 void WorldActor::Move(float x, float y) {
   x_ = x;

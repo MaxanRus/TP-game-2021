@@ -1,22 +1,17 @@
-class Drawable;
-
 #pragma once
 
-#include <tuple>
-#include <cmath>
-#include <graphics/GShape.hpp>
-#include "../graphics/ResourceManager.hpp"
+#include <string_view>
 
 class Drawable {
  public:
   Drawable() = default;
-  explicit Drawable(const std::string& image);
+  explicit Drawable(const std::string_view& image);
   virtual void Draw(int x, int y, float power = 1.0) const;
   virtual ~Drawable() = default;
 
-  [[nodiscard]] const std::string& GetImg() const;
-  void SetImage(const std::string& image);
+  [[nodiscard]] const std::string_view& GetImg() const;
+  void SetImage(const std::string_view& image);
 
  private:
-  std::string image_;
+  std::string_view image_;
 };

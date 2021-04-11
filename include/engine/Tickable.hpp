@@ -1,5 +1,3 @@
-class Tickable;
-
 #pragma once
 
 class Tickable {

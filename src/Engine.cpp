@@ -1,9 +1,10 @@
 #include "Engine.hpp"
 #include <iostream>
+#include <graphics/ResourceManager.hpp>
 
 Engine* Engine::ptr = nullptr;
 
-Engine::Engine(unsigned width, unsigned height, const std::string& path_file) :
+Engine::Engine(uint32_t width, uint32_t height, const std::string_view& path_file) :
     player_(200, 200, &field_, "player"),
     field_(width, height, path_file) {
   enemies.push_back(new UnitGroup(100, 30.0, 30.0, &field_));
@@ -31,7 +32,7 @@ void Engine::Draw() const {
   Graphics::ResourceManager::GetWindow().Render();
 }
 
-Engine* Engine::GetEngine(unsigned width, unsigned height, const std::string& file) {
+Engine* Engine::GetEngine(uint32_t width, uint32_t height, const std::string_view& file) {
   if (!ptr)
     ptr = new Engine(width, height, file);
   return ptr;

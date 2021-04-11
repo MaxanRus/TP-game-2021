@@ -1,15 +1,12 @@
-class Player;
-
 #pragma once
 
 #include <engine/Drawable.hpp>
-#include <engine/Field.hpp>
 #include <engine/WorldActor.hpp>
 
 class Player : public Drawable, public WorldActor {
  public:
   Player() = default;
-  Player(float x, float y, Field* field, const std::string& img, bool fly = false, bool rooted = false);
+  Player(float x, float y, Field* field, const std::string_view& img, bool fly = false, bool rooted = false);
   ~Player() override = default;
 
   void Stop();

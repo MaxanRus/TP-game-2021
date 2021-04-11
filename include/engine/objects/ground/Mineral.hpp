@@ -1,12 +1,10 @@
-class Mineral;
-
 #pragma once
 
-#include <engine/objects/Cell.hpp>
+#include <engine/objects/Ground.hpp>
 
 class Mineral : public Ground {
  public:
   ~Mineral() override = default;
-  explicit Mineral(const std::string& image_name);
+  explicit Mineral(const std::string_view& image_name);
  private:
 };

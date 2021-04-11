@@ -2,4 +2,4 @@
 
 void Iron::Tick() {}
 
-Iron::Iron(const std::string& image_name) : Mineral(image_name) {}
+Iron::Iron(const std::string_view& image_name) : Mineral(image_name) {}

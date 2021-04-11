@@ -1,22 +1,12 @@
-class Engine;
-
 #pragma once
 
-#include <graphics/Window.hpp>
-#include <engine/Drawable.hpp>
-#include <engine/Field.hpp>
 #include <engine/objects/Player.hpp>
-#include <engine/objects/ground/GroundEmpty.hpp>
-#include <engine/objects/ground/earth/Dirt.hpp>
-#include <engine/objects/ground/earth/Stone.hpp>
-#include <engine/objects/ground/water/Water.hpp>
-#include <engine/objects/ground/mineral/Iron.hpp>
 #include <engine/objects/UnitGroup.hpp>
 
 class Engine {
  public:
-  static Engine* GetEngine(unsigned width = 0, unsigned height = 0,
-                           const std::string& file = "");
+  static Engine* GetEngine(uint32_t width = 0, uint32_t height = 0,
+                           const std::string_view& file = "");
   ~Engine() = default;
 
   void Tick();
@@ -29,5 +19,5 @@ class Engine {
 
   static Engine* ptr;
 
-  explicit Engine(unsigned width, unsigned height, const std::string& path_file = "");
+  explicit Engine(uint32_t width, uint32_t height, const std::string_view& path_file = "");
 };

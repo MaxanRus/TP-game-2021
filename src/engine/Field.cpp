@@ -1,7 +1,8 @@
-#include <Engine.hpp>
 #include <engine/Field.hpp>
 #include <SpritesManager.hpp>
 #include <ConstantsManager.hpp>
+#include <cmath>
+#include <graphics/ResourceManager.hpp>
 
 const Cell& Field::GetCell(float x, float y) const {
   int X = std::trunc(x / ConstantsManager::kSizeCell);
@@ -9,7 +10,7 @@ const Cell& Field::GetCell(float x, float y) const {
   return At(X, Y);
 }
 
-std::pair<unsigned int, unsigned int> Field::GetCellPos(float x, float y) {
+std::pair<uint32_t, uint32_t> Field::GetCellPos(float x, float y) {
   return {std::trunc(x / ConstantsManager::kSizeCell), std::trunc(y / ConstantsManager::kSizeCell)};
 }
 
@@ -50,15 +51,15 @@ const Cell& Field::At(int x, int y) const {
   return field_[x][y];
 }
 
-std::vector<Cell>& Field::operator[](unsigned int i) { return field_[i]; }
+std::vector<Cell>& Field::operator[](uint32_t i) { return field_[i]; }
 
-const std::vector<Cell>& Field::operator[](unsigned int i) const { return field_[i]; }
+const std::vector<Cell>& Field::operator[](uint32_t i) const { return field_[i]; }
 
-unsigned int Field::GetWidth() const { return width_; }
+uint32_t Field::GetWidth() const { return width_; }
 
-unsigned int Field::GetHeight() const { return height_; }
+uint32_t Field::GetHeight() const { return height_; }
 
-Field::Field(unsigned width, unsigned height, const std::string& path_file) :
+Field::Field(uint32_t width, uint32_t height, const std::string_view& path_file) :
     width_(width), height_(height),
     field_(width, std::vector<Cell>(height)) {
   int c = 0;

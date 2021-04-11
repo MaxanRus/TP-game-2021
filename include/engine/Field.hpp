@@ -1,11 +1,6 @@
-class Field;
-
 #pragma once
 
-#include <vector>
 #include <engine/objects/Cell.hpp>
-#include <cmath>
-#include <engine/objects/Building.hpp>
 
 class Engine;
 
@@ -15,7 +10,7 @@ class Field {
   [[nodiscard]] unsigned int GetHeight() const;
 
   Field() = default;
-  Field(unsigned int width, unsigned int height, const std::string& path_file);
+  Field(unsigned int width, unsigned int height, const std::string_view& path_file);
 
   [[nodiscard]] std::vector<Cell>& operator[](unsigned int i);
   [[nodiscard]] const std::vector<Cell>& operator[](unsigned int i) const;

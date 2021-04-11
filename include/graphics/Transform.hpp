@@ -1,7 +1,3 @@
-namespace Graphics {
-class Transform;
-}
-
 #pragma once
 
 #include <glm/gtc/type_ptr.hpp>

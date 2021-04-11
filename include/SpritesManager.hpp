@@ -1,13 +1,12 @@
+#pragma once
+
 #include <engine/objects/ground/earth/Dirt.hpp>
 #include <engine/objects/ground/earth/Stone.hpp>
 #include <engine/objects/ground/GroundEmpty.hpp>
 #include <engine/objects/ground/water/Water.hpp>
 #include <engine/objects/ground/mineral/Iron.hpp>
 #include <engine/objects/ground/mineral/Copper.hpp>
-
-class SpritesManager;
-
-#pragma once
+#include <engine/objects/Cell.hpp>
 
 class SpritesManager {
  public:

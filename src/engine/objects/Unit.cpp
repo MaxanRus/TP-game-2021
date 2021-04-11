@@ -2,7 +2,7 @@
 #include "engine/objects/Unit.hpp"
 #include <iostream>
 
-Unit::Unit(float power, const std::string& img, float x, float y,
+Unit::Unit(float power, const std::string_view& img, float x, float y,
            Field* ptr, bool fly, bool rooted, float sx, float sy) :
     WorldActor(x, y, ptr, fly, rooted, sx, sy),
     Drawable(img), power_(power), last_attack_(0) {

@@ -1,8 +1,5 @@
-class UnitGroup;
-
 #pragma once
 
-#include <engine/WorldActor.hpp>
 #include "Unit.hpp"
 #include <list>
 

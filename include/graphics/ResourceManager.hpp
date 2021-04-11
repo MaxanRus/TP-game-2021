@@ -1,7 +1,3 @@
-namespace Graphics {
-class ResourceManager;
-}
-
 #pragma once
 
 #include <map>
