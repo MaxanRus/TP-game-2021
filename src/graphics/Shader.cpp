@@ -53,7 +53,7 @@ std::pair<std::string, std::string> Shader::LoadFromFile(const std::string& vert
 }
 
 void Shader::Compile(const std::string& vertex_code_shader, const std::string& fragment_code_shader) {
-  unsigned int vertex, fragment;
+  uint32_t vertex, fragment;
 
   // Вершинный шейдер
   vertex = glCreateShader(GL_VERTEX_SHADER);

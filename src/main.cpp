@@ -9,7 +9,7 @@ void Initialization();
 int main() {
   Initialization();
 
-  while (Graphics::ResourceManager::GetWindow().IsLive()) {
+  while (Graphics::ResourceManager::GetWindow().IsAlive()) {
     double t = glfwGetTime();
 
     /// events

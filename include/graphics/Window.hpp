@@ -18,9 +18,9 @@ class Window {
  public:
   enum class keys { LEFT_MOUSE, RIGHT_MOUSE, ESC, SPACE, ENTER, W, A, S, D, UP, LEFT, DOWN, RIGHT, SHIFT, CTRL };
 
-  Window(int width, int height, const char* title_window);
+  Window(int width, int height, std::string_view title_window);
 
-  bool IsLive() const;
+  bool IsAlive() const;
   std::pair<int, int> GetSizeWindow() const;
   std::pair<int, int> GetCursorPosition() const;
   void Use(Shader);
@@ -33,8 +33,6 @@ class Window {
   }
 
   bool CheckPressButton(keys);
-
-  operator bool() const;
 
  private:
   GLFWwindow* window_ = nullptr;

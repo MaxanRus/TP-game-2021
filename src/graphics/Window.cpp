@@ -3,13 +3,13 @@
 
 using namespace Graphics;
 
-Window::Window(int width, int height, const char* title_window) {
+Window::Window(int width, int height, std::string_view title_window) {
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-  window_ = glfwCreateWindow(width, height, title_window, NULL, NULL);
+  window_ = glfwCreateWindow(width, height, std::string(title_window).c_str(), NULL, NULL);
 
   if (!window_)
     return;
@@ -29,7 +29,7 @@ Window::Window(int width, int height, const char* title_window) {
   Clear();
 }
 
-bool Window::IsLive() const {
+bool Window::IsAlive() const {
   return !glfwWindowShouldClose(window_);
 }
 
@@ -83,8 +83,4 @@ bool Window::CheckPressButton(keys key) {
           || glfwGetKey(window_, GLFW_KEY_RIGHT_CONTROL) == GLFW_PRESS;
     default: return false;
   }
-}
-
-Window::operator bool() const {
-  return window_;
 }
