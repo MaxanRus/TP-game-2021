@@ -1,30 +1,30 @@
 #include "SpritesManager.hpp"
 
-Dirt* SpritesManager::dirt_ = new Dirt("dirt");
-Stone* SpritesManager::stone_ = new Stone("stone");
+GroundEarth* SpritesManager::dirt_ = new GroundEarth("dirt");
+GroundEarth* SpritesManager::stone_ = new GroundEarth("stone");
 
-Water* SpritesManager::water_ = new Water("water");
+GroundWater* SpritesManager::water_ = new GroundWater("water");
 
 GroundEmpty* SpritesManager::ground_empty_ = new GroundEmpty("empty");
 
 Cell* SpritesManager::empty_cell_ = new Cell();
 
-Iron* SpritesManager::iron_ = new Iron("iron");
-Copper* SpritesManager::copper_ = new Copper("copper");
+Mineral* SpritesManager::iron_ = new Mineral("iron");
+Mineral* SpritesManager::copper_ = new Mineral("copper");
 
 void SpritesManager::Init() {
   empty_cell_->Add(ground_empty_);
 }
 
-Dirt* SpritesManager::GetDirt() {
+GroundEarth* SpritesManager::GetDirt() {
   return dirt_;
 }
 
-Stone* SpritesManager::GetStone() {
+GroundEarth* SpritesManager::GetStone() {
   return stone_;
 }
 
-Water* SpritesManager::GetWater() {
+GroundWater* SpritesManager::GetWater() {
   return water_;
 }
 
@@ -36,10 +36,10 @@ Cell* SpritesManager::GetEmptyCell() {
   return empty_cell_;
 }
 
-Iron* SpritesManager::GetIron() {
+Mineral* SpritesManager::GetIron() {
   return iron_;
 }
 
-Copper* SpritesManager::GetCopper() {
+Mineral* SpritesManager::GetCopper() {
   return copper_;
 }

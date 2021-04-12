@@ -2,10 +2,10 @@
 #include <Engine.hpp>
 #include <graphics/ResourceManager.hpp>
 
-void Drawable::Draw(int x, int y, float size) const {
+void Drawable::Draw(const Vector2D& position, float size) const {
   Graphics::ResourceManager::GetImage(image_).Draw(Graphics::ResourceManager::GetWindow(),
                                                    Graphics::ResourceManager::GetShader("image"),
-                                                   x, y, size);
+                                                   position.x, position.y, size);
 }
 
 const std::string_view& Drawable::GetImg() const { return image_; }

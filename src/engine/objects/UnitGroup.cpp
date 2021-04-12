@@ -2,14 +2,14 @@
 #include <iostream>
 #include <cmath>
 
-UnitGroup::UnitGroup(float power, float x, float y, Field* ptr) :
-    WorldActor(x, y, ptr, false, false, 1, 1) {
+UnitGroup::UnitGroup(float power, const Vector2D& position, Field* ptr) :
+    WorldActor(position, ptr, false, false, {1, 1}) {
   radius_ = 100.0;
   magnetic_power_ = 3.0;
   while (power > 0) {
     float p = 6.0 * (rand() % 1000) / 1000;
     power -= 1;
-    units_.push_back(new Unit(p, "unit", x, y, ptr));
+    units_.push_back(new Unit(p, "unit", position, ptr));
   }
 }
 
@@ -20,13 +20,13 @@ void UnitGroup::Tick() {
       it->IncSpeedRandomly();
       it->Tick();
     } else {
-      float sx = it->GetX() - x_;
-      float sy = it->GetY() - y_;
+      float sx = it->GetX() - position_.x;
+      float sy = it->GetY() - position_.y;
       float d = sqrtf(magnetic_power_ / sqrtf(sx * sx + sy * sy));
       sx *= d, sy *= d;
-      it->IncSpeed(-sx, -sy);
+      it->IncSpeed(-speed_);
       it->Tick();
-      it->IncSpeed(0, 0);
+      it->IncSpeed({0, 0});
     }
   }
   for (auto it = units_.begin(); it != units_.end(); ++it) {
@@ -38,8 +38,8 @@ void UnitGroup::Tick() {
   }
 }
 
-void UnitGroup::Draw(int from_x, int from_y, int to_x, int to_y) const {
+void UnitGroup::Draw(const Vector2D& from, const Vector2D& to) const {
   for (auto it : units_) {
-    it->Draw(to_x - from_x + it->GetX(), to_y - from_y + it->GetY(), it->GetPower());
+    it->Draw({to.x - from.x + it->GetX(), to.y - from.y + it->GetY()}, it->GetPower());
   }
 }

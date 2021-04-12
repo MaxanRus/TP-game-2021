@@ -2,9 +2,9 @@
 #include "engine/objects/Unit.hpp"
 #include <iostream>
 
-Unit::Unit(float power, const std::string_view& img, float x, float y,
-           Field* ptr, bool fly, bool rooted, float sx, float sy) :
-    WorldActor(x, y, ptr, fly, rooted, sx, sy),
+Unit::Unit(float power, const std::string_view& img, const Vector2D& a,
+           Field* ptr, bool fly, bool rooted, const Vector2D& speed) :
+    WorldActor(a, ptr, fly, rooted, speed),
     Drawable(img), power_(power), last_attack_(0) {
   damage_ = power;
   move_speed_ = 1.0;
@@ -19,7 +19,7 @@ void Unit::Tick() {
   auto time = Timer::GetTime();
   if (last_attack_ <= time) {
     last_attack_ = time + attack_speed_;
-    auto ptr = field_->GetBuilding(x_, y_);
+    auto ptr = field_->GetBuilding(position_);
     if (ptr != nullptr) {
       ptr->DealDamage(damage_);
     }
@@ -27,20 +27,20 @@ void Unit::Tick() {
 }
 
 void Unit::IncSpeedRandomly() {
-  if (speed_x_ * speed_x_ + speed_y_ * speed_y_ >= 2 * randomize_) {
-    if (speed_x_ > 0) {
-      speed_x_ = std::min(0.f, speed_x_ - randomize_ * (rand() % 1000) / 1000);
+  if (speed_.x * speed_.x + speed_.y * speed_.y >= 2 * randomize_) {
+    if (speed_.x > 0) {
+      speed_.x = std::min(0.f, speed_.x - randomize_ * (rand() % 1000) / 1000);
     } else {
-      speed_x_ = std::max(0.f, speed_x_ + randomize_ * (rand() % 1000) / 1000);
+      speed_.x = std::max(0.f, speed_.x + randomize_ * (rand() % 1000) / 1000);
     }
-    if (speed_y_ > 0) {
-      speed_y_ = std::min(0.f, speed_y_ - randomize_ * (rand() % 1000) / 1000);
+    if (speed_.y > 0) {
+      speed_.y = std::min(0.f, speed_.y - randomize_ * (rand() % 1000) / 1000);
     } else {
-      speed_y_ = std::max(0.f, speed_y_ + randomize_ * (rand() % 1000) / 1000);
+      speed_.y = std::max(0.f, speed_.y + randomize_ * (rand() % 1000) / 1000);
     }
   } else {
-    speed_x_ += randomize_ * (rand() % 2000 - 1000) / 1000;
-    speed_y_ += randomize_ * (rand() % 2000 - 1000) / 1000;
+    speed_.x += randomize_ * (rand() % 2000 - 1000) / 1000;
+    speed_.y += randomize_ * (rand() % 2000 - 1000) / 1000;
   }
 }
 

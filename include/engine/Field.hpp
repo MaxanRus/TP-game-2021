@@ -1,31 +1,32 @@
 #pragma once
 
 #include <engine/objects/Cell.hpp>
+#include <Helpers/Vector2D.hpp>
 
 class Engine;
 
 class Field {
  public:
-  [[nodiscard]] unsigned int GetWidth() const;
-  [[nodiscard]] unsigned int GetHeight() const;
+  [[nodiscard]] uint32_t GetWidth() const;
+  [[nodiscard]] uint32_t GetHeight() const;
 
   Field() = default;
-  Field(unsigned int width, unsigned int height, const std::string_view& path_file);
+  Field(uint32_t width, uint32_t height, const std::string_view& path_file);
 
-  [[nodiscard]] std::vector<Cell>& operator[](unsigned int i);
-  [[nodiscard]] const std::vector<Cell>& operator[](unsigned int i) const;
+  [[nodiscard]] std::vector<Cell>& operator[](uint32_t i);
+  [[nodiscard]] const std::vector<Cell>& operator[](uint32_t i) const;
 
-  [[nodiscard]] const Cell& GetCell(float x, float y) const;
-  [[nodiscard]] static std::pair<unsigned int, unsigned int> GetCellPos(float x, float y);
+  [[nodiscard]] const Cell& GetCell(const Vector2D& a) const;
+  [[nodiscard]] static std::pair<uint32_t, uint32_t> GetCellPos(const Vector2D& a);
 
-  [[nodiscard]] Building* GetBuilding(float x, float y) const;
+  [[nodiscard]] Building* GetBuilding(const Vector2D& a) const;
 
-  void Draw(float x, float y, float center_x, float center_y) const;
+  void Draw(const Vector2D& a, const Vector2D& center) const;
 
   void Tick();
 
  private:
-  unsigned int width_ = 0, height_ = 0;
+  uint32_t width_ = 0, height_ = 0;
   std::vector<std::vector<Cell>> field_;
 
   [[nodiscard]] Cell& At(int x, int y);

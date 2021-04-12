@@ -1,9 +1,8 @@
 #include "engine/WorldActor.hpp"
 #include <cmath>
 
-void WorldActor::Move(float x, float y) {
-  x_ = x;
-  y_ = y;
+void WorldActor::Move(const Vector2D& a) {
+  position_ = a;
 }
 
 void WorldActor::Tick() {
@@ -15,34 +14,33 @@ void WorldActor::Tick() {
     if (fly_) {
       speed_coefficient = 1.0;
     } else {
-      speed_coefficient = field_->GetCell(speed_x_, speed_y_).GetSpeed();
+      speed_coefficient = field_->GetCell(speed_).GetSpeed();
     }
   }
-  x_ += speed_x_ * speed_coefficient;
-  y_ += speed_y_ * speed_coefficient;
+  position_.x += speed_.x * speed_coefficient;
+  position_.y += speed_.y * speed_coefficient;
 }
 
-void WorldActor::IncSpeed(float x, float y) {
-  speed_x_ += x;
-  speed_y_ += y;
+void WorldActor::IncSpeed(const Vector2D& a) {
+  speed_ += a;
 }
 
-WorldActor::WorldActor(float x, float y, Field* ptr, bool fly, bool rooted, float sx, float sy) :
-    x_(x), y_(y), field_(ptr), fly_(fly), rooted_(rooted), speed_x_(sx), speed_y_(sy) {}
+WorldActor::WorldActor(const Vector2D& position, Field* ptr, bool fly, bool rooted, const Vector2D& speed) :
+    position_(position), field_(ptr), fly_(fly), rooted_(rooted), speed_(speed) {}
 
 float WorldActor::Distance(const WorldActor& first, const WorldActor& second) {
-  return sqrtf((first.x_ - second.x_) * (first.x_ - second.x_) + (first.y_ - second.y_) * (first.y_ - second.y_));
+  return sqrtf((first.position_.x - second.position_.x) * (first.position_.x - second.position_.x) +
+               (first.position_.y - second.position_.y) * (first.position_.y - second.position_.y));
 }
 
 float WorldActor::GetX() const {
-  return x_;
+  return position_.x;
 }
 
 float WorldActor::GetY() const {
-  return y_;
+  return position_.y;
 }
 
-void WorldActor::SetSpeed(float x, float y) {
-  speed_x_ = x;
-  speed_y_ = y;
+void WorldActor::SetSpeed(const Vector2D& a) {
+  speed_ = a;
 }
