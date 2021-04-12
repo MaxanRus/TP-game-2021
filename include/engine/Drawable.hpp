@@ -14,5 +14,5 @@ class Drawable {
   void SetImage(const std::string_view& image);
 
  private:
-  std::string_view image_;
+  std::string_view image_name_;
 };
