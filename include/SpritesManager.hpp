@@ -1,35 +1,33 @@
 #pragma once
 
-#include <engine/objects/ground/earth/Dirt.hpp>
-#include <engine/objects/ground/earth/Stone.hpp>
 #include <engine/objects/ground/GroundEmpty.hpp>
-#include <engine/objects/ground/water/Water.hpp>
-#include <engine/objects/ground/mineral/Iron.hpp>
-#include <engine/objects/ground/mineral/Copper.hpp>
 #include <engine/objects/Cell.hpp>
+#include <engine/objects/ground/GroundEarth.hpp>
+#include <engine/objects/ground/GroundWater.hpp>
+#include <engine/objects/ground/Mineral.hpp>
 
 class SpritesManager {
  public:
   static void Init();
 
-  static Dirt* GetDirt();
-  static Stone* GetStone();
-  static Water* GetWater();
+  static GroundEarth* GetDirt();
+  static GroundEarth* GetStone();
+  static GroundWater* GetWater();
   static GroundEmpty* GetGroundEmpty();
   static Cell* GetEmptyCell();
-  static Iron* GetIron();
-  static Copper* GetCopper();
+  static Mineral* GetIron();
+  static Mineral* GetCopper();
 
  private:
-  static Dirt* dirt_;
-  static Stone* stone_;
+  static GroundEarth* dirt_;
+  static GroundEarth* stone_;
 
-  static Water* water_;
+  static GroundWater* water_;
 
   static GroundEmpty* ground_empty_;
 
   static Cell* empty_cell_;
 
-  static Iron* iron_;
-  static Copper* copper_;
+  static Mineral* iron_;
+  static Mineral* copper_;
 };

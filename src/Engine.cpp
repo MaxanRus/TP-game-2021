@@ -5,9 +5,9 @@
 Engine* Engine::ptr = nullptr;
 
 Engine::Engine(uint32_t width, uint32_t height, const std::string_view& path_file) :
-    player_(200, 200, &field_, "player"),
+    player_({200, 200}, &field_, "player"),
     field_(width, height, path_file) {
-  enemies.push_back(new UnitGroup(100, 30.0, 30.0, &field_));
+  enemies.push_back(new UnitGroup(100, Vector2D{30.0, 30.0}, &field_));
 }
 
 void Engine::Tick() {
@@ -19,15 +19,15 @@ void Engine::Tick() {
 }
 
 void Engine::Draw() const {
-  field_.Draw(player_.GetX(), player_.GetY(),
-              Graphics::ResourceManager::GetWindow().GetSizeWindow().first / 2,
-              Graphics::ResourceManager::GetWindow().GetSizeWindow().second / 2);
-  player_.Draw(Graphics::ResourceManager::GetWindow().GetSizeWindow().first / 2,
-               Graphics::ResourceManager::GetWindow().GetSizeWindow().second / 2);
+  field_.Draw({player_.GetX(), player_.GetY()},
+              {(float) (Graphics::ResourceManager::GetWindow().GetSizeWindow().first / 2),
+               (float) (Graphics::ResourceManager::GetWindow().GetSizeWindow().second / 2)});
+  player_.Draw({(float) (Graphics::ResourceManager::GetWindow().GetSizeWindow().first / 2),
+                (float) (Graphics::ResourceManager::GetWindow().GetSizeWindow().second / 2)});
   for (auto& it : enemies) {
-    it->Draw(player_.GetX(), player_.GetY(),
-             Graphics::ResourceManager::GetWindow().GetSizeWindow().first / 2,
-             Graphics::ResourceManager::GetWindow().GetSizeWindow().second / 2);
+    it->Draw({player_.GetX(), player_.GetY()},
+             {(float)(Graphics::ResourceManager::GetWindow().GetSizeWindow().first / 2),
+              (float)(Graphics::ResourceManager::GetWindow().GetSizeWindow().second / 2)});
   }
   Graphics::ResourceManager::GetWindow().Render();
 }

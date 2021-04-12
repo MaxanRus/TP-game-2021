@@ -3,27 +3,24 @@
 #include <cmath>
 
 void Player::Stop() {
-  speed_x_ = 0.0;
-  speed_y_ = 0.0;
+  speed_.x = 0.0;
+  speed_.y = 0.0;
   frame_number_ = 0;
 }
 
-void Player::SpeedSet(float x, float y) {
-  speed_x_ = x;
-  speed_y_ = y;
+void Player::SpeedSet(const Vector2D& to) {
+  speed_ = to;
 }
 
-void Player::SpeedInc(float x, float y) {
-  speed_x_ += x;
-  speed_y_ += y;
+void Player::SpeedInc(const Vector2D& to) {
+  speed_ += to;
 }
 
 void Player::Tick() {
-  x_ += speed_x_;
-  y_ += speed_y_;
-  frame_number_ += sqrt(x_ * x_ + y_ + y_);
+  position_ += speed_;
+  frame_number_ += Vector2D::dist(speed_, {0, 0});
 }
 
-Player::Player(float x, float y, Field* field, const std::string_view& img, bool fly, bool rooted) :
-    WorldActor(x, y, field, fly, rooted), Drawable(img) {
+Player::Player(const Vector2D& position, Field* field, const std::string_view& img, bool fly, bool rooted) :
+    WorldActor(position, field, fly, rooted), Drawable(img) {
 }

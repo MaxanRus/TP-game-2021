@@ -43,11 +43,8 @@ set(SOURCE_FILES
         src/engine/objects/Ground.cpp
         src/engine/objects/ground/GroundEmpty.cpp
         src/Console.cpp
-        src/engine/objects/ground/earth/Dirt.cpp
-        src/engine/objects/ground/earth/Stone.cpp
         src/graphics/Transform.cpp
         src/Engine.cpp
-        src/engine/objects/ground/water/Water.cpp
         src/engine/WorldActor.cpp
         src/engine/objects/UnitGroup.cpp
         src/engine/objects/Unit.cpp
@@ -58,9 +55,7 @@ set(SOURCE_FILES
         src/ConstantsManager.cpp
         src/SpritesManager.cpp
         src/engine/objects/ground/Mineral.cpp
-        src/engine/objects/ground/mineral/Iron.cpp
-        src/engine/objects/ground/mineral/Copper.cpp
-        )
+        src/Helpers/Vector2D.cpp include/Helpers/Vector2D.hpp)
 
 add_executable(game ${SOURCE_FILES})
 

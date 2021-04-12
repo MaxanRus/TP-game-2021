@@ -4,22 +4,22 @@
 #include <cmath>
 #include <graphics/ResourceManager.hpp>
 
-const Cell& Field::GetCell(float x, float y) const {
-  int X = std::trunc(x / ConstantsManager::kSizeCell);
-  int Y = std::trunc(y / ConstantsManager::kSizeCell);
+const Cell& Field::GetCell(const Vector2D& a) const {
+  int X = std::trunc(a.x / ConstantsManager::kSizeCell);
+  int Y = std::trunc(a.y / ConstantsManager::kSizeCell);
   return At(X, Y);
 }
 
-std::pair<uint32_t, uint32_t> Field::GetCellPos(float x, float y) {
-  return {std::trunc(x / ConstantsManager::kSizeCell), std::trunc(y / ConstantsManager::kSizeCell)};
+std::pair<uint32_t, uint32_t> Field::GetCellPos(const Vector2D& a) {
+  return {std::trunc(a.x / ConstantsManager::kSizeCell), std::trunc(a.y / ConstantsManager::kSizeCell)};
 }
 
-void Field::Draw(float x, float y, float center_x, float center_y) const {
-  int cell_x = GetCellPos(x, y).first;
-  int cell_y = GetCellPos(x, y).second;
+void Field::Draw(const Vector2D& a, const Vector2D& center) const {
+  int cell_x = GetCellPos(a).first;
+  int cell_y = GetCellPos(a).second;
 
-  float pixelPosX = center_x - x + cell_x * ConstantsManager::kSizeCell;
-  float pixelPosY = center_y - y + cell_y * ConstantsManager::kSizeCell;
+  Vector2D pixelPos = Vector2D(center.x - a.x + cell_x * ConstantsManager::kSizeCell,
+                               center.y - a.y + cell_y * ConstantsManager::kSizeCell);
 
   int WindowCellWidth =
       Graphics::ResourceManager::GetWindow().GetSizeWindow().first / ConstantsManager::kSizeCell;
@@ -30,9 +30,9 @@ void Field::Draw(float x, float y, float center_x, float center_y) const {
        i < cell_x + WindowCellWidth / 2 + 2; ++i) {
     for (int j = cell_y - WindowCellHeight / 2 - ConstantsManager::kSizeBiggestObject - 3;
          j < cell_y + WindowCellHeight / 2 + 2; ++j) {
-      int x = pixelPosX - (cell_x - i) * static_cast<int>(ConstantsManager::kSizeCell);
-      int y = pixelPosY - (cell_y - j) * static_cast<int>(ConstantsManager::kSizeCell);
-      At(i, j).Draw(x, y);
+      Vector2D a = {pixelPos.x - (cell_x - i) * static_cast<int>(ConstantsManager::kSizeCell),
+                    pixelPos.y - (cell_y - j) * static_cast<int>(ConstantsManager::kSizeCell)};
+      At(i, j).Draw(a);
     }
   }
 }
@@ -90,8 +90,8 @@ void Field::Tick() {
   }
 }
 
-Building* Field::GetBuilding(float x, float y) const {
-  auto[pos_x, pos_y] = GetCellPos(x, y);
+Building* Field::GetBuilding(const Vector2D& a) const {
+  auto[pos_x, pos_y] = GetCellPos(a);
   for (size_t i = std::min(size_t(pos_x), field_.size() - 1);
        i > std::max(-1U, pos_x - ConstantsManager::kSizeBiggestObject); --i) {
     for (size_t j = std::min(size_t(pos_y), field_[i].size() - 1);

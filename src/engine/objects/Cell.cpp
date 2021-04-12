@@ -1,12 +1,12 @@
 #include "engine/objects/Cell.hpp"
 #include <iostream>
 
-void Cell::Draw(int x, int y) const {
+void Cell::Draw(const Vector2D& position) const {
   for (auto& it : items_) {
-    it->Draw(x, y);
+    it->Draw(position);
   }
   if (building_) {
-    building_->Draw(x, y);
+    building_->Draw(position);
   }
 }
 
