@@ -60,7 +60,7 @@ set(SOURCE_FILES
         src/engine/objects/ground/Mineral.cpp
         src/engine/objects/ground/mineral/Iron.cpp
         src/engine/objects/ground/mineral/Copper.cpp
-        )
+        src/graphics/ResourceManager.cpp)
 
 add_executable(game ${SOURCE_FILES})
 

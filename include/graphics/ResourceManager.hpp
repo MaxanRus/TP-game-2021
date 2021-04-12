@@ -1,7 +1,7 @@
 #pragma once
 
 #include <map>
-#include <string_view>
+#include <string>
 #include <memory>
 
 #include "graphics/Shader.hpp"
@@ -11,34 +11,24 @@
 namespace Graphics {
 class ResourceManager {
  public:
-  ResourceManager* GetResourceManager() {
-    if (!me) me = new ResourceManager;
-    return me;
-  }
-  static Shader& LoadShader(const std::string_view& v_path, const std::string_view& f_path, const std::string_view& name) {
-    return shaders_[name] = Shader(v_path, f_path);
-  }
-  static Shader& GetShader(std::string_view name) {
-    return shaders_[name];
-  }
-  static Image& LoadImage(const std::string_view& path, const std::string_view& name) {
-    return images_[name] = Image(path);
-  }
-  static Image& GetImage(const std::string_view& name) {
-    return images_[name];
-  }
-  static Window& CreateWindow(size_t width, size_t height, std::string_view title) {
-    window_ = std::make_unique<Window>(width, height, title);
-    return *window_;
-  }
-  static Window& GetWindow() { return *window_; }
+  ResourceManager* GetResourceManager();
+  static Shader& LoadShader(const std::string& v_path, const std::string& f_path, const std::string& name);
+  static Shader& GetShader(const std::string_view& name);
+  static Image& LoadImage(const std::string& path, const std::string& name);
+  static Image& GetImage(const std::string_view& name);
+  static Window& CreateWindow(size_t width, size_t height, std::string title);
+  static Window& GetWindow();
 
  private:
   ResourceManager() = default;
   ResourceManager* me = nullptr;
 
-  static inline std::map<std::string_view, Shader> shaders_;
-  static inline std::map<std::string_view, Image> images_;
+  static inline std::map<std::string, Shader> shaders_;
+  static inline std::map<std::string, Image> images_;
   static inline std::unique_ptr<Window> window_ = nullptr;
 };
+
+namespace ResourceParser {
+void LoadResources(std::string path_to_config);
+}
 }

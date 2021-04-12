@@ -24,19 +24,7 @@ int main() {
 }
 
 void Initialization() {
-  Graphics::ResourceManager::CreateWindow(1280, 720, "Game");
-
-  Graphics::ResourceManager::LoadImage("assets/img/dirt.png", "dirt");
-  Graphics::ResourceManager::LoadImage("assets/img/stone.png", "stone");
-  Graphics::ResourceManager::LoadImage("assets/img/water.png", "water");
-  Graphics::ResourceManager::LoadImage("assets/img/empty.png", "empty");
-  Graphics::ResourceManager::LoadImage("assets/img/iron.png", "iron");
-  //Graphics::ResourceManager::LoadImage("assets/img/copper.png", "copper");
-  Graphics::ResourceManager::LoadImage("assets/img/unit.png", "unit");
-  Graphics::ResourceManager::LoadImage("assets/img/dwarf_debug.png", "player");
-  Graphics::ResourceManager::LoadShader("assets/shaders/image_shader.vs", "assets/shaders/image_shader.fs", "image");
-
-  Graphics::ResourceManager::GetShader("image").SetProjectorMatrix(Graphics::ResourceManager::GetWindow().GetTransformCoordinates());
+  Graphics::ResourceParser::LoadResources("assets/configs/resources.cfg");
 
   std::cout << "pictures are loaded" << std::endl;
 

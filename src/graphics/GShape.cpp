@@ -56,13 +56,13 @@ void Quadrangle::Draw(Window& window, Shader shader, int x, int y, float scale, 
   GShape::Draw(window, shader, x, y, scale, rotate);
 }
 
-Image::Image(const std::string_view& path) : Quadrangle(0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0) {
+Image::Image(const std::string_view& path) : Quadrangle(0, 0, 1, 0, 1, 1, 0, 1) {
   stbi_set_flip_vertically_on_load(true);
   glGenTextures(1, &id_);
   glBindTexture(GL_TEXTURE_2D, id_);
 
   int width, height, nr_channels;
-  unsigned char* data = stbi_load(std::string(path).c_str(), &width, &height, &nr_channels, 0);
+  unsigned char* data = stbi_load(path.data(), &width, &height, &nr_channels, 0);
   if (data) {
     if (nr_channels == 4)
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -70,7 +70,7 @@ Image::Image(const std::string_view& path) : Quadrangle(0.0, 0.0, 1.0, 0.0, 1.0,
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
   } else {
-    throw std::runtime_error("fail load image");
+    throw std::runtime_error("fail load image" + std::string(path));
   }
   stbi_image_free(data);
 
