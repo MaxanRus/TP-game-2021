@@ -24,9 +24,8 @@ void UnitGroup::Tick() {
       float sy = it->GetY() - position_.y;
       float d = sqrtf(magnetic_power_ / sqrtf(sx * sx + sy * sy));
       sx *= d, sy *= d;
-      it->IncSpeed(-speed_);
+      it->SetSpeed(-Vector2D(sx, sy));
       it->Tick();
-      it->IncSpeed({0, 0});
     }
   }
   for (auto it = units_.begin(); it != units_.end(); ++it) {
