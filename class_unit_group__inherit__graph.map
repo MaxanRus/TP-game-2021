@@ -1,0 +1,5 @@
+<map id="UnitGroup" name="UnitGroup">
+<area shape="rect" id="node1" title=" " alt="" coords="8,417,108,524"/>
+<area shape="rect" id="node2" href="$class_world_actor.html" title=" " alt="" coords="5,131,111,369"/>
+<area shape="rect" id="node3" href="$class_tickable.html" title=" " alt="" coords="23,5,93,83"/>
+</map>

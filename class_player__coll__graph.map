@@ -1,0 +1,8 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node1" title=" " alt="" coords="23,609,122,775"/>
+<area shape="rect" id="node2" href="$class_drawable.html" title=" " alt="" coords="5,387,108,538"/>
+<area shape="rect" id="node3" href="$class_world_actor.html" title=" " alt="" coords="132,365,237,560"/>
+<area shape="rect" id="node4" href="$class_tickable.html" title=" " alt="" coords="37,108,108,185"/>
+<area shape="rect" id="node5" href="$struct_vector2_d.html" title=" " alt="" coords="133,5,237,288"/>
+<area shape="rect" id="node6" href="$class_field.html" title=" " alt="" coords="261,35,369,259"/>
+</map>
