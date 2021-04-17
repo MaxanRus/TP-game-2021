@@ -1,7 +1,7 @@
 #include "engine/objects/Cell.hpp"
 #include <iostream>
 
-void Cell::Draw(const Vector2D& position) const {
+void Cell::Draw(const Vector2D& position, float scale) const {
   for (auto& it : items_) {
     it->Draw(position);
   }
@@ -24,6 +24,9 @@ void Cell::Add(Ground* x) {
 void Cell::Tick() {
   for (auto& it : items_) {
     it->Tick();
+  }
+  if (building_) {
+    building_->Tick();
   }
 }
 

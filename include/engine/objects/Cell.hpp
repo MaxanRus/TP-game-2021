@@ -20,7 +20,7 @@ class Cell : public Drawable, public Tickable {
 
   [[nodiscard]] Building* GetBuilding() const;
 
-  void Draw(const Vector2D& position) const;
+  void Draw(const Vector2D& position, float scale = 1.0) const override;
   void Tick() override;
 
  private:
