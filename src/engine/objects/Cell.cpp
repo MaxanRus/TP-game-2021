@@ -16,7 +16,7 @@ size_t Cell::GetSize() const { return items_.size(); }
 
 void Cell::Add(Ground* x) {
   if (!x) {
-    throw std::runtime_error("adding nullptr in Cell");
+    throw std::invalid_argument("adding nullptr in Cell");
   }
   items_.emplace_back(x);
 }
