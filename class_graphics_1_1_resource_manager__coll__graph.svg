@@ -18,13 +18,13 @@
 <polyline fill="none" stroke="black" points="0,-104.5 139,-104.5 "/>
 <text text-anchor="middle" x="69.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <polyline fill="none" stroke="black" points="0,-85.5 139,-85.5 "/>
-<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetResourceManager()</text>
-<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LoadShader()</text>
-<text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetShader()</text>
-<text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LoadImage()</text>
-<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetImage()</text>
-<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateWindow()</text>
-<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetWindow()</text>
+<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LoadShader()</text>
+<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetShader()</text>
+<text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LoadImage()</text>
+<text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetImage()</text>
+<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateWindow()</text>
+<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetWindow()</text>
+<text text-anchor="start" x="8" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetEventHandler()</text>
 </a>
 </g>
 </g>

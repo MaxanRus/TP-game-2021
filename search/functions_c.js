@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['redraw_365',['Redraw',['../namespace_console.html#a6bc0f72a79043f946668cb0e8e706a83',1,'Console']]],
-  ['render_366',['Render',['../class_graphics_1_1_window.html#a7863fafae23423f404bee7aa3a57e124',1,'Graphics::Window']]],
-  ['repair_367',['Repair',['../class_building.html#a4c1a5eaaecaa60873af1a4602d44c8ac',1,'Building']]],
-  ['rotate_368',['Rotate',['../class_graphics_1_1_transform.html#af2c7b869c8803ba0f2f1ecf9f0a5ca37',1,'Graphics::Transform']]]
+  ['quadrangle_375',['Quadrangle',['../class_graphics_1_1_quadrangle.html#a23d11fe54282c75f5c988ddcfc7477ee',1,'Graphics::Quadrangle::Quadrangle()=default'],['../class_graphics_1_1_quadrangle.html#a5ab25d99ed14b8569e4736467818f1db',1,'Graphics::Quadrangle::Quadrangle(const Quadrangle &amp;)=default'],['../class_graphics_1_1_quadrangle.html#a1ec0aeba2955d6ac1274a0ecf61c8e14',1,'Graphics::Quadrangle::Quadrangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4)']]]
 ];

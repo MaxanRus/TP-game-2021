@@ -1,8 +1,9 @@
 <map id="include/graphics/ResourceManager.hpp" name="include/graphics/ResourceManager.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="323,5,497,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="419,5,593,47"/>
 <area shape="rect" id="node2" href="$_drawable_8cpp.html" title=" " alt="" coords="5,95,169,121"/>
 <area shape="rect" id="node3" href="$_field_8cpp.html" title=" " alt="" coords="194,95,333,121"/>
 <area shape="rect" id="node4" href="$_engine_8cpp.html" title=" " alt="" coords="357,95,463,121"/>
-<area shape="rect" id="node5" href="$_resource_manager_8cpp.html" title=" " alt="" coords="487,95,714,121"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="738,95,834,121"/>
+<area shape="rect" id="node5" href="$_event_handler_8cpp.html" title=" " alt="" coords="488,95,716,121"/>
+<area shape="rect" id="node6" href="$_resource_manager_8cpp.html" title=" " alt="" coords="741,95,967,121"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title=" " alt="" coords="991,95,1087,121"/>
 </map>

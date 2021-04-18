@@ -1,10 +1,11 @@
 <map id="Graphics::ResourceManager::GetWindow" name="Graphics::ResourceManager::GetWindow">
-<area shape="rect" id="node1" title=" " alt="" coords="737,111,923,153"/>
-<area shape="rect" id="node2" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="104,144,201,171"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,144,56,171"/>
-<area shape="rect" id="node4" href="$class_field.html#a40e273e9fe4e28fe71aa6947eacc1ab0" title=" " alt="" coords="251,93,338,120"/>
-<area shape="rect" id="node5" href="$class_drawable.html#a380dbc28ed3746ac7ac00c4844b30d08" title=" " alt="" coords="547,119,659,145"/>
-<area shape="rect" id="node7" href="$namespace_graphics_1_1_resource_parser.html#a6a538c07babc9bbaf884e0aeb9654fe0" title=" " alt="" coords="516,246,689,287"/>
-<area shape="rect" id="node6" href="$class_cell.html#a3d4a0b84cec344e492e1d7cb1241e250" title=" " alt="" coords="388,93,468,120"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#adb66f09c018c6ec5f3ade6acd02a5003" title=" " alt="" coords="249,247,340,273"/>
+<area shape="rect" id="node1" title=" " alt="" coords="808,162,993,203"/>
+<area shape="rect" id="node2" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="104,169,201,196"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,208,56,235"/>
+<area shape="rect" id="node4" href="$class_field.html#a40e273e9fe4e28fe71aa6947eacc1ab0" title=" " alt="" coords="287,144,373,171"/>
+<area shape="rect" id="node5" href="$class_drawable.html#a380dbc28ed3746ac7ac00c4844b30d08" title=" " alt="" coords="617,93,729,120"/>
+<area shape="rect" id="node7" href="$namespace_graphics_1_1_resource_parser.html#a6a538c07babc9bbaf884e0aeb9654fe0" title=" " alt="" coords="587,246,760,287"/>
+<area shape="rect" id="node9" href="$class_event_handler.html#a53ee17f2156ec5ad0769743f39ea259d" title=" " alt="" coords="249,302,411,343"/>
+<area shape="rect" id="node6" href="$class_cell.html#a3d4a0b84cec344e492e1d7cb1241e250" title=" " alt="" coords="459,93,539,120"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#adb66f09c018c6ec5f3ade6acd02a5003" title=" " alt="" coords="107,233,198,260"/>
 </map>

@@ -3,6 +3,7 @@ var struct_vector2_d =
     [ "Vector2D", "struct_vector2_d.html#a98e9997ebb7a629f4db52397d4e0d653", null ],
     [ "Vector2D", "struct_vector2_d.html#a166ca1df158a260a7cbf3b57ff147a4a", null ],
     [ "Vector2D", "struct_vector2_d.html#ad27db0fa1d15b3c9e90cce2a47deecdd", null ],
+    [ "Vector2D", "struct_vector2_d.html#acff73701801e425071e7ef30f1d99f21", null ],
     [ "operator*", "struct_vector2_d.html#af0e9b02fd8dfd60c278113f8a0d83b96", null ],
     [ "operator*=", "struct_vector2_d.html#ae64983c00dde766310a3c152dcdf26eb", null ],
     [ "operator+", "struct_vector2_d.html#a09a704109bb11e79a7ed2cfe2f2d2ad6", null ],

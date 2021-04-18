@@ -7,7 +7,7 @@ var annotated_dup =
       [ "GShape", "class_graphics_1_1_g_shape.html", "class_graphics_1_1_g_shape" ],
       [ "Quadrangle", "class_graphics_1_1_quadrangle.html", "class_graphics_1_1_quadrangle" ],
       [ "Image", "class_graphics_1_1_image.html", "class_graphics_1_1_image" ],
-      [ "ResourceManager", "class_graphics_1_1_resource_manager.html", "class_graphics_1_1_resource_manager" ],
+      [ "ResourceManager", "class_graphics_1_1_resource_manager.html", null ],
       [ "Shader", "class_graphics_1_1_shader.html", "class_graphics_1_1_shader" ],
       [ "Transform", "class_graphics_1_1_transform.html", "class_graphics_1_1_transform" ],
       [ "Window", "class_graphics_1_1_window.html", "class_graphics_1_1_window" ]
@@ -17,6 +17,7 @@ var annotated_dup =
     [ "ConstantsManager", "struct_constants_manager.html", null ],
     [ "Drawable", "class_drawable.html", "class_drawable" ],
     [ "Engine", "class_engine.html", "class_engine" ],
+    [ "EventHandler", "class_event_handler.html", "class_event_handler" ],
     [ "Field", "class_field.html", "class_field" ],
     [ "Ground", "class_ground.html", "class_ground" ],
     [ "GroundEarth", "class_ground_earth.html", "class_ground_earth" ],
