@@ -6,11 +6,6 @@
 #include <fstream>
 
 namespace Graphics {
-ResourceManager* ResourceManager::GetResourceManager() {
-  if (!me) me = new ResourceManager;
-  return me;
-}
-
 Shader& ResourceManager::LoadShader(const std::string& v_path, const std::string& f_path, const std::string& name) {
   return shaders_[name] = Shader(v_path, f_path);
 }
@@ -33,6 +28,10 @@ Window& ResourceManager::CreateWindow(size_t width, size_t height, std::string t
 }
 
 Window& ResourceManager::GetWindow() { return *window_; }
+
+EventHandler& ResourceManager::GetEventHandler() {
+  return event_handler_;
+}
 
 namespace ResourceParser {
 void LoadResources(std::string path_to_config) {

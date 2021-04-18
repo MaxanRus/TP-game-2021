@@ -56,7 +56,8 @@ set(SOURCE_FILES
         src/SpritesManager.cpp
         src/engine/objects/ground/Mineral.cpp
         src/graphics/ResourceManager.cpp
-        src/Helpers/Vector2D.cpp)
+        src/Helpers/Vector2D.cpp
+        src/EventHandler/EventHandler.cpp)
 
 add_executable(game ${SOURCE_FILES})
 
