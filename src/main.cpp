@@ -14,6 +14,7 @@ int main() {
 
     /// events
 
+    Graphics::ResourceManager::GetEventHandler().TriggerAllEvents();
     Engine::GetEngine()->Tick();
     Engine::GetEngine()->Draw();
 

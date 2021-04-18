@@ -19,6 +19,7 @@ void Player::SpeedInc(const Vector2D& to) {
 void Player::Tick() {
   position_ += speed_;
   frame_number_ += Vector2D::dist(speed_, {0, 0});
+  speed_ *= 0.3;
 }
 
 Player::Player(const Vector2D& position, Field* field, const std::string_view& img, bool fly, bool rooted) :

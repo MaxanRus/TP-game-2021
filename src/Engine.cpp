@@ -8,6 +8,20 @@ Engine::Engine(uint32_t width, uint32_t height, const std::string_view& path_fil
     player_({200, 200}, &field_, "player"),
     field_(width, height, path_file) {
   enemies.push_back(new UnitGroup(100, Vector2D{30.0, 30.0}, &field_));
+  using Trigger = EventHandler::EventTrigger;
+  auto& event_handler = Graphics::ResourceManager::GetEventHandler();
+  event_handler.AddEvent(Trigger::A, [this](Trigger, Vector2D) -> void {
+    player_.SpeedInc(Vector2D(-1, 0));
+  });
+  event_handler.AddEvent(Trigger::W, [this](Trigger, Vector2D) -> void {
+    player_.SpeedInc(Vector2D(0, 1));
+  });
+  event_handler.AddEvent(Trigger::S, [this](Trigger, Vector2D) -> void {
+    player_.SpeedInc(Vector2D(0, -1));
+  });
+  event_handler.AddEvent(Trigger::D, [this](Trigger, Vector2D) -> void {
+    player_.SpeedInc(Vector2D(1, 0));
+  });
 }
 
 void Engine::Tick() {
