@@ -15,3 +15,7 @@ void Building::Repair(float to) {
   life_ += to;
   life_ = std::min(life_, max_life_);
 }
+
+void Building::Tick() {
+
+}

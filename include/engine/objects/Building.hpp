@@ -9,6 +9,7 @@ class Building : public Drawable, public Tickable {
   void DealDamage(float damage);
   void Repair(float to);
   explicit Building(const std::string_view& img, float life);
+  void Tick() override;
 
  private:
   float life_;
