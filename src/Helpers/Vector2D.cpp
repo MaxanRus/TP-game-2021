@@ -62,3 +62,8 @@ Vector2D Vector2D::operator/(float c) {
   result /= c;
   return result;
 }
+
+Vector2D::Vector2D(const std::pair<float, float>& another) {
+  x = another.first;
+  y = another.second;
+}

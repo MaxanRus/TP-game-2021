@@ -1,5 +1,7 @@
 #pragma once
 
+#include <utility>
+
 struct Vector2D {
   float x, y;
 
@@ -7,6 +9,7 @@ struct Vector2D {
   //Vector2D(int x, int y);
   Vector2D(float x, float y);
   Vector2D(const Vector2D&) = default;
+  explicit Vector2D(const std::pair<float, float>&);
   Vector2D& operator=(const Vector2D&) = default;
 
   Vector2D operator-();
