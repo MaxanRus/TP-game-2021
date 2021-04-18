@@ -22,6 +22,15 @@ Engine::Engine(uint32_t width, uint32_t height, const std::string_view& path_fil
   event_handler.AddEvent(Trigger::D, [this](Trigger, Vector2D) -> void {
     player_.SpeedInc(Vector2D(1, 0));
   });
+  event_handler.AddEvent(Trigger::LEFT_MOUSE, [this](Trigger, Vector2D cursor_position) -> void {
+    Vector2D(Graphics::ResourceManager::GetWindow().GetSizeWindow());
+    int x = field_.GetCellPos(cursor_position + Vector2D(player_.GetX(), player_.GetY()) - Vector2D(Graphics::ResourceManager::GetWindow().GetSizeWindow()) / 2).first;
+    int y = field_.GetCellPos(-cursor_position + Vector2D(player_.GetX(), player_.GetY()) + Vector2D(Graphics::ResourceManager::GetWindow().GetSizeWindow()) / 2).second;
+    field_[x][y].SetBuilding(new Building("wall", 200, [this, x, y]() {
+      delete field_[x][y].GetBuilding();
+      field_[x][y].GetBuilding() = nullptr;
+    }));
+  });
 }
 
 void Engine::Tick() {

@@ -30,7 +30,7 @@ void Cell::Tick() {
   }
 }
 
-Building* Cell::GetBuilding() const {
+Building*& Cell::GetBuilding() {
   return building_;
 }
 

@@ -82,15 +82,20 @@ Field::Field(uint32_t width, uint32_t height, const std::string_view& path_file)
 void Field::Tick() {
   for (auto& i : field_) {
     for (auto& j : i) {
-      if (!j.GetBuilding() && j.GetBuilding()->GetLife() <= 0) {
+      if (j.GetBuilding()) {
+        j.GetBuilding()->Tick();
+      }
+      /*
+      if (j.GetBuilding() && j.GetBuilding()->GetLife() <= 0) {
         delete j.GetBuilding();
         j.SetBuilding(nullptr);
       }
+       */
     }
   }
 }
 
-Building* Field::GetBuilding(const Vector2D& a) const {
+Building* Field::GetBuilding(const Vector2D& a) {
   auto[pos_x, pos_y] = GetCellPos(a);
   for (size_t i = std::min(size_t(pos_x), field_.size() - 1);
        i > std::max(-1U, pos_x - ConstantsManager::kSizeBiggestObject); --i) {

@@ -18,7 +18,7 @@ class Cell : public Drawable, public Tickable {
   [[nodiscard]] float GetSpeed() const;
   [[nodiscard]] size_t GetSize() const;
 
-  [[nodiscard]] Building* GetBuilding() const;
+  [[nodiscard]] Building*& GetBuilding();
 
   void Draw(const Vector2D& position, float scale = 1.0) const override;
   void Tick() override;
