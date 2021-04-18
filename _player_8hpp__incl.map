@@ -1,15 +1,16 @@
 <map id="include/engine/objects/Player.hpp" name="include/engine/objects/Player.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="302,5,453,47"/>
 <area shape="rect" id="node2" href="$_drawable_8hpp.html" title=" " alt="" coords="390,393,533,420"/>
-<area shape="rect" id="node6" href="$_world_actor_8hpp.html" title=" " alt="" coords="81,95,233,121"/>
+<area shape="rect" id="node7" href="$_world_actor_8hpp.html" title=" " alt="" coords="81,95,233,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="417,468,505,495"/>
 <area shape="rect" id="node4" href="$_vector2_d_8hpp.html" title=" " alt="" coords="5,468,155,495"/>
-<area shape="rect" id="node5" title=" " alt="" coords="54,543,106,569"/>
-<area shape="rect" id="node7" href="$_field_8hpp.html" title=" " alt="" coords="120,169,195,196"/>
-<area shape="rect" id="node8" href="$_cell_8hpp.html" title=" " alt="" coords="191,244,347,271"/>
-<area shape="rect" id="node9" href="$_tickable_8hpp.html" title=" " alt="" coords="126,393,263,420"/>
-<area shape="rect" id="node10" title=" " alt="" coords="397,319,456,345"/>
-<area shape="rect" id="node11" href="$_ground_8hpp.html" title=" " alt="" coords="168,319,256,345"/>
-<area shape="rect" id="node12" href="$_building_8hpp.html" title=" " alt="" coords="281,319,373,345"/>
-<area shape="rect" id="node13" title=" " alt="" coords="287,393,366,420"/>
+<area shape="rect" id="node5" title=" " alt="" coords="14,543,66,569"/>
+<area shape="rect" id="node6" title=" " alt="" coords="91,543,149,569"/>
+<area shape="rect" id="node8" href="$_field_8hpp.html" title=" " alt="" coords="120,169,195,196"/>
+<area shape="rect" id="node9" href="$_cell_8hpp.html" title=" " alt="" coords="191,244,347,271"/>
+<area shape="rect" id="node10" href="$_tickable_8hpp.html" title=" " alt="" coords="126,393,263,420"/>
+<area shape="rect" id="node11" title=" " alt="" coords="397,319,456,345"/>
+<area shape="rect" id="node12" href="$_ground_8hpp.html" title=" " alt="" coords="168,319,256,345"/>
+<area shape="rect" id="node13" href="$_building_8hpp.html" title=" " alt="" coords="281,319,373,345"/>
+<area shape="rect" id="node14" title=" " alt="" coords="287,393,366,420"/>
 </map>

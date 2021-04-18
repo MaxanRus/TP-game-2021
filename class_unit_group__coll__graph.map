@@ -1,7 +1,7 @@
 <map id="UnitGroup" name="UnitGroup">
-<area shape="rect" id="node1" title=" " alt="" coords="103,624,203,731"/>
-<area shape="rect" id="node2" href="$class_world_actor.html" title=" " alt="" coords="100,380,205,575"/>
-<area shape="rect" id="node3" href="$class_tickable.html" title=" " alt="" coords="5,115,76,193"/>
-<area shape="rect" id="node4" href="$struct_vector2_d.html" title=" " alt="" coords="101,5,205,303"/>
-<area shape="rect" id="node5" href="$class_field.html" title=" " alt="" coords="229,42,337,266"/>
+<area shape="rect" id="node1" title=" " alt="" coords="112,595,212,701"/>
+<area shape="rect" id="node2" href="$class_world_actor.html" title=" " alt="" coords="109,351,215,545"/>
+<area shape="rect" id="node3" href="$class_tickable.html" title=" " alt="" coords="5,101,76,178"/>
+<area shape="rect" id="node4" href="$struct_vector2_d.html" title=" " alt="" coords="101,5,223,273"/>
+<area shape="rect" id="node5" href="$class_field.html" title=" " alt="" coords="248,27,356,251"/>
 </map>

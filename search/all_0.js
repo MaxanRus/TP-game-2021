@@ -2,5 +2,5 @@ var searchData=
 [
   ['a_0',['A',['../class_graphics_1_1_window.html#a9316c56342623827a22b6dcb02fe08d0a7fc56270e7a70fa81a5935b72eacbe29',1,'Graphics::Window']]],
   ['add_1',['Add',['../class_cell.html#a4ab1e51777a98363d170f41754e204c0',1,'Cell']]],
-  ['addevent_2',['AddEvent',['../class_event_handler.html#a25bac3abbb5ab2f398372019c6e35ead',1,'EventHandler']]]
+  ['addevent_2',['AddEvent',['../class_event_handler.html#ad06645b11c98f156a71c4b242f9ce699',1,'EventHandler']]]
 ];

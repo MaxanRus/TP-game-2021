@@ -1,9 +1,10 @@
 <map id="include/engine/objects/Building.hpp" name="include/engine/objects/Building.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="209,5,359,47"/>
 <area shape="rect" id="node2" href="$_drawable_8hpp.html" title=" " alt="" coords="49,95,191,121"/>
-<area shape="rect" id="node6" href="$_tickable_8hpp.html" title=" " alt="" coords="215,95,353,121"/>
-<area shape="rect" id="node7" title=" " alt="" coords="377,95,455,121"/>
+<area shape="rect" id="node7" href="$_tickable_8hpp.html" title=" " alt="" coords="215,95,353,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="377,95,455,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,93,196"/>
 <area shape="rect" id="node4" href="$_vector2_d_8hpp.html" title=" " alt="" coords="117,169,267,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="166,244,218,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="126,244,178,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="203,244,261,271"/>
 </map>

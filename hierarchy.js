@@ -37,6 +37,7 @@ var hierarchy =
     ] ],
     [ "Timer", "class_timer.html", null ],
     [ "Graphics::Transform", "class_graphics_1_1_transform.html", null ],
-    [ "Vector2D", "struct_vector2_d.html", null ],
+    [ "Vector2D< T >", "struct_vector2_d.html", null ],
+    [ "Vector2D< float >", "struct_vector2_d.html", null ],
     [ "Graphics::Window", "class_graphics_1_1_window.html", null ]
 ];

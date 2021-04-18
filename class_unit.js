@@ -1,6 +1,6 @@
 var class_unit =
 [
-    [ "Unit", "class_unit.html#ad6c150acf56d5322d5e8fe933750f42d", null ],
+    [ "Unit", "class_unit.html#a0616847a1b8a59780baf8eb997402e75", null ],
     [ "GetLife", "class_unit.html#adcbc70dd1dd0a24d2b32f4ff01e18c0e", null ],
     [ "GetPower", "class_unit.html#af4e9e4879baaa367f1142c8b85c5718c", null ],
     [ "GetRandomize", "class_unit.html#a657edc3138d11bfc3b168931561704e2", null ],

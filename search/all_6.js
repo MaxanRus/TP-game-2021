@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['getbuilding_44',['GetBuilding',['../class_cell.html#ad9c7029f80018cf27a1175ac0b0237e6',1,'Cell::GetBuilding()'],['../class_field.html#a198a31202a6e9d9414356491ec9cdad4',1,'Field::GetBuilding(const Vector2D &amp;a)']]],
-  ['getcell_45',['GetCell',['../class_field.html#ae4f590bead2c56d2962a5362e8d127a4',1,'Field']]],
-  ['getcellpos_46',['GetCellPos',['../class_field.html#abbe1a428501a04475979b292b5ad404b',1,'Field']]],
+  ['getbuilding_44',['GetBuilding',['../class_cell.html#ad9c7029f80018cf27a1175ac0b0237e6',1,'Cell::GetBuilding()'],['../class_field.html#a8ce096331f51a8e41e54c0ce4e8ac43a',1,'Field::GetBuilding(const Vector2Df &amp;a)']]],
+  ['getcell_45',['GetCell',['../class_field.html#a5a202354dc5e99cb7f51121904256845',1,'Field']]],
+  ['getcellpos_46',['GetCellPos',['../class_field.html#a81822f0090fbb9f187fe4d3d15c7ab96',1,'Field']]],
   ['getcopper_47',['GetCopper',['../class_sprites_manager.html#aab7efbd0060d2094d6d492ef0a9eb520',1,'SpritesManager']]],
   ['getcursorposition_48',['GetCursorPosition',['../class_graphics_1_1_window.html#ab543b174ebe01570bf8f072ca2796eb8',1,'Graphics::Window']]],
   ['getdirt_49',['GetDirt',['../class_sprites_manager.html#ac62b90b9791238708ab900d59ac74a6d',1,'SpritesManager']]],
