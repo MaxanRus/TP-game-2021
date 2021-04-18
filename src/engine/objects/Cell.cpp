@@ -1,7 +1,7 @@
 #include "engine/objects/Cell.hpp"
 #include <iostream>
 
-void Cell::Draw(const Vector2D& position, float scale) const {
+void Cell::Draw(const Vector2Df& position, float scale) const {
   for (auto& it : items_) {
     it->Draw(position);
   }

@@ -1,7 +1,7 @@
 #include "engine/WorldActor.hpp"
 #include <cmath>
 
-void WorldActor::Move(const Vector2D& a) {
+void WorldActor::Move(const Vector2Df& a) {
   position_ = a;
 }
 
@@ -21,11 +21,11 @@ void WorldActor::Tick() {
   position_.y += speed_.y * speed_coefficient;
 }
 
-void WorldActor::IncSpeed(const Vector2D& a) {
+void WorldActor::IncSpeed(const Vector2Df& a) {
   speed_ += a;
 }
 
-WorldActor::WorldActor(const Vector2D& position, Field* ptr, bool fly, bool rooted, const Vector2D& speed) :
+WorldActor::WorldActor(const Vector2Df& position, Field* ptr, bool fly, bool rooted, const Vector2Df& speed) :
     position_(position), field_(ptr), fly_(fly), rooted_(rooted), speed_(speed) {}
 
 float WorldActor::Distance(const WorldActor& first, const WorldActor& second) {
@@ -41,6 +41,6 @@ float WorldActor::GetY() const {
   return position_.y;
 }
 
-void WorldActor::SetSpeed(const Vector2D& a) {
+void WorldActor::SetSpeed(const Vector2Df& a) {
   speed_ = a;
 }

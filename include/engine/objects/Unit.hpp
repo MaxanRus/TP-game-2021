@@ -4,8 +4,8 @@
 
 class Unit: public Drawable, public WorldActor {
  public:
-  explicit Unit(float power, const std::string_view& img, const Vector2D& a, Field* ptr,
-                bool fly = true, bool rooted = false, const Vector2D& speed = Vector2D());
+  explicit Unit(float power, const std::string_view& img, const Vector2Df& a, Field* ptr,
+                bool fly = true, bool rooted = false, const Vector2Df& speed = Vector2Df());
   void Tick() override;
   void IncSpeedRandomly();
 

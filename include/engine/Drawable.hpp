@@ -7,7 +7,7 @@ class Drawable {
  public:
   Drawable() = default;
   explicit Drawable(const std::string_view& image);
-  virtual void Draw(const Vector2D& position, float power = 1.0) const;
+  virtual void Draw(const Vector2Df& position, float power = 1.0) const;
   virtual ~Drawable() = default;
 
   [[nodiscard]] const std::string_view& GetImg() const;

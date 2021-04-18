@@ -6,12 +6,12 @@
 class Player : public Drawable, public WorldActor {
  public:
   Player() = default;
-  Player(const Vector2D& position, Field* field, const std::string_view& img, bool fly = false, bool rooted = false);
+  Player(const Vector2Df& position, Field* field, const std::string_view& img, bool fly = false, bool rooted = false);
   ~Player() override = default;
 
   void Stop();
-  void SpeedSet(const Vector2D& to);
-  void SpeedInc(const Vector2D& to);
+  void SpeedSet(const Vector2Df& to);
+  void SpeedInc(const Vector2Df& to);
 
   void Tick() override;
 

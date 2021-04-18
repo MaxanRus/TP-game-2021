@@ -16,12 +16,12 @@ class Field {
   [[nodiscard]] std::vector<Cell>& operator[](uint32_t i);
   [[nodiscard]] const std::vector<Cell>& operator[](uint32_t i) const;
 
-  [[nodiscard]] const Cell& GetCell(const Vector2D& a) const;
-  [[nodiscard]] static std::pair<uint32_t, uint32_t> GetCellPos(const Vector2D& a);
+  [[nodiscard]] const Cell& GetCell(const Vector2Df& a) const;
+  [[nodiscard]] static std::pair<uint32_t, uint32_t> GetCellPos(const Vector2Df& a);
 
-  [[nodiscard]] Building* GetBuilding(const Vector2D& a);
+  [[nodiscard]] Building* GetBuilding(const Vector2Df& a);
 
-  void Draw(const Vector2D& a, const Vector2D& center) const;
+  void Draw(const Vector2Df& a, const Vector2Df& center) const;
 
   void Tick();
 

@@ -2,8 +2,8 @@
 #include "engine/objects/Unit.hpp"
 #include <iostream>
 
-Unit::Unit(float power, const std::string_view& img, const Vector2D& a,
-           Field* ptr, bool fly, bool rooted, const Vector2D& speed) :
+Unit::Unit(float power, const std::string_view& img, const Vector2Df& a,
+           Field* ptr, bool fly, bool rooted, const Vector2Df& speed) :
     WorldActor(a, ptr, fly, rooted, speed),
     Drawable(img), power_(power), last_attack_(0) {
   damage_ = power;

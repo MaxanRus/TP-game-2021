@@ -5,9 +5,9 @@
 
 class UnitGroup : public WorldActor {
  public:
-  explicit UnitGroup(float power, const Vector2D& position, Field* ptr);
+  explicit UnitGroup(float power, const Vector2Df& position, Field* ptr);
   void Tick() override;
-  void Draw(const Vector2D& from, const Vector2D& to) const;
+  void Draw(const Vector2Df& from, const Vector2Df& to) const;
 
  private:
   float radius_;

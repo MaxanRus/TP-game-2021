@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 
-UnitGroup::UnitGroup(float power, const Vector2D& position, Field* ptr) :
+UnitGroup::UnitGroup(float power, const Vector2Df& position, Field* ptr) :
     WorldActor(position, ptr, false, false, {1, 1}) {
   radius_ = 100.0;
   magnetic_power_ = 3.0;
@@ -24,7 +24,7 @@ void UnitGroup::Tick() {
       float sy = it->GetY() - position_.y;
       float d = sqrtf(magnetic_power_ / sqrtf(sx * sx + sy * sy));
       sx *= d, sy *= d;
-      it->SetSpeed(-Vector2D(sx, sy));
+      it->SetSpeed(-Vector2Df(sx, sy));
       it->Tick();
     }
   }
@@ -37,7 +37,7 @@ void UnitGroup::Tick() {
   }
 }
 
-void UnitGroup::Draw(const Vector2D& from, const Vector2D& to) const {
+void UnitGroup::Draw(const Vector2Df& from, const Vector2Df& to) const {
   for (auto it : units_) {
     it->Draw({to.x - from.x + it->GetX(), to.y - from.y + it->GetY()}, it->GetPower());
   }

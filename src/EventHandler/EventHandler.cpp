@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-void EventHandler::AddEvent(EventHandler::EventTrigger trigger, std::function<void(EventTrigger, Vector2D)> function) {
+void EventHandler::AddEvent(EventHandler::EventTrigger trigger, std::function<void(EventTrigger, Vector2Df)> function) {
   list_events_.emplace_back(trigger, function);
 }
 
@@ -12,7 +12,7 @@ void EventHandler::TriggerAllEvents() const {
   auto& window = Graphics::ResourceManager::GetWindow();
   for (auto& i: list_events_) {
     if (window.CheckPressButton(i.first)) {
-      i.second(i.first, Vector2D(window.GetCursorPosition()));
+      i.second(i.first, Vector2Df(window.GetCursorPosition()));
     }
   }
 }

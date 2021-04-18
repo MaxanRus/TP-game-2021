@@ -2,7 +2,7 @@
 #include <Engine.hpp>
 #include <graphics/ResourceManager.hpp>
 
-void Drawable::Draw(const Vector2D& position, float size) const {
+void Drawable::Draw(const Vector2Df& position, float size) const {
   Graphics::ResourceManager::GetImage(image_name_).Draw(Graphics::ResourceManager::GetWindow(),
                                                         Graphics::ResourceManager::GetShader("image"),
                                                         position.x, position.y, size);
