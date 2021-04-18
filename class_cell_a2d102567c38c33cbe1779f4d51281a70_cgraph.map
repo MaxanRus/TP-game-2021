@@ -1,4 +1,5 @@
 <map id="Cell::Tick" name="Cell::Tick">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node2" href="$class_tickable.html#aed4f359bf9301a1407bb5e3fc0d67e72" title=" " alt="" coords="128,5,231,32"/>
+<area shape="rect" id="node2" href="$class_building.html#ab5a2b4ab22447eb435024432f0825614" title=" " alt="" coords="128,5,227,32"/>
+<area shape="rect" id="node3" href="$class_building.html#a0946ee74f4385c905c5cbffbde38e7dc" title=" " alt="" coords="275,5,423,32"/>
 </map>

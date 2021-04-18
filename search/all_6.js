@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getbuilding_44',['GetBuilding',['../class_cell.html#a4aaa15e8a22c3b31e78fd1667f2b30ae',1,'Cell::GetBuilding()'],['../class_field.html#a5ee31c16463135d5b86eed77cb05df02',1,'Field::GetBuilding(const Vector2D &amp;a) const']]],
+  ['getbuilding_44',['GetBuilding',['../class_cell.html#ad9c7029f80018cf27a1175ac0b0237e6',1,'Cell::GetBuilding()'],['../class_field.html#a198a31202a6e9d9414356491ec9cdad4',1,'Field::GetBuilding(const Vector2D &amp;a)']]],
   ['getcell_45',['GetCell',['../class_field.html#ae4f590bead2c56d2962a5362e8d127a4',1,'Field']]],
   ['getcellpos_46',['GetCellPos',['../class_field.html#abbe1a428501a04475979b292b5ad404b',1,'Field']]],
   ['getcopper_47',['GetCopper',['../class_sprites_manager.html#aab7efbd0060d2094d6d492ef0a9eb520',1,'SpritesManager']]],

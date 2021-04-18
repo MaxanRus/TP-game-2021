@@ -31,22 +31,24 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="class_building.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-155 0,-245 86,-245 86,-155 0,-155"/>
-<text text-anchor="middle" x="43" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">Building</text>
-<polyline fill="none" stroke="black" points="0,-226 86,-226 "/>
-<text text-anchor="middle" x="43" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="0,-207 86,-207 "/>
-<text text-anchor="start" x="8" y="-195" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetLife()</text>
-<text text-anchor="start" x="8" y="-184" font-family="Helvetica,sans-Serif" font-size="10.00">+ DealDamage()</text>
-<text text-anchor="start" x="8" y="-173" font-family="Helvetica,sans-Serif" font-size="10.00">+ Repair()</text>
+<polygon fill="white" stroke="black" points="0,-144 0,-256 86,-256 86,-144 0,-144"/>
+<text text-anchor="middle" x="43" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">Building</text>
+<polyline fill="none" stroke="black" points="0,-237 86,-237 "/>
+<text text-anchor="middle" x="43" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="0,-218 86,-218 "/>
+<text text-anchor="start" x="8" y="-206" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetLife()</text>
+<text text-anchor="start" x="8" y="-195" font-family="Helvetica,sans-Serif" font-size="10.00">+ DealDamage()</text>
+<text text-anchor="start" x="8" y="-184" font-family="Helvetica,sans-Serif" font-size="10.00">+ Repair()</text>
+<text text-anchor="start" x="8" y="-173" font-family="Helvetica,sans-Serif" font-size="10.00">+ Building()</text>
 <text text-anchor="start" x="8" y="-162" font-family="Helvetica,sans-Serif" font-size="10.00">+ Building()</text>
+<text text-anchor="start" x="8" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">+ Tick()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M190.24,-351.96C160.49,-335.7 122.73,-311.99 95,-284 83.75,-272.64 73.75,-258.44 65.6,-245"/>
+<path fill="none" stroke="midnightblue" d="M190.24,-351.96C160.49,-335.7 122.73,-311.99 95,-284 86.86,-275.78 79.38,-266.08 72.78,-256.25"/>
 <polygon fill="none" stroke="midnightblue" points="188.73,-355.13 199.2,-356.77 192.04,-348.96 188.73,-355.13"/>
 </g>
 <!-- Node3 -->

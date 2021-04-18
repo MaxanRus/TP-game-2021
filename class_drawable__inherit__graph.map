@@ -1,6 +1,6 @@
 <map id="Drawable" name="Drawable">
 <area shape="rect" id="node1" title=" " alt="" coords="271,5,374,156"/>
-<area shape="rect" id="node2" href="$class_building.html" title=" " alt="" coords="5,255,120,377"/>
+<area shape="rect" id="node2" href="$class_building.html" title=" " alt="" coords="5,241,120,391"/>
 <area shape="rect" id="node3" href="$class_cell.html" title=" " alt="" coords="145,204,253,428"/>
 <area shape="rect" id="node4" href="$class_ground.html" title=" " alt="" coords="277,270,368,362"/>
 <area shape="rect" id="node9" href="$class_player.html" title=" " alt="" coords="392,233,491,399"/>

@@ -1,6 +1,6 @@
 <map id="Tickable" name="Tickable">
 <area shape="rect" id="node1" title=" " alt="" coords="265,5,335,83"/>
-<area shape="rect" id="node2" href="$class_building.html" title=" " alt="" coords="45,189,160,311"/>
+<area shape="rect" id="node2" href="$class_building.html" title=" " alt="" coords="45,175,160,325"/>
 <area shape="rect" id="node3" href="$class_cell.html" title=" " alt="" coords="185,138,293,362"/>
 <area shape="rect" id="node4" href="$class_ground.html" title=" " alt="" coords="317,204,408,296"/>
 <area shape="rect" id="node9" href="$class_world_actor.html" title=" " alt="" coords="635,131,741,369"/>
