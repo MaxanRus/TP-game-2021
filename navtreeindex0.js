@@ -85,9 +85,10 @@ var NAVTREEINDEX0 =
 "_unit_group_8hpp.html":[2,0,0,0,0,6],
 "_unit_group_8hpp_source.html":[2,0,0,0,0,6],
 "_vector2_d_8hpp.html":[2,0,0,3,0],
-"_vector2_d_8hpp.html#adc9f48fffb435d5a604b678fbacabd6c":[2,0,0,3,0,2],
-"_vector2_d_8hpp.html#ae00ad5deae5fdb9c56ee4b81d9c8748e":[2,0,0,3,0,3],
+"_vector2_d_8hpp.html#adc9f48fffb435d5a604b678fbacabd6c":[2,0,0,3,0,3],
+"_vector2_d_8hpp.html#ae00ad5deae5fdb9c56ee4b81d9c8748e":[2,0,0,3,0,4],
 "_vector2_d_8hpp.html#ae709f7159db8c4bfbea37ed9c666a9c6":[2,0,0,3,0,1],
+"_vector2_d_8hpp.html#af85c0fa8230068899ab55019c3ffcf99":[2,0,0,3,0,2],
 "_vector2_d_8hpp_source.html":[2,0,0,3,0],
 "_window_8cpp.html":[2,0,1,2,4],
 "_window_8hpp.html":[2,0,0,2,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "class_player.html#a3283935abe9e88db250b1bdb825f9c90":[1,0,14,4],
 "class_player.html#aaa23b3bf80e8c0267cf08d4fe4d6ddc1":[1,0,14,0],
 "class_player.html#ac9010645b179712c09ebd310e5fe48eb":[1,0,14,6],
-"class_player.html#aeacc31a8913ba9546b7863583ac05d96":[1,0,14,1],
-"class_sprites_manager.html":[1,0,15]
+"class_player.html#aeacc31a8913ba9546b7863583ac05d96":[1,0,14,1]
 };
