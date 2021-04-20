@@ -10,6 +10,7 @@ class Image;
 #include "graphics/Window.hpp"
 #include "graphics/Shader.hpp"
 #include "graphics/Transform.hpp"
+#include "Helpers/Vector2D.hpp"
 
 namespace Graphics {
 class GShape {
@@ -17,6 +18,7 @@ class GShape {
   virtual ~GShape() {}
   virtual void Draw(Window&, Shader, const Transform& = Transform()) const = 0;
   virtual void Draw(Window&, Shader, int x, int y, float scale = 1, float rotate = 0) const = 0;
+  virtual void Draw(Window& window, Shader shader, const Vector2Di& position, float scale = 1, float rotate = 0) const = 0;
  protected:
   uint32_t id_vertex_arrays_;
   uint32_t id_vertex_buffer_;
@@ -30,7 +32,8 @@ class Quadrangle : public GShape {
   Quadrangle& operator=(const Quadrangle&) = default;
   Quadrangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
   void Draw(Window&, Shader, const Transform& = Transform()) const override;
-  virtual void Draw(Window&, Shader, int x, int y, float scale = 1, float rotate = 0) const;
+  void Draw(Window&, Shader, int x, int y, float scale = 1, float rotate = 0) const override;
+  void Draw(Window& window, Shader shader, const Vector2Di& position, float scale = 1, float rotate = 0) const override;
  protected:
   int x1, y1, x2, y2, x3, y3, x4, y4;
  private:
@@ -48,6 +51,7 @@ class Image : public Quadrangle {
   [[nodiscard]] uint32_t GetId() const { return id_; }
   void Draw(Window&, Shader, const Transform& = Transform()) const override;
   void Draw(Window& window, Shader shader, int x, int y, float scale = 1, float rotate = 0) const;
+  void Draw(Window& window, Shader shader, const Vector2Di& position, float scale = 1, float rotate = 0) const;
  private:
   int nr_channels_;
   int width_, height_;

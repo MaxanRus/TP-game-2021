@@ -3,12 +3,15 @@
 #include <SpritesManager.hpp>
 #include "graphics/ResourceManager.hpp"
 #include "Timer.hpp"
+#include "GUI/GUIManager.hpp"
+#include "GUI/Inventory.hpp"
 
 void Initialization();
 
 int main() {
   Initialization();
 
+  GUI::GUIManager::GetGUIManager().AddWindow(std::make_unique<GUI::Inventory>());
   while (Graphics::ResourceManager::GetWindow().IsAlive()) {
     double t = glfwGetTime();
 

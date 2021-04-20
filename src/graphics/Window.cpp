@@ -42,7 +42,7 @@ std::pair<int, int> Window::GetSizeWindow() const {
 std::pair<int, int> Window::GetCursorPosition() const {
   double mouse_x, mouse_y;
   glfwGetCursorPos(window_, &mouse_x, &mouse_y);
-  return std::make_pair(int(mouse_x + 0.5), int(mouse_y) + 0.5);
+  return std::make_pair(int(mouse_x + 0.5), GetSizeWindow().second - int(mouse_y) + 0.5);
 }
 
 void Window::Use(Shader shader) {

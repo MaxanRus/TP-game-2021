@@ -1,18 +1,20 @@
-#include <exception>
-
 #include <stb_image.h>
 #include <array>
 #include <stdexcept>
 
 #include "graphics/GShape.hpp"
+#include "Helpers/Vector2D.hpp"
 
 using namespace Graphics;
 
+/*
 void GShape::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
+  assert(0);
   Transform transform;
   transform.Move(x, y).Rotate(rotate).Scale(scale);
   Draw(window, shader, transform);
 }
+ */
 
 Quadrangle::Quadrangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
   std::array<float, 8> vertices = {static_cast<float>(x1), static_cast<float>(y1), static_cast<float>(x2), static_cast<float>(y2),
@@ -53,7 +55,19 @@ void Quadrangle::Draw(Window& window, Shader shader, const Transform& transform)
 }
 
 void Quadrangle::Draw(Window& window, Shader shader, int x, int y, float scale, float rotate) const {
-  GShape::Draw(window, shader, x, y, scale, rotate);
+  if (abs(rotate) > 1e-3)
+    Draw(window, shader, Transform().Move(x + scale * 1 / 2.0f, y + scale * 1 / 2.0f).Scale(scale)
+        .Rotate(rotate).Move(-1 / 2.0f, -1 / 2.0f));
+  else
+    Draw(window, shader, Transform().Move(x, y).Scale(scale));
+}
+
+void Quadrangle::Draw(Window& window, Shader shader, const Vector2Di& position, float scale, float rotate) const {
+  if (abs(rotate) > 1e-3)
+    Draw(window, shader, Transform().Move(position.x + scale * 1 / 2.0f, position.y + scale * 1 / 2.0f).Scale(scale)
+        .Rotate(rotate).Move(-1 / 2.0f, -1 / 2.0f));
+  else
+    Draw(window, shader, Transform().Move(position.x, position.y).Scale(scale));
 }
 
 Image::Image(const std::string_view& path) : Quadrangle(0, 0, 1, 0, 1, 1, 0, 1) {
@@ -90,4 +104,12 @@ void Image::Draw(Window& window, Shader shader, int x, int y, float scale, float
         .Rotate(rotate).Move(-width_ / 2.0f, -height_ / 2.0f));
   else
     Draw(window, shader, Transform().Move(x, y).Scale(scale));
+}
+
+void Image::Draw(Window& window, Shader shader, const Vector2Di& position, float scale, float rotate) const {
+  if (abs(rotate) > 1e-3)
+    Draw(window, shader, Transform().Move(position.x + scale * width_ / 2.0f, position.y + scale * height_ / 2.0f).Scale(scale)
+        .Rotate(rotate).Move(-width_ / 2.0f, -height_ / 2.0f));
+  else
+    Draw(window, shader, Transform().Move(position.x, position.y).Scale(scale));
 }

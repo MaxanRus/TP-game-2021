@@ -1,6 +1,7 @@
 #include "Engine.hpp"
-#include <iostream>
 #include <graphics/ResourceManager.hpp>
+#include "GUI/GUIManager.hpp"
+#include "GUI/States.hpp"
 
 Engine* Engine::ptr = nullptr;
 
@@ -22,14 +23,19 @@ Engine::Engine(uint32_t width, uint32_t height, const std::string_view& path_fil
   event_handler.AddEvent(Trigger::D, [this](Trigger, Vector2Df) -> void {
     player_.SpeedInc(Vector2Df(1, 0));
   });
-  event_handler.AddEvent(Trigger::LEFT_MOUSE, [this](Trigger, Vector2Df cursor_position) -> void {
-    Vector2Df(Graphics::ResourceManager::GetWindow().GetSizeWindow());
-    int x = field_.GetCellPos(cursor_position + Vector2Df(player_.GetX(), player_.GetY()) - Vector2Df(Graphics::ResourceManager::GetWindow().GetSizeWindow()) / 2).first;
-    int y = field_.GetCellPos(-cursor_position + Vector2Df(player_.GetX(), player_.GetY()) + Vector2Df(Graphics::ResourceManager::GetWindow().GetSizeWindow()) / 2).second;
-    field_[x][y].SetBuilding(new Building("wall", 200, [this, x, y]() {
-      delete field_[x][y].GetBuilding();
-      field_[x][y].GetBuilding() = nullptr;
-    }));
+  event_handler.AddEvent(Trigger::LEFT_MOUSE, [this](Trigger, const Vector2Df& cursor_position) -> void {
+    if (GUI::GUIManager::GetGUIManager().Click(Vector2Di(cursor_position))) {
+    } else {
+      Vector2Df(Graphics::ResourceManager::GetWindow().GetSizeWindow());
+      int x = field_.GetCellPos(cursor_position + Vector2Df(player_.GetX(), player_.GetY())
+                                    - Vector2Df(Graphics::ResourceManager::GetWindow().GetSizeWindow()) / 2).first;
+      int y = field_.GetCellPos(cursor_position + Vector2Df(player_.GetX(), player_.GetY())
+                                    - Vector2Df(Graphics::ResourceManager::GetWindow().GetSizeWindow()) / 2).second;
+      field_[x][y].SetBuilding(new Building(GUI::current_placed_block, 200, [this, x, y]() {
+        delete field_[x][y].GetBuilding();
+        field_[x][y].GetBuilding() = nullptr;
+      }));
+    }
   });
 }
 
@@ -52,6 +58,7 @@ void Engine::Draw() const {
              {(float)(Graphics::ResourceManager::GetWindow().GetSizeWindow().first / 2),
               (float)(Graphics::ResourceManager::GetWindow().GetSizeWindow().second / 2)});
   }
+  GUI::GUIManager::GetGUIManager().Draw();
   Graphics::ResourceManager::GetWindow().Render();
 }
 
