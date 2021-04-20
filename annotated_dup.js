@@ -12,6 +12,12 @@ var annotated_dup =
       [ "Transform", "class_graphics_1_1_transform.html", "class_graphics_1_1_transform" ],
       [ "Window", "class_graphics_1_1_window.html", "class_graphics_1_1_window" ]
     ] ],
+    [ "GUI", "namespace_g_u_i.html", [
+      [ "GUIManager", "class_g_u_i_1_1_g_u_i_manager.html", "class_g_u_i_1_1_g_u_i_manager" ],
+      [ "GUIWindow", "class_g_u_i_1_1_g_u_i_window.html", "class_g_u_i_1_1_g_u_i_window" ],
+      [ "Inventory", "class_g_u_i_1_1_inventory.html", "class_g_u_i_1_1_inventory" ],
+      [ "Item", "class_g_u_i_1_1_item.html", "class_g_u_i_1_1_item" ]
+    ] ],
     [ "Building", "class_building.html", "class_building" ],
     [ "Cell", "class_cell.html", "class_cell" ],
     [ "ConstantsManager", "struct_constants_manager.html", null ],

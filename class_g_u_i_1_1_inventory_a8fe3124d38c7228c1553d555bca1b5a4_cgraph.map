@@ -1,0 +1,6 @@
+<map id="GUI::Inventory::Inventory" name="GUI::Inventory::Inventory">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,169,98"/>
+<area shape="rect" id="node2" href="$class_graphics_1_1_resource_manager.html#a712cf513dbda24deb3a7fcea7157003a" title=" " alt="" coords="217,5,403,47"/>
+<area shape="rect" id="node3" href="$class_graphics_1_1_image.html#a844862eac20e00b7d2b33da163be0304" title=" " alt="" coords="226,71,394,98"/>
+<area shape="rect" id="node4" href="$class_graphics_1_1_resource_manager.html#a2bf0311bf4f8431618eb13706a26a5f1" title=" " alt="" coords="217,123,403,164"/>
+</map>

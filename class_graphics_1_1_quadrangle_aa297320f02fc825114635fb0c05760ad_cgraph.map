@@ -1,0 +1,9 @@
+<map id="Graphics::Quadrangle::Draw" name="Graphics::Quadrangle::Draw">
+<area shape="rect" id="node1" title=" " alt="" coords="5,122,152,163"/>
+<area shape="rect" id="node2" href="$class_graphics_1_1_quadrangle.html#a7a061a60b5bff19feb5fd317d06495f0" title=" " alt="" coords="200,23,347,65"/>
+<area shape="rect" id="node5" href="$class_graphics_1_1_transform.html#a7796be5a06b51d8319548f8cdfca6ff7" title=" " alt="" coords="204,89,343,130"/>
+<area shape="rect" id="node6" href="$class_graphics_1_1_transform.html#af2c7b869c8803ba0f2f1ecf9f0a5ca37" title=" " alt="" coords="204,154,343,195"/>
+<area shape="rect" id="node7" href="$class_graphics_1_1_transform.html#a2811e9ce17dcf86f36a7a38ec444ec0f" title=" " alt="" coords="204,219,343,261"/>
+<area shape="rect" id="node3" href="$class_graphics_1_1_shader.html#a63bfd523754bb6b2224aa7a48c65a504" title=" " alt="" coords="395,5,553,32"/>
+<area shape="rect" id="node4" href="$class_graphics_1_1_shader.html#a11a2de17d1d077ec34acd4f7cd57f6b1" title=" " alt="" coords="399,56,549,83"/>
+</map>

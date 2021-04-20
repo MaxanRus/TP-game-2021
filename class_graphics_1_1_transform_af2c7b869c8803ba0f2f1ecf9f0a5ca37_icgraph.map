@@ -1,4 +1,5 @@
 <map id="Graphics::Transform::Rotate" name="Graphics::Transform::Rotate">
-<area shape="rect" id="node1" title=" " alt="" coords="216,5,355,47"/>
-<area shape="rect" id="node2" href="$class_graphics_1_1_g_shape.html#ad303fe96d5d856cfbae1cc8e99414d65" title=" " alt="" coords="5,13,168,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="205,27,344,69"/>
+<area shape="rect" id="node2" href="$class_graphics_1_1_image.html#a880481ff1290a4b0dd916e0ff1402b51" title=" " alt="" coords="5,5,157,32"/>
+<area shape="rect" id="node3" href="$class_graphics_1_1_quadrangle.html#aa297320f02fc825114635fb0c05760ad" title=" " alt="" coords="8,57,155,98"/>
 </map>

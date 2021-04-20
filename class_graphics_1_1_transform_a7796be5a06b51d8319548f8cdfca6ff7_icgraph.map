@@ -1,5 +1,6 @@
 <map id="Graphics::Transform::Move" name="Graphics::Transform::Move">
-<area shape="rect" id="node1" title=" " alt="" coords="265,27,404,69"/>
-<area shape="rect" id="node2" href="$class_graphics_1_1_g_shape.html#ad303fe96d5d856cfbae1cc8e99414d65" title=" " alt="" coords="30,5,193,32"/>
-<area shape="rect" id="node3" href="$class_graphics_1_1_window.html#a8c9f4d2a14be1c7c17cc2a9ad855aecc" title=" " alt="" coords="5,57,217,98"/>
+<area shape="rect" id="node1" title=" " alt="" coords="265,57,404,98"/>
+<area shape="rect" id="node2" href="$class_graphics_1_1_image.html#a880481ff1290a4b0dd916e0ff1402b51" title=" " alt="" coords="35,5,187,32"/>
+<area shape="rect" id="node3" href="$class_graphics_1_1_quadrangle.html#aa297320f02fc825114635fb0c05760ad" title=" " alt="" coords="38,57,185,98"/>
+<area shape="rect" id="node4" href="$class_graphics_1_1_window.html#a8c9f4d2a14be1c7c17cc2a9ad855aecc" title=" " alt="" coords="5,122,217,163"/>
 </map>
