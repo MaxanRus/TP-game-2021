@@ -18,6 +18,12 @@ void WorldActor::Tick() {
     }
   }
   auto newPos = position_ + speed_ * speed_coefficient;
+  if (newPos.x < 0) {
+    newPos.x = 0;
+  }
+  if (newPos.y < 0) {
+    newPos.y = 0;
+  }
   if (field_->GetBuilding(newPos) == nullptr || fly_) {
     position_ = newPos;
   }

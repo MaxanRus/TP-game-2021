@@ -23,10 +23,10 @@ void Unit::Tick() {
     if (Vector2Df::dist(position_, Engine::GetPlayer().GetPosition()) <= power_ * 3) {
       throw "end game";
     }
-    last_attack_ = time + attack_speed_;
     auto ptr = field_->GetBuilding(position_);
     if (ptr != nullptr) {
       ptr->DealDamage(damage_);
+      last_attack_ = time + attack_speed_;
     }
   }
 }
