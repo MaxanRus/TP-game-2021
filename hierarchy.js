@@ -16,6 +16,7 @@ var hierarchy =
     [ "Engine", "class_engine.html", null ],
     [ "EventHandler", "class_event_handler.html", null ],
     [ "Field", "class_field.html", null ],
+    [ "Game", "class_game.html", null ],
     [ "Graphics::GShape", "class_graphics_1_1_g_shape.html", [
       [ "Graphics::Quadrangle", "class_graphics_1_1_quadrangle.html", [
         [ "Graphics::Image", "class_graphics_1_1_image.html", null ]

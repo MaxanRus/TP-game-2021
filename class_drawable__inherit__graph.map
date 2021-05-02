@@ -1,12 +1,12 @@
 <map id="Drawable" name="Drawable">
 <area shape="rect" id="node1" title=" " alt="" coords="271,5,374,156"/>
-<area shape="rect" id="node2" href="$class_building.html" title=" " alt="" coords="5,241,120,391"/>
-<area shape="rect" id="node3" href="$class_cell.html" title=" " alt="" coords="145,204,253,428"/>
-<area shape="rect" id="node4" href="$class_ground.html" title=" " alt="" coords="277,270,368,362"/>
-<area shape="rect" id="node9" href="$class_player.html" title=" " alt="" coords="392,233,491,399"/>
-<area shape="rect" id="node10" href="$class_unit.html" title=" " alt="" coords="515,241,669,391"/>
-<area shape="rect" id="node5" href="$class_ground_earth.html" title=" " alt="" coords="40,476,160,583"/>
-<area shape="rect" id="node6" href="$class_ground_empty.html" title=" " alt="" coords="185,476,311,583"/>
-<area shape="rect" id="node7" href="$class_ground_water.html" title=" " alt="" coords="335,476,459,583"/>
-<area shape="rect" id="node8" href="$class_mineral.html" title=" " alt="" coords="484,476,575,583"/>
+<area shape="rect" id="node2" href="$class_building.html" title=" " alt="" coords="5,255,120,391"/>
+<area shape="rect" id="node3" href="$class_cell.html" title=" " alt="" coords="145,204,253,443"/>
+<area shape="rect" id="node4" href="$class_ground.html" title=" " alt="" coords="277,277,368,369"/>
+<area shape="rect" id="node9" href="$class_player.html" title=" " alt="" coords="392,241,491,406"/>
+<area shape="rect" id="node10" href="$class_unit.html" title=" " alt="" coords="515,248,669,399"/>
+<area shape="rect" id="node5" href="$class_ground_earth.html" title=" " alt="" coords="40,491,160,597"/>
+<area shape="rect" id="node6" href="$class_ground_empty.html" title=" " alt="" coords="185,491,311,597"/>
+<area shape="rect" id="node7" href="$class_ground_water.html" title=" " alt="" coords="335,491,459,597"/>
+<area shape="rect" id="node8" href="$class_mineral.html" title=" " alt="" coords="484,491,575,597"/>
 </map>

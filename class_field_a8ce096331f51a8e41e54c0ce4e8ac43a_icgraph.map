@@ -1,4 +1,11 @@
 <map id="Field::GetBuilding" name="Field::GetBuilding">
-<area shape="rect" id="node1" title=" " alt="" coords="131,5,253,32"/>
-<area shape="rect" id="node2" href="$class_unit.html#a764442e3620b9af8882d8050d8a08afe" title=" " alt="" coords="5,5,83,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="713,56,836,83"/>
+<area shape="rect" id="node2" href="$class_field.html#a2944ed80b5699ff0fc9b0bd5031183af" title=" " alt="" coords="543,5,665,32"/>
+<area shape="rect" id="node3" href="$class_unit.html#a764442e3620b9af8882d8050d8a08afe" title=" " alt="" coords="400,56,477,83"/>
+<area shape="rect" id="node4" href="$class_world_actor.html#a211b1d4fdcd4eaed756b3602b6dfb412" title=" " alt="" coords="545,107,663,133"/>
+<area shape="rect" id="node5" href="$class_player.html#ac9010645b179712c09ebd310e5fe48eb" title=" " alt="" coords="394,107,483,133"/>
+<area shape="rect" id="node9" href="$class_unit_group.html#a49ae050d0c9fb676cbff630d18d29b20" title=" " alt="" coords="383,157,495,184"/>
+<area shape="rect" id="node6" href="$class_engine.html#a06d3e75a7f768f0d48746aea00483724" title=" " alt="" coords="243,107,335,133"/>
+<area shape="rect" id="node7" href="$class_game.html#adb05b20574551a26f8cf1dc664782790" title=" " alt="" coords="104,107,195,133"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,56,133"/>
 </map>

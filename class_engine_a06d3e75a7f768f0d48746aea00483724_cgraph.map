@@ -1,6 +1,12 @@
 <map id="Engine::Tick" name="Engine::Tick">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,97,57"/>
-<area shape="rect" id="node2" href="$class_field.html#a5f554e84e4bc9af72e5d262f41e97493" title=" " alt="" coords="149,5,231,32"/>
-<area shape="rect" id="node3" href="$class_player.html#ac9010645b179712c09ebd310e5fe48eb" title=" " alt="" coords="145,56,235,83"/>
-<area shape="rect" id="node4" href="$struct_vector2_d.html#a4243151f5398e352a38073c4e1dfd30b" title=" " alt="" coords="283,56,432,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,97,83"/>
+<area shape="rect" id="node2" href="$class_engine.html#a6d852b5acb8b7af1df790a662ca863fe" title=" " alt="" coords="145,5,269,32"/>
+<area shape="rect" id="node3" href="$class_field.html#a5f554e84e4bc9af72e5d262f41e97493" title=" " alt="" coords="167,56,248,83"/>
+<area shape="rect" id="node4" href="$class_player.html#ac9010645b179712c09ebd310e5fe48eb" title=" " alt="" coords="163,107,252,133"/>
+<area shape="rect" id="node5" href="$struct_vector2_d.html#a4243151f5398e352a38073c4e1dfd30b" title=" " alt="" coords="317,81,467,108"/>
+<area shape="rect" id="node6" href="$class_world_actor.html#a211b1d4fdcd4eaed756b3602b6dfb412" title=" " alt="" coords="333,132,451,159"/>
+<area shape="rect" id="node7" href="$class_field.html#a8ce096331f51a8e41e54c0ce4e8ac43a" title=" " alt="" coords="515,81,637,108"/>
+<area shape="rect" id="node9" href="$class_field.html#a5a202354dc5e99cb7f51121904256845" title=" " alt="" coords="527,132,625,159"/>
+<area shape="rect" id="node10" href="$class_cell.html#ac21e31812473f2d969ff434b35a81825" title=" " alt="" coords="522,183,630,209"/>
+<area shape="rect" id="node8" href="$class_field.html#a81822f0090fbb9f187fe4d3d15c7ab96" title=" " alt="" coords="685,81,808,108"/>
 </map>

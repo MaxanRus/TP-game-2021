@@ -1,12 +1,13 @@
 <map id="Graphics::Quadrangle::Draw" name="Graphics::Quadrangle::Draw">
-<area shape="rect" id="node1" title=" " alt="" coords="912,78,1059,119"/>
-<area shape="rect" id="node2" href="$class_graphics_1_1_image.html#af48c0e309532eb1ff36e8fdaee244da1" title=" " alt="" coords="712,56,864,83"/>
-<area shape="rect" id="node10" href="$class_graphics_1_1_quadrangle.html#aaa7571e889354bb4b4326d8b497d1055" title=" " alt="" coords="715,107,861,149"/>
-<area shape="rect" id="node3" href="$class_g_u_i_1_1_item.html#ab089785456c77b4ff16f15dc7b6bd8fa" title=" " alt="" coords="531,5,645,32"/>
-<area shape="rect" id="node4" href="$class_drawable.html#ac46f25a963a3fe3e9176461d61d213c7" title=" " alt="" coords="532,56,644,83"/>
-<area shape="rect" id="node9" href="$class_graphics_1_1_image.html#a90e9a33ef5f89fa71e830d967122b9e3" title=" " alt="" coords="512,107,664,133"/>
-<area shape="rect" id="node5" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="104,56,201,83"/>
-<area shape="rect" id="node7" href="$class_cell.html#ac88160c4177e146f8dd7482c4eaee4f0" title=" " alt="" coords="384,81,464,108"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
-<area shape="rect" id="node8" href="$class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b" title=" " alt="" coords="249,81,336,108"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1051,78,1197,119"/>
+<area shape="rect" id="node2" href="$class_graphics_1_1_image.html#af48c0e309532eb1ff36e8fdaee244da1" title=" " alt="" coords="851,56,1003,83"/>
+<area shape="rect" id="node11" href="$class_graphics_1_1_quadrangle.html#aaa7571e889354bb4b4326d8b497d1055" title=" " alt="" coords="853,107,1000,149"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_item.html#ab089785456c77b4ff16f15dc7b6bd8fa" title=" " alt="" coords="669,5,784,32"/>
+<area shape="rect" id="node4" href="$class_drawable.html#ac46f25a963a3fe3e9176461d61d213c7" title=" " alt="" coords="671,56,783,83"/>
+<area shape="rect" id="node10" href="$class_graphics_1_1_image.html#a90e9a33ef5f89fa71e830d967122b9e3" title=" " alt="" coords="651,107,803,133"/>
+<area shape="rect" id="node5" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="243,56,340,83"/>
+<area shape="rect" id="node8" href="$class_cell.html#ac88160c4177e146f8dd7482c4eaee4f0" title=" " alt="" coords="523,81,603,108"/>
+<area shape="rect" id="node6" href="$class_game.html#adb05b20574551a26f8cf1dc664782790" title=" " alt="" coords="104,56,195,83"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+<area shape="rect" id="node9" href="$class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b" title=" " alt="" coords="388,81,475,108"/>
 </map>

@@ -107,24 +107,26 @@ $(document).ready(function(){initNavTree('_field_8hpp_source.html',''); initResi
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  [[nodiscard]] <span class="keyword">static</span> std::pair&lt;uint32_t, uint32_t&gt; <a class="code" href="class_field.html#a81822f0090fbb9f187fe4d3d15c7ab96">GetCellPos</a>(<span class="keyword">const</span> <a class="code" href="struct_vector2_d.html">Vector2Df</a>&amp; a);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  [[nodiscard]] <a class="code" href="class_building.html">Building</a>* <a class="code" href="class_field.html#a8ce096331f51a8e41e54c0ce4e8ac43a">GetBuilding</a>(<span class="keyword">const</span> <a class="code" href="struct_vector2_d.html">Vector2Df</a>&amp; a);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b">Draw</a>(<span class="keyword">const</span> <a class="code" href="struct_vector2_d.html">Vector2Df</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_vector2_d.html">Vector2Df</a>&amp; center) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_field.html#a5f554e84e4bc9af72e5d262f41e97493">Tick</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  uint32_t width_ = 0, height_ = 0;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  std::vector&lt;std::vector&lt;Cell&gt;&gt; field_;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  [[nodiscard]] <a class="code" href="class_cell.html">Cell</a>&amp; At(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  [[nodiscard]] <span class="keyword">const</span> <a class="code" href="class_cell.html">Cell</a>&amp; At(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  [[nodiscard]] <a class="code" href="class_building.html">Building</a>* <a class="code" href="class_field.html#a2944ed80b5699ff0fc9b0bd5031183af">SetBuilding</a>(<span class="keyword">const</span> <a class="code" href="struct_vector2_d.html">Vector2Df</a>&amp; a, <a class="code" href="class_building.html">Building</a>* x);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b">Draw</a>(<span class="keyword">const</span> <a class="code" href="struct_vector2_d.html">Vector2Df</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_vector2_d.html">Vector2Df</a>&amp; center) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_field.html#a5f554e84e4bc9af72e5d262f41e97493">Tick</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  uint32_t width_ = 0, height_ = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  std::vector&lt;std::vector&lt;Cell&gt;&gt; field_;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  [[nodiscard]] <a class="code" href="class_cell.html">Cell</a>&amp; At(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  [[nodiscard]] <span class="keyword">const</span> <a class="code" href="class_cell.html">Cell</a>&amp; At(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 <div class="ttc" id="a_cell_8hpp_html"><div class="ttname"><a href="_cell_8hpp.html">Cell.hpp</a></div></div>
 <div class="ttc" id="a_vector2_d_8hpp_html"><div class="ttname"><a href="_vector2_d_8hpp.html">Vector2D.hpp</a></div></div>
 <div class="ttc" id="aclass_building_html"><div class="ttname"><a href="class_building.html">Building</a></div><div class="ttdef"><b>Definition:</b> Building.hpp:7</div></div>
 <div class="ttc" id="aclass_cell_html"><div class="ttname"><a href="class_cell.html">Cell</a></div><div class="ttdef"><b>Definition:</b> Cell.hpp:9</div></div>
 <div class="ttc" id="aclass_engine_html"><div class="ttname"><a href="class_engine.html">Engine</a></div><div class="ttdef"><b>Definition:</b> Engine.hpp:6</div></div>
 <div class="ttc" id="aclass_field_html"><div class="ttname"><a href="class_field.html">Field</a></div><div class="ttdef"><b>Definition:</b> Field.hpp:8</div></div>
+<div class="ttc" id="aclass_field_html_a2944ed80b5699ff0fc9b0bd5031183af"><div class="ttname"><a href="class_field.html#a2944ed80b5699ff0fc9b0bd5031183af">Field::SetBuilding</a></div><div class="ttdeci">Building * SetBuilding(const Vector2Df &amp;a, Building *x)</div><div class="ttdef"><b>Definition:</b> Field.cpp:108</div></div>
 <div class="ttc" id="aclass_field_html_a2e8ff230baeb040c92e46bb8ca06a20f"><div class="ttname"><a href="class_field.html#a2e8ff230baeb040c92e46bb8ca06a20f">Field::GetHeight</a></div><div class="ttdeci">uint32_t GetHeight() const</div><div class="ttdef"><b>Definition:</b> Field.cpp:60</div></div>
 <div class="ttc" id="aclass_field_html_a49946f632ba55deabf6bc8cd5f100225"><div class="ttname"><a href="class_field.html#a49946f632ba55deabf6bc8cd5f100225">Field::Field</a></div><div class="ttdeci">Field()=default</div></div>
 <div class="ttc" id="aclass_field_html_a5a202354dc5e99cb7f51121904256845"><div class="ttname"><a href="class_field.html#a5a202354dc5e99cb7f51121904256845">Field::GetCell</a></div><div class="ttdeci">const Cell &amp; GetCell(const Vector2Df &amp;a) const</div><div class="ttdef"><b>Definition:</b> Field.cpp:7</div></div>

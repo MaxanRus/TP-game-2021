@@ -12,6 +12,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "Engine.hpp", "_engine_8hpp.html", [
       [ "Engine", "class_engine.html", "class_engine" ]
     ] ],
+    [ "Game.h", "_game_8h.html", [
+      [ "Game", "class_game.html", null ]
+    ] ],
     [ "SpritesManager.hpp", "_sprites_manager_8hpp.html", [
       [ "SpritesManager", "class_sprites_manager.html", null ]
     ] ],

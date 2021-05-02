@@ -1,7 +1,7 @@
 var class_player =
 [
     [ "Player", "class_player.html#aaa23b3bf80e8c0267cf08d4fe4d6ddc1", null ],
-    [ "Player", "class_player.html#aeacc31a8913ba9546b7863583ac05d96", null ],
+    [ "Player", "class_player.html#afe4a1461b35658906d99a5d1bd57ebc7", null ],
     [ "~Player", "class_player.html#a1228878de27edb8544145dc7964ce72a", null ],
     [ "SpeedInc", "class_player.html#a1cb398374b8458da02a57f41413b55b2", null ],
     [ "SpeedSet", "class_player.html#a3283935abe9e88db250b1bdb825f9c90", null ],

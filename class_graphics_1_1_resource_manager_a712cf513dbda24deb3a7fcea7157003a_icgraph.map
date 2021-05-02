@@ -1,11 +1,12 @@
 <map id="Graphics::ResourceManager::GetImage" name="Graphics::ResourceManager::GetImage">
-<area shape="rect" id="node1" title=" " alt="" coords="724,74,909,115"/>
-<area shape="rect" id="node2" href="$class_g_u_i_1_1_item.html#a2aed1e3debe2a6080c10d5b2d005f8c8" title=" " alt="" coords="537,5,651,32"/>
-<area shape="rect" id="node3" href="$class_g_u_i_1_1_item.html#ab089785456c77b4ff16f15dc7b6bd8fa" title=" " alt="" coords="537,56,651,83"/>
-<area shape="rect" id="node4" href="$class_drawable.html#ac46f25a963a3fe3e9176461d61d213c7" title=" " alt="" coords="538,107,650,133"/>
-<area shape="rect" id="node9" href="$class_g_u_i_1_1_inventory.html#a8fe3124d38c7228c1553d555bca1b5a4" title=" " alt="" coords="512,157,676,184"/>
-<area shape="rect" id="node5" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="104,107,201,133"/>
-<area shape="rect" id="node7" href="$class_cell.html#ac88160c4177e146f8dd7482c4eaee4f0" title=" " alt="" coords="384,132,464,159"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,56,133"/>
-<area shape="rect" id="node8" href="$class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b" title=" " alt="" coords="249,132,336,159"/>
+<area shape="rect" id="node1" title=" " alt="" coords="863,74,1048,115"/>
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_item.html#a2aed1e3debe2a6080c10d5b2d005f8c8" title=" " alt="" coords="676,5,789,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_item.html#ab089785456c77b4ff16f15dc7b6bd8fa" title=" " alt="" coords="675,56,790,83"/>
+<area shape="rect" id="node4" href="$class_drawable.html#ac46f25a963a3fe3e9176461d61d213c7" title=" " alt="" coords="677,107,789,133"/>
+<area shape="rect" id="node10" href="$class_g_u_i_1_1_inventory.html#a8fe3124d38c7228c1553d555bca1b5a4" title=" " alt="" coords="651,157,815,184"/>
+<area shape="rect" id="node5" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="243,107,340,133"/>
+<area shape="rect" id="node8" href="$class_cell.html#ac88160c4177e146f8dd7482c4eaee4f0" title=" " alt="" coords="523,132,603,159"/>
+<area shape="rect" id="node6" href="$class_game.html#adb05b20574551a26f8cf1dc664782790" title=" " alt="" coords="104,107,195,133"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,56,133"/>
+<area shape="rect" id="node9" href="$class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b" title=" " alt="" coords="388,132,475,159"/>
 </map>

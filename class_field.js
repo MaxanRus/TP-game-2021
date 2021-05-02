@@ -9,5 +9,6 @@ var class_field =
     [ "GetWidth", "class_field.html#ab8fe8427dfeeeca58fdb068ec7416fc1", null ],
     [ "operator[]", "class_field.html#ac512669ec35a0537ae3c6e4eb35309eb", null ],
     [ "operator[]", "class_field.html#a5df70b893ca3e491c3760097e2ae00f2", null ],
+    [ "SetBuilding", "class_field.html#a2944ed80b5699ff0fc9b0bd5031183af", null ],
     [ "Tick", "class_field.html#a5f554e84e4bc9af72e5d262f41e97493", null ]
 ];

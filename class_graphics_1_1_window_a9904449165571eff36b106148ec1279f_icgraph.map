@@ -1,7 +1,8 @@
 <map id="Graphics::Window::Clear" name="Graphics::Window::Clear">
-<area shape="rect" id="node1" title=" " alt="" coords="476,31,639,57"/>
-<area shape="rect" id="node2" href="$class_graphics_1_1_window.html#a7863fafae23423f404bee7aa3a57e124" title=" " alt="" coords="252,5,425,32"/>
-<area shape="rect" id="node5" href="$class_graphics_1_1_window.html#a2e753d71ab2265c36178dc86d77a44be" title=" " alt="" coords="249,56,428,83"/>
-<area shape="rect" id="node3" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="104,5,201,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="615,31,777,57"/>
+<area shape="rect" id="node2" href="$class_graphics_1_1_window.html#a7863fafae23423f404bee7aa3a57e124" title=" " alt="" coords="391,5,564,32"/>
+<area shape="rect" id="node6" href="$class_graphics_1_1_window.html#a2e753d71ab2265c36178dc86d77a44be" title=" " alt="" coords="388,56,567,83"/>
+<area shape="rect" id="node3" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="243,5,340,32"/>
+<area shape="rect" id="node4" href="$class_game.html#adb05b20574551a26f8cf1dc664782790" title=" " alt="" coords="104,5,195,32"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>

@@ -25,6 +25,7 @@ var annotated_dup =
     [ "Engine", "class_engine.html", "class_engine" ],
     [ "EventHandler", "class_event_handler.html", "class_event_handler" ],
     [ "Field", "class_field.html", "class_field" ],
+    [ "Game", "class_game.html", null ],
     [ "Ground", "class_ground.html", "class_ground" ],
     [ "GroundEarth", "class_ground_earth.html", "class_ground_earth" ],
     [ "GroundEmpty", "class_ground_empty.html", "class_ground_empty" ],

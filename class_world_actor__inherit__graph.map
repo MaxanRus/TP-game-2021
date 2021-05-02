@@ -1,7 +1,7 @@
 <map id="WorldActor" name="WorldActor">
-<area shape="rect" id="node1" title=" " alt="" coords="153,131,258,369"/>
-<area shape="rect" id="node3" href="$class_player.html" title=" " alt="" coords="5,417,104,583"/>
-<area shape="rect" id="node4" href="$class_unit.html" title=" " alt="" coords="129,425,282,575"/>
-<area shape="rect" id="node5" href="$class_unit_group.html" title=" " alt="" coords="306,447,406,553"/>
+<area shape="rect" id="node1" title=" " alt="" coords="151,131,260,384"/>
+<area shape="rect" id="node3" href="$class_player.html" title=" " alt="" coords="5,432,104,597"/>
+<area shape="rect" id="node4" href="$class_unit.html" title=" " alt="" coords="129,439,282,590"/>
+<area shape="rect" id="node5" href="$class_unit_group.html" title=" " alt="" coords="306,461,406,568"/>
 <area shape="rect" id="node2" href="$class_tickable.html" title=" " alt="" coords="170,5,241,83"/>
 </map>

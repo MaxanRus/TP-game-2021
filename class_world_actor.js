@@ -1,6 +1,7 @@
 var class_world_actor =
 [
     [ "WorldActor", "class_world_actor.html#a9332dcbe314f0dcf6e06c3827a641421", null ],
+    [ "GetPosition", "class_world_actor.html#a9d26e2c5b22a06b35334611c6130c83a", null ],
     [ "GetX", "class_world_actor.html#a35b3672c657fd763d44c75f9625c1185", null ],
     [ "GetY", "class_world_actor.html#a28d9235e9224dee56e6f32791d5931f0", null ],
     [ "IncSpeed", "class_world_actor.html#a4a81be19e80232b13e458f7902cb4657", null ],

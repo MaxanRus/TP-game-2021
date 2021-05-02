@@ -1,6 +1,7 @@
 <map id="Cell::Draw" name="Cell::Draw">
-<area shape="rect" id="node1" title=" " alt="" coords="384,5,464,32"/>
-<area shape="rect" id="node2" href="$class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b" title=" " alt="" coords="249,5,336,32"/>
-<area shape="rect" id="node3" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="104,5,201,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="523,5,603,32"/>
+<area shape="rect" id="node2" href="$class_field.html#ad13d86066be42a2e10fcb9cbcc51fb0b" title=" " alt="" coords="388,5,475,32"/>
+<area shape="rect" id="node3" href="$class_engine.html#a39f23d7f0ad86322bfdb73d4e6763005" title=" " alt="" coords="243,5,340,32"/>
+<area shape="rect" id="node4" href="$class_game.html#adb05b20574551a26f8cf1dc664782790" title=" " alt="" coords="104,5,195,32"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
 </map>
