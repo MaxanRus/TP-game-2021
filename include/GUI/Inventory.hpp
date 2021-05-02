@@ -17,7 +17,7 @@ class Inventory : public GUIWindow {
     position_ = Vector2Di((1 - k) * width, k * height);
     window_ = std::make_unique<Graphics::Quadrangle>(Graphics::Quadrangle((1 - k) * width, k * height, width, k * height, width, 0, (1 - k) * width, 0));
 
-    std::vector<std::string_view> list_blocks = {"dirt", "empty", "wall"};
+    std::vector<std::string_view> list_blocks = {"drill", "empty", "wall"};
     for (size_t i = 0; i < list_blocks.size(); ++i) {
       auto[height_image, width_image] = Graphics::ResourceManager::GetImage(list_blocks[i]).GetSize();
       content_.push_back(std::make_unique<GUI::Item>(position_ + Vector2Di(5 + (5 + width_image) * i, -5 - height_image), list_blocks[i]));

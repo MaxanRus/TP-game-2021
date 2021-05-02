@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project("Game")
 
-set(CMAKE_CXX_FLAGS "-O3")
+# set(CMAKE_CXX_FLAGS "-O3")
 
 add_custom_target(copy_assets ALL
         DEPENDS ${CMAKE_SOURCE_DIR}/assets
@@ -61,7 +61,7 @@ set(SOURCE_FILES
         src/GUI/GUIWindow.cpp
         src/GUI/Inventory.cpp
         src/GUI/Item.cpp
-        )
+        src/Game.cpp include/Game.h)
 
 add_executable(game ${SOURCE_FILES})
 

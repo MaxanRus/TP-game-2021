@@ -1,5 +1,6 @@
 #include "engine/objects/Cell.hpp"
 #include <iostream>
+#include <engine/objects/ground/GroundEarth.hpp>
 
 void Cell::Draw(const Vector2Df& position, float scale) const {
   for (auto& it : items_) {
@@ -36,4 +37,13 @@ Building*& Cell::GetBuilding() {
 
 void Cell::SetBuilding(Building* x) {
   building_ = x;
+}
+
+bool Cell::isEarth() {
+  for (auto i : items_) {
+    if (!dynamic_cast<GroundEarth*>(i)) {
+      return false;
+    }
+  }
+  return true;
 }

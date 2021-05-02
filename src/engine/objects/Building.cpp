@@ -13,8 +13,6 @@ void Building::DealDamage(float damage) {
   }
 }
 
-Building::Building(const std::string_view& img, float life) : Drawable(img), life_(life), max_life_(life) {}
-
 Building::Building(const std::string_view& img, float life, std::function<void()> deleter) : Drawable(img), life_(life), deleter_(std::move(deleter)) {}
 
 void Building::Repair(float to) {
@@ -23,5 +21,5 @@ void Building::Repair(float to) {
 }
 
 void Building::Tick() {
-  DealDamage(0.3);
+  DealDamage(0.1);
 }

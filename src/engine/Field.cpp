@@ -65,14 +65,14 @@ Field::Field(uint32_t width, uint32_t height, const std::string_view& path_file)
   int c = 0;
   for (auto& i : field_) {
     for (auto& j : i) {
-      c = (c + 1) % 3;
-      if (c == 0) {
+      c = rand() % 5;
+      if (c == 0 || c == 1) {
         j.Add(SpritesManager::GetDirt());
       }
-      if (c == 1) {
+      if (c == 2 || c == 3) {
         j.Add(SpritesManager::GetStone());
       }
-      if (c == 2) {
+      if (c == 4) {
         j.Add(SpritesManager::GetWater());
       }
     }
@@ -96,15 +96,27 @@ void Field::Tick() {
 }
 
 Building* Field::GetBuilding(const Vector2Df& a) {
+  auto[i, j] = GetCellPos(a);
+  if (i < 0 || j < 0 || i >= field_.size() || j >= field_[0].size()) {
+    return nullptr;
+  }
+  if (field_[i][j].GetBuilding() != nullptr) {
+    return field_[i][j].GetBuilding();
+  }
+  return nullptr;
+}
+Building* Field::SetBuilding(const Vector2Df& a, Building* x) {
   auto[pos_x, pos_y] = GetCellPos(a);
   for (size_t i = std::min(size_t(pos_x), field_.size() - 1);
        i > std::max(-1U, pos_x - ConstantsManager::kSizeBiggestObject); --i) {
     for (size_t j = std::min(size_t(pos_y), field_[i].size() - 1);
          j > std::max(-1U, pos_y - ConstantsManager::kSizeBiggestObject); --j) {
+      if (i < 0 || j < 0 || i >= field_.size() || j >= field_[0].size()) {
+        continue;
+      }
       if (field_[i][j].GetBuilding() != nullptr) {
-        return field_[i][j].GetBuilding();
+        field_[i][j].GetBuilding() = x;
       }
     }
   }
-  return nullptr;
 }

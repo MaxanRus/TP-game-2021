@@ -17,8 +17,10 @@ void WorldActor::Tick() {
       speed_coefficient = field_->GetCell(speed_).GetSpeed();
     }
   }
-  position_.x += speed_.x * speed_coefficient;
-  position_.y += speed_.y * speed_coefficient;
+  auto newPos = position_ + speed_ * speed_coefficient;
+  if (field_->GetBuilding(newPos) == nullptr || fly_) {
+    position_ = newPos;
+  }
 }
 
 void WorldActor::IncSpeed(const Vector2Df& a) {
@@ -43,4 +45,7 @@ float WorldActor::GetY() const {
 
 void WorldActor::SetSpeed(const Vector2Df& a) {
   speed_ = a;
+}
+Vector2Df WorldActor::GetPosition() const {
+  return position_;
 }

@@ -12,6 +12,7 @@ class WorldActor : Tickable {
   void SetSpeed(const Vector2Df& a);
   [[nodiscard]] virtual float GetX() const;
   [[nodiscard]] virtual float GetY() const;
+  [[nodiscard]] virtual Vector2Df GetPosition() const;
 
   static float Distance(const WorldActor& first, const WorldActor& second);
 

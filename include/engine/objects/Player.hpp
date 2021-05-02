@@ -6,7 +6,7 @@
 class Player : public Drawable, public WorldActor {
  public:
   Player() = default;
-  Player(const Vector2Df& position, Field* field, const std::string_view& img, bool fly = false, bool rooted = false);
+  Player(const Vector2Df& position, Field* field, const std::string_view& img, bool fly = true, bool rooted = false);
   ~Player() override = default;
 
   void Stop();

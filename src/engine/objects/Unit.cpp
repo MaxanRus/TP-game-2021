@@ -1,11 +1,13 @@
 #include <Timer.hpp>
 #include "engine/objects/Unit.hpp"
 #include <iostream>
+#include "Engine.hpp"
 
 Unit::Unit(float power, const std::string_view& img, const Vector2Df& a,
            Field* ptr, bool fly, bool rooted, const Vector2Df& speed) :
     WorldActor(a, ptr, fly, rooted, speed),
     Drawable(img), power_(power), last_attack_(0) {
+  fly_ = true;
   damage_ = power;
   move_speed_ = 1.0;
   attack_speed_ = 100;
@@ -18,6 +20,9 @@ void Unit::Tick() {
   WorldActor::Tick();
   auto time = Timer::GetTime();
   if (last_attack_ <= time) {
+    if (Vector2Df::dist(position_, Engine::GetPlayer().GetPosition()) <= power_ * 3) {
+      throw "end game";
+    }
     last_attack_ = time + attack_speed_;
     auto ptr = field_->GetBuilding(position_);
     if (ptr != nullptr) {

@@ -12,12 +12,15 @@ class Engine {
   void Tick();
   void Draw() const;
 
+  static Player& GetPlayer();
+
  private:
-  Player player_;
+  static Player* player_;
   Field field_;
   std::vector<UnitGroup*> enemies;
 
   static Engine* ptr;
 
   explicit Engine(uint32_t width, uint32_t height, const std::string_view& path_file = "");
+  void NewEnemy(float power);
 };

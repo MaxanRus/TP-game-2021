@@ -20,6 +20,7 @@ class Field {
   [[nodiscard]] static std::pair<uint32_t, uint32_t> GetCellPos(const Vector2Df& a);
 
   [[nodiscard]] Building* GetBuilding(const Vector2Df& a);
+  [[nodiscard]] Building* SetBuilding(const Vector2Df& a, Building* x);
 
   void Draw(const Vector2Df& a, const Vector2Df& center) const;
 

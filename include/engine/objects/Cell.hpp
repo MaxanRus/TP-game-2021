@@ -23,6 +23,8 @@ class Cell : public Drawable, public Tickable {
   void Draw(const Vector2Df& position, float scale = 1.0) const override;
   void Tick() override;
 
+  bool isEarth();
+
  private:
   float speed_coefficient_ = 1.0;
 
